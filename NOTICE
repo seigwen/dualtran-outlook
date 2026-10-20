@@ -1,0 +1,11 @@
+DualTran for Outlook
+====================
+
+Copyright (c) 2026 seigwen
+
+This add-in follows the design of the DualTran browser extension
+(https://github.com/seigwen/DualTran-extension), whose translation engine is
+licensed under the Mozilla Public License 2.0:
+https://www.mozilla.org/en-US/MPL/2.0/
+
+This repository's own source code is MIT (see LICENSE).

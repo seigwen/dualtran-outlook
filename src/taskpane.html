@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>DualTran</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
+</head>
+<body>
+  <main class="wrap">
+    <header class="bar">
+      <span class="brand">DualTran</span>
+      <select id="engine" title="Engine">
+        <option value="google">Google</option>
+        <option value="ai">AI (BYOK)</option>
+      </select>
+      <input id="source" class="lang" title="Source language" size="4" value="auto" />
+      <span class="arrow">→</span>
+      <input id="target" class="lang" title="Target language" size="4" value="zh-CN" />
+      <button id="settings" class="link" title="Settings">⚙</button>
+    </header>
+
+    <textarea id="input" placeholder="Select text in the message, or load the whole message…" spellcheck="false"></textarea>
+
+    <div class="actions">
+      <button id="load" class="ghost">Load message</button>
+      <button id="translate">Translate</button>
+      <button id="copy" class="ghost" disabled>Copy</button>
+      <span id="status" class="status"></span>
+    </div>
+
+    <pre id="result" class="result"></pre>
+
+    <div class="actions">
+      <button id="replace" class="ghost" disabled>Replace message</button>
+      <button id="insert" class="ghost" disabled>Insert at cursor</button>
+    </div>
+
+    <section id="settingsPanel" class="panel" hidden>
+      <label>AI endpoint <input id="aiEndpoint" placeholder="https://api.openai.com/v1" /></label>
+      <label>Model <input id="aiModel" placeholder="gpt-4o-mini" /></label>
+      <label>API key <input id="aiKey" type="password" placeholder="sk-…" /></label>
+      <p class="hint">The key stays in this browser (localStorage). Google needs no account.</p>
+      <button id="saveSettings">Save</button>
+    </section>
+  </main>
+  <script src="translate.js"></script>
+  <script src="taskpane.js"></script>
+</body>
+</html>
