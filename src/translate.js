@@ -41,21 +41,40 @@
       throw new Error("AI mode needs an endpoint, a model and an API key (⚙).");
     }
     const base = cfg.endpoint.replace(/\/+$/, "");
-    const res = await fetch(base + "/chat/completions", {
-      method: "POST",
-      headers: { "Content-Type": "application/json", Authorization: "Bearer " + cfg.key },
-      body: JSON.stringify({
-        model: cfg.model,
-        temperature: 0.2,
-        messages: [
-          { role: "system", content: `Translate into ${targetLang}. Output only the translation, keep line breaks.` },
-          { role: "user", content: text },
-        ],
-      }),
-    });
+    const url = base + "/chat/completions";
+    const body = {
+      model: cfg.model,
+      temperature: 0.2,
+      messages: [
+        { role: "system", content: `Translate into ${targetLang}. Output only the translation, keep line breaks.` },
+        { role: "user", content: text },
+      ],
+    };
+    if (cfg.reasoning) body.reasoning_effort = cfg.reasoning;
+    const post = (payload) =>
+      fetch(url, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Authorization: "Bearer " + cfg.key },
+        body: JSON.stringify(payload),
+      });
+
+    let res = await post(body);
+    if (!res.ok && res.status === 400 && body.reasoning_effort) {
+      // A gateway that does not know the parameter gets the request again without it.
+      const detail = await res.text().catch(() => "");
+      if (/reasoning|effort|unsupported|unrecognized/i.test(detail)) {
+        delete body.reasoning_effort;
+        res = await post(body);
+        if (res.ok) {
+          const retried = await res.json();
+          return (retried.choices && retried.choices[0] && retried.choices[0].message.content || "").trim();
+        }
+      }
+      throw new Error("AI translation failed: HTTP " + res.status + (detail ? " — " + detail.slice(0, 160) : ""));
+    }
     if (!res.ok) {
-      const body = await res.text().catch(() => "");
-      throw new Error("AI translation failed: HTTP " + res.status + (body ? " — " + body.slice(0, 160) : ""));
+      const detail = await res.text().catch(() => "");
+      throw new Error("AI translation failed: HTTP " + res.status + (detail ? " — " + detail.slice(0, 160) : ""));
     }
     const data = await res.json();
     return (data.choices && data.choices[0] && data.choices[0].message.content || "").trim();

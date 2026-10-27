@@ -38,13 +38,17 @@
     </div>
 
     <section id="settingsPanel" class="panel" hidden>
-      <label>AI endpoint <input id="aiEndpoint" placeholder="https://api.openai.com/v1" /></label>
-      <label>Model <input id="aiModel" placeholder="gpt-4o-mini" /></label>
+      <label>AI provider <select id="aiProvider"></select></label>
+      <label>Model <select id="aiModelSelect"></select></label>
+      <label id="customModelRow" hidden>Custom model <input id="aiModel" placeholder="model id" /></label>
+      <label>Endpoint <input id="aiEndpoint" placeholder="https://api.openai.com/v1" /></label>
+      <label>Reasoning effort <select id="aiReasoning"></select></label>
       <label>API key <input id="aiKey" type="password" placeholder="sk-…" /></label>
       <p class="hint">The key stays in this browser (localStorage). Google needs no account.</p>
       <button id="saveSettings">Save</button>
     </section>
   </main>
+  <script src="catalog.js"></script>
   <script src="translate.js"></script>
   <script src="taskpane.js"></script>
 </body>
