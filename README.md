@@ -40,3 +40,7 @@ See [PRIVACY.md](PRIVACY.md).
 ## License
 
 MIT — the DualTran translation engine is MPL-2.0; see NOTICE if present.
+
+## E2E
+
+`npm run e2e` drives the task pane in headless Chromium with a minimal Office.js stub and a local mock for Google/AI: settings shape, translation, AI request body, loading state, error path and persistence. Artifacts (screenshots, requests) land in `e2e-artifacts/`. CI runs it on every push.
