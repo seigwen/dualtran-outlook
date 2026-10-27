@@ -6,7 +6,9 @@
   "license": "MIT",
   "scripts": {
     "test": "node --test tests/*.test.js",
-    "validate": "office-addin-manifest validate manifest.xml"
+    "validate": "office-addin-manifest validate manifest.xml",
+    "e2e": "node e2e/run.mjs",
+    "verify": "npm test && npm run e2e"
   },
   "devDependencies": {
     "office-addin-manifest": "^1.13.5",
