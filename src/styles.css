@@ -9,6 +9,7 @@ body { background: var(--bg); color: var(--text); font: 13px/1.5 -apple-system, 
 .bar { display: flex; align-items: center; gap: 8px; }
 .brand { font-weight: 600; letter-spacing: .2px; margin-right: 4px; }
 .arrow { color: var(--dim); }
+[dir="rtl"] .arrow { display: inline-block; transform: scaleX(-1); }
 select, input, textarea, button {
   background: var(--panel); color: var(--text); border: 1px solid #3a3b44;
   border-radius: 6px; padding: 5px 8px; font: inherit; outline: none;

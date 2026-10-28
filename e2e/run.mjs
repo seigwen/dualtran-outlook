@@ -22,11 +22,12 @@ const HERE = path.dirname(fileURLToPath(import.meta.url));
 const ARTIFACTS = path.join(HERE, "..", "e2e-artifacts");
 const FIXTURE = JSON.parse(fs.readFileSync(path.join(HERE, "fixtures", "modelsdev.json"), "utf8"));
 
-const OFFICE_STUB = `
+const OFFICE_STUB = (displayLanguage = "en-US") => `
   window.Office = {
     AsyncResultStatus: { Succeeded: "succeeded" },
     CoercionType: { Text: "text" },
     context: {
+      displayLanguage: ${JSON.stringify(displayLanguage)},
       mailbox: {
         item: {
           body: {
@@ -58,14 +59,15 @@ const OFFICE_STUB = `
 const scenarios = [];
 const scenario = (name, run) => scenarios.push({ name, run });
 
-async function openPage(browser, origin) {
-  const context = await browser.newContext({ viewport: { width: 520, height: 900 } });
+async function openPage(browser, origin, options = {}) {
+  const context = await browser.newContext({ viewport: { width: 520, height: 900 }, ...options });
   const consoleLines = [];
   const page = await context.newPage();
   page.on("console", (message) => consoleLines.push(`${message.type()}: ${message.text()}`));
   page.on("pageerror", (error) => consoleLines.push(`pageerror: ${error.message}`));
 
-  await page.addInitScript(OFFICE_STUB);
+  // Office.context.displayLanguage is what the pane actually adopts.
+  await page.addInitScript(OFFICE_STUB(options.displayLanguage));
   await page.route("https://appsforoffice.microsoft.com/**", (route) =>
     route.fulfill({ status: 200, contentType: "text/javascript", body: "/* office.js stubbed */" })
   );
@@ -256,6 +258,81 @@ scenario("persistence", async ({ browser, server }) => {
   assert(restored.target === "ja", `target language not persisted: ${restored.target}`);
   await page.screenshot({ path: path.join(ARTIFACTS, "persistence", "screenshot.png") });
   await context.close();
+});
+
+scenario("i18n-locale", async ({ browser, server }) => {
+  const read = (code) => JSON.parse(fs.readFileSync(path.join(HERE, "..", "locales", code, "messages.json"), "utf8"));
+  const de = read("de");
+
+  // Office's display language is adopted even though the page renders before onReady.
+  const { page, context } = await openPage(browser, server.origin, { displayLanguage: "de-DE" });
+  const ui = await page.evaluate(() => ({
+    translate: document.getElementById("translate").textContent,
+    copy: document.getElementById("copy").textContent,
+    load: document.getElementById("load").textContent,
+    engineGoogle: document.querySelector('#engine option[value="google"]').textContent,
+    engineAi: document.querySelector('#engine option[value="ai"]').textContent,
+    placeholder: document.getElementById("input").getAttribute("placeholder"),
+    providerLabel: document.querySelector('[data-i18n="settingProvider"]').textContent,
+    hint: document.querySelector('[data-i18n="settingsHint"]').textContent,
+    reasoningFirst: document.getElementById("aiReasoning").options[0].textContent,
+    divider: Array.from(document.getElementById("aiProvider").options).find((option) => option.disabled)?.textContent,
+    dictDir: document.documentElement.getAttribute("dir"),
+    htmlLang: document.documentElement.getAttribute("lang"),
+  }));
+  assert(ui.translate === de.btnTranslate.message, `translate must be German, got "${ui.translate}"`);
+  assert(ui.copy === de.btnCopy.message, `copy must be German, got "${ui.copy}"`);
+  assert(ui.load === de.btnLoad.message, `load must be German, got "${ui.load}"`);
+  assert(ui.engineGoogle === de.engineGoogle.message, `engine option must be German, got "${ui.engineGoogle}"`);
+  assert(ui.engineAi === de.engineAi.message, `AI option must be German, got "${ui.engineAi}"`);
+  assert(ui.placeholder === de.inputPlaceholder.message, `placeholder must be German, got "${ui.placeholder}"`);
+  assert(ui.providerLabel === de.settingProvider.message, `settings label must be German, got "${ui.providerLabel}"`);
+  assert(ui.hint === de.settingsHint.message, `hint must be German, got "${ui.hint}"`);
+  assert(ui.reasoningFirst === de.reasoningLowest.message, `reasoning label must be German, got "${ui.reasoningFirst}"`);
+  assert(ui.divider === de.providerDivider.message, `catalogue divider must be German, got "${ui.divider}"`);
+  assert(ui.dictDir === null, `German must not set dir, got "${ui.dictDir}"`);
+  assert(ui.htmlLang === "de", `<html lang> must follow the locale, got "${ui.htmlLang}"`);
+
+  // No label may render its raw key or stay empty.
+  const leaks = await page.evaluate(() =>
+    Array.from(document.querySelectorAll("[data-i18n]"))
+      .filter((node) => {
+        const key = node.getAttribute("data-i18n");
+        const text = (node.textContent || "").trim();
+        return !text || text === key;
+      })
+      .map((node) => node.getAttribute("data-i18n"))
+  );
+  assert(leaks.length === 0, `untranslated labels: ${leaks.join(", ")}`);
+
+  // Dynamic status text is translated too.
+  await page.click("#translate");
+  await page.waitForFunction(() => document.getElementById("status").textContent.trim().length > 0);
+  const statusText = await page.evaluate(() => document.getElementById("status").textContent);
+  assert(statusText === de.statusNothing.message, `status must be German, got "${statusText}"`);
+  await page.screenshot({ path: path.join(ARTIFACTS, "i18n-locale", "de.png") });
+  await context.close();
+
+  // Arabic flips the pane and mirrors the arrow.
+  const rtl = await openPage(browser, server.origin, { displayLanguage: "ar-SA" });
+  const ar = read("ar");
+  const flipped = await rtl.page.evaluate(() => ({
+    dir: document.documentElement.getAttribute("dir"),
+    arrow: getComputedStyle(document.querySelector(".arrow")).transform,
+    button: document.getElementById("translate").textContent,
+  }));
+  assert(flipped.dir === "rtl", `Arabic must set dir=rtl, got "${flipped.dir}"`);
+  assert(flipped.arrow.includes("-1"), `arrow must be mirrored, got "${flipped.arrow}"`);
+  assert(flipped.button === ar.btnTranslate.message, `Arabic button expected, got "${flipped.button}"`);
+  await rtl.page.screenshot({ path: path.join(ARTIFACTS, "i18n-locale", "ar.png") });
+  await rtl.context.close();
+
+  // A language we do not ship falls back to English, never to keys.
+  const en = read("en");
+  const fallback = await openPage(browser, server.origin, { displayLanguage: "xx-YY" });
+  const fallbackText = await fallback.page.evaluate(() => document.getElementById("translate").textContent);
+  assert(fallbackText === en.btnTranslate.message, `unknown locale must fall back to English, got "${fallbackText}"`);
+  await fallback.context.close();
 });
 
 async function main() {

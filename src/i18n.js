@@ -89,10 +89,22 @@
     return root.navigator && root.navigator.language ? root.navigator.language : "en";
   }
 
-  function init() {
-    var i18n = create(root.DT_LOCALES || {}, displayLocale());
+  var RTL = { ar: 1, fa: 1, he: 1, ug: 1 };
+
+  /** Mirror the pane for right-to-left scripts and keep <html lang> honest. */
+  function applyDirection(i18n) {
+    var doc = root.document;
+    if (!doc || !doc.documentElement) return;
+    if (RTL[i18n.code]) doc.documentElement.setAttribute("dir", "rtl");
+    else doc.documentElement.removeAttribute("dir");
+    doc.documentElement.setAttribute("lang", String(i18n.code).replace("_", "-"));
+  }
+
+  function init(preferred) {
+    var i18n = create(root.DT_LOCALES || {}, preferred || displayLocale());
     i18n.apply = function (node) {
       apply(node || root.document, i18n.t);
+      applyDirection(i18n);
     };
     root.DT_I18N = i18n;
     return i18n;

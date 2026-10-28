@@ -21,6 +21,10 @@ original in the task pane; in a draft you can replace the body or insert at the 
    Outlook desktop (Windows): **Get Add-ins → My add-ins → Add a custom add-in → From file**.
 3. The ribbon shows **DualTran → Translate**.
 
+The Playwright suite includes an `i18n-locale` scenario: it starts the pane with
+`Office.context.displayLanguage = de-DE`, asserts the German labels, status line and
+`<html lang>`, then repeats in Arabic to prove `dir=rtl` and the mirrored arrow.
+
 ## Development
 
 ```bash

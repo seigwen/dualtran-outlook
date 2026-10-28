@@ -21,9 +21,18 @@
   el.customModelRow = $("customModelRow");
 
   // Interface language: Office's display language → browser language → English.
-  const i18n = window.DtI18n.init();
-  const t = i18n.t;
+  // Office.context is only reliable inside onReady, so boot() re-resolves it.
+  let i18n = window.DtI18n.init();
+  let t = i18n.t;
   i18n.apply();
+
+  /** Adopt the host's display language once Office is ready (no picker here). */
+  function relocalize(preferred) {
+    if (!preferred || window.DtI18n.detectLocale(preferred) === i18n.code) return;
+    i18n = window.DtI18n.init(preferred);
+    t = i18n.t;
+    i18n.apply();
+  }
 
   const SETTINGS_KEY = "dualtran.outlook.settings";
   const CATALOG_KEY = "dualtran.outlook.catalog";
@@ -281,6 +290,7 @@
   }
 
   async function boot() {
+    relocalize(typeof Office !== "undefined" && Office.context ? Office.context.displayLanguage : "");
     await loadCatalog();
     paintSettings();
     wire();
