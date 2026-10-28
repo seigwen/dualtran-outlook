@@ -1,0 +1,116 @@
+{
+  "engineTitle": {
+    "message": "Motore"
+  },
+  "engineGoogle": {
+    "message": "Google"
+  },
+  "engineAi": {
+    "message": "AI (BYOK)"
+  },
+  "sourceTitle": {
+    "message": "Lingua di origine"
+  },
+  "targetTitle": {
+    "message": "Lingua di destinazione"
+  },
+  "settingsTitle": {
+    "message": "Impostazioni"
+  },
+  "inputPlaceholder": {
+    "message": "Seleziona il testo nel messaggio oppure carica l'intero messaggio…"
+  },
+  "btnLoad": {
+    "message": "Carica messaggio"
+  },
+  "btnTranslate": {
+    "message": "Traduci"
+  },
+  "btnCopy": {
+    "message": "Copia"
+  },
+  "btnReplace": {
+    "message": "Sostituisci messaggio"
+  },
+  "btnInsert": {
+    "message": "Inserisci nel punto di inserimento"
+  },
+  "settingProvider": {
+    "message": "Provider di IA"
+  },
+  "settingModel": {
+    "message": "Modello"
+  },
+  "settingCustomModel": {
+    "message": "Modello personalizzato"
+  },
+  "placeholderModelId": {
+    "message": "id modello"
+  },
+  "settingEndpoint": {
+    "message": "Endpoint"
+  },
+  "settingReasoning": {
+    "message": "Sforzo di ragionamento"
+  },
+  "settingApiKey": {
+    "message": "Chiave API"
+  },
+  "settingsHint": {
+    "message": "La chiave resta in questo browser (localStorage). Google non richiede un account."
+  },
+  "btnSave": {
+    "message": "Salva"
+  },
+  "providerDivider": {
+    "message": "──── altro ────"
+  },
+  "customModel": {
+    "message": "Personalizzato…"
+  },
+  "reasoningLowest": {
+    "message": "Minimo (predefinito)"
+  },
+  "reasoningDefault": {
+    "message": "Predefinito del provider"
+  },
+  "statusOpenMessage": {
+    "message": "Apri prima un messaggio o una bozza."
+  },
+  "statusNothing": {
+    "message": "Niente da tradurre."
+  },
+  "statusTranslating": {
+    "message": "Traduzione in corso…"
+  },
+  "statusDone": {
+    "message": "Fatto."
+  },
+  "statusEmpty": {
+    "message": "Traduzione vuota."
+  },
+  "statusWritten": {
+    "message": "Scritto nel messaggio."
+  },
+  "statusWriteFailed": {
+    "message": "Scrittura non riuscita."
+  },
+  "statusCopied": {
+    "message": "Copiato."
+  },
+  "statusLoadedSelection": {
+    "message": "Caricata la selezione."
+  },
+  "statusLoadedAll": {
+    "message": "Caricato l'intero messaggio."
+  },
+  "statusSaved": {
+    "message": "Salvato."
+  },
+  "statusPreview": {
+    "message": "Modalità anteprima — Office.js non disponibile"
+  },
+  "extDescription": {
+    "message": "Traduci il testo selezionato o l'intero messaggio accanto all'originale — Google o il tuo modello AI (BYOK)."
+  }
+}

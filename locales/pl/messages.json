@@ -1,0 +1,116 @@
+{
+  "engineTitle": {
+    "message": "Silnik"
+  },
+  "engineGoogle": {
+    "message": "Google"
+  },
+  "engineAi": {
+    "message": "AI (BYOK)"
+  },
+  "sourceTitle": {
+    "message": "Język źródłowy"
+  },
+  "targetTitle": {
+    "message": "Język docelowy"
+  },
+  "settingsTitle": {
+    "message": "Ustawienia"
+  },
+  "inputPlaceholder": {
+    "message": "Zaznacz tekst w wiadomości lub wczytaj całą wiadomość…"
+  },
+  "btnLoad": {
+    "message": "Wczytaj wiadomość"
+  },
+  "btnTranslate": {
+    "message": "Tłumacz"
+  },
+  "btnCopy": {
+    "message": "Kopiuj"
+  },
+  "btnReplace": {
+    "message": "Zastąp wiadomość"
+  },
+  "btnInsert": {
+    "message": "Wstaw w miejscu kursora"
+  },
+  "settingProvider": {
+    "message": "Dostawca AI"
+  },
+  "settingModel": {
+    "message": "Model"
+  },
+  "settingCustomModel": {
+    "message": "Model niestandardowy"
+  },
+  "placeholderModelId": {
+    "message": "id modelu"
+  },
+  "settingEndpoint": {
+    "message": "Endpoint"
+  },
+  "settingReasoning": {
+    "message": "Poziom rozumowania"
+  },
+  "settingApiKey": {
+    "message": "Klucz API"
+  },
+  "settingsHint": {
+    "message": "Klucz pozostaje w tej przeglądarce (localStorage). Google nie wymaga konta."
+  },
+  "btnSave": {
+    "message": "Zapisz"
+  },
+  "providerDivider": {
+    "message": "──── więcej ────"
+  },
+  "customModel": {
+    "message": "Własny…"
+  },
+  "reasoningLowest": {
+    "message": "Najniższy (domyślnie)"
+  },
+  "reasoningDefault": {
+    "message": "Domyślne dostawcy"
+  },
+  "statusOpenMessage": {
+    "message": "Najpierw otwórz wiadomość lub wersję roboczą."
+  },
+  "statusNothing": {
+    "message": "Nie ma nic do przetłumaczenia."
+  },
+  "statusTranslating": {
+    "message": "Tłumaczenie…"
+  },
+  "statusDone": {
+    "message": "Gotowe."
+  },
+  "statusEmpty": {
+    "message": "Puste tłumaczenie."
+  },
+  "statusWritten": {
+    "message": "Zapisano w wiadomości."
+  },
+  "statusWriteFailed": {
+    "message": "Zapis nie powiódł się."
+  },
+  "statusCopied": {
+    "message": "Skopiowano."
+  },
+  "statusLoadedSelection": {
+    "message": "Wczytano zaznaczenie."
+  },
+  "statusLoadedAll": {
+    "message": "Wczytano całą wiadomość."
+  },
+  "statusSaved": {
+    "message": "Zapisano."
+  },
+  "statusPreview": {
+    "message": "Tryb podglądu — Office.js niedostępny."
+  },
+  "extDescription": {
+    "message": "Tłumacz zaznaczony tekst lub całą wiadomość obok oryginału — Google lub własny model AI (BYOK)."
+  }
+}

@@ -1,0 +1,116 @@
+{
+  "engineTitle": {
+    "message": "Pogon"
+  },
+  "engineGoogle": {
+    "message": "Google"
+  },
+  "engineAi": {
+    "message": "AI (BYOK)"
+  },
+  "sourceTitle": {
+    "message": "Izvorni jezik"
+  },
+  "targetTitle": {
+    "message": "Ciljni jezik"
+  },
+  "settingsTitle": {
+    "message": "Nastavitve"
+  },
+  "inputPlaceholder": {
+    "message": "Izberite besedilo v sporočilu ali naložite celotno sporočilo…"
+  },
+  "btnLoad": {
+    "message": "Naloži sporočilo"
+  },
+  "btnTranslate": {
+    "message": "Prevedi"
+  },
+  "btnCopy": {
+    "message": "Kopirati"
+  },
+  "btnReplace": {
+    "message": "Zamenjaj sporočilo"
+  },
+  "btnInsert": {
+    "message": "Vstavi na kazalko"
+  },
+  "settingProvider": {
+    "message": "Ponudnik umetne inteligence"
+  },
+  "settingModel": {
+    "message": "Model"
+  },
+  "settingCustomModel": {
+    "message": "Model po meri"
+  },
+  "placeholderModelId": {
+    "message": "ID modela"
+  },
+  "settingEndpoint": {
+    "message": "Končna točka"
+  },
+  "settingReasoning": {
+    "message": "Obseg razmišljanja"
+  },
+  "settingApiKey": {
+    "message": "Ključ API"
+  },
+  "settingsHint": {
+    "message": "Ključ ostane v tem brskalniku (localStorage). Google ne potrebuje računa."
+  },
+  "btnSave": {
+    "message": "Shrani"
+  },
+  "providerDivider": {
+    "message": "──── več ────"
+  },
+  "customModel": {
+    "message": "Po meri …"
+  },
+  "reasoningLowest": {
+    "message": "Najnižja (privzeto)"
+  },
+  "reasoningDefault": {
+    "message": "Privzeto pri ponudniku"
+  },
+  "statusOpenMessage": {
+    "message": "Najprej odprite sporočilo ali osnutek."
+  },
+  "statusNothing": {
+    "message": "Ni česa prevesti."
+  },
+  "statusTranslating": {
+    "message": "Prevajanje …"
+  },
+  "statusDone": {
+    "message": "Končano."
+  },
+  "statusEmpty": {
+    "message": "Prazen prevod."
+  },
+  "statusWritten": {
+    "message": "Zapisano v sporočilo."
+  },
+  "statusWriteFailed": {
+    "message": "Zapis ni uspel."
+  },
+  "statusCopied": {
+    "message": "Kopirano."
+  },
+  "statusLoadedSelection": {
+    "message": "Naložen izbor."
+  },
+  "statusLoadedAll": {
+    "message": "Naloženo celotno sporočilo."
+  },
+  "statusSaved": {
+    "message": "Shranjeno."
+  },
+  "statusPreview": {
+    "message": "Način predogleda — Office.js ni na voljo."
+  },
+  "extDescription": {
+    "message": "Prevedite izbrano besedilo ali celotno sporočilo poleg izvirnika — Google ali vaš lastni model AI (BYOK)."
+  }
+}

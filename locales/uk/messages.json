@@ -1,0 +1,116 @@
+{
+  "engineTitle": {
+    "message": "Рушій"
+  },
+  "engineGoogle": {
+    "message": "Google"
+  },
+  "engineAi": {
+    "message": "AI (BYOK)"
+  },
+  "sourceTitle": {
+    "message": "Мова джерела"
+  },
+  "targetTitle": {
+    "message": "Цільова мова"
+  },
+  "settingsTitle": {
+    "message": "Налаштування"
+  },
+  "inputPlaceholder": {
+    "message": "Виділіть текст у повідомленні або завантажте все повідомлення…"
+  },
+  "btnLoad": {
+    "message": "Завантажити повідомлення"
+  },
+  "btnTranslate": {
+    "message": "Перекласти"
+  },
+  "btnCopy": {
+    "message": "Копіювати"
+  },
+  "btnReplace": {
+    "message": "Замінити повідомлення"
+  },
+  "btnInsert": {
+    "message": "Вставити в курсор"
+  },
+  "settingProvider": {
+    "message": "Постачальник ШІ"
+  },
+  "settingModel": {
+    "message": "Модель"
+  },
+  "settingCustomModel": {
+    "message": "Власна модель"
+  },
+  "placeholderModelId": {
+    "message": "ідентифікатор моделі"
+  },
+  "settingEndpoint": {
+    "message": "Кінцева точка"
+  },
+  "settingReasoning": {
+    "message": "Обсяг міркувань"
+  },
+  "settingApiKey": {
+    "message": "Ключ API"
+  },
+  "settingsHint": {
+    "message": "Ключ зберігається в цьому браузері (localStorage). Google не потребує облікового запису."
+  },
+  "btnSave": {
+    "message": "Зберегти"
+  },
+  "providerDivider": {
+    "message": "──── більше ────"
+  },
+  "customModel": {
+    "message": "Власна…"
+  },
+  "reasoningLowest": {
+    "message": "Найнижчий (за замовчуванням)"
+  },
+  "reasoningDefault": {
+    "message": "Типово в постачальника"
+  },
+  "statusOpenMessage": {
+    "message": "Спочатку відкрийте повідомлення або чернетку."
+  },
+  "statusNothing": {
+    "message": "Немає що перекладати."
+  },
+  "statusTranslating": {
+    "message": "Перекладаю…"
+  },
+  "statusDone": {
+    "message": "Готово."
+  },
+  "statusEmpty": {
+    "message": "Порожній переклад."
+  },
+  "statusWritten": {
+    "message": "Записано в повідомлення."
+  },
+  "statusWriteFailed": {
+    "message": "Не вдалося записати."
+  },
+  "statusCopied": {
+    "message": "Скопійовано."
+  },
+  "statusLoadedSelection": {
+    "message": "Завантажено виділене."
+  },
+  "statusLoadedAll": {
+    "message": "Завантажено все повідомлення."
+  },
+  "statusSaved": {
+    "message": "Збережено."
+  },
+  "statusPreview": {
+    "message": "Режим попереднього перегляду — Office.js недоступний."
+  },
+  "extDescription": {
+    "message": "Перекладайте виділений текст або все повідомлення поруч з оригіналом — Google або власна AI-модель (BYOK)."
+  }
+}

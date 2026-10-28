@@ -1,0 +1,116 @@
+{
+  "engineTitle": {
+    "message": "Mehanizam"
+  },
+  "engineGoogle": {
+    "message": "Google"
+  },
+  "engineAi": {
+    "message": "AI (BYOK)"
+  },
+  "sourceTitle": {
+    "message": "Izvorni jezik"
+  },
+  "targetTitle": {
+    "message": "Циљни језик"
+  },
+  "settingsTitle": {
+    "message": "Подешавања"
+  },
+  "inputPlaceholder": {
+    "message": "Izaberite tekst u poruci ili učitajte celu poruku…"
+  },
+  "btnLoad": {
+    "message": "Učitaj poruku"
+  },
+  "btnTranslate": {
+    "message": "превести"
+  },
+  "btnCopy": {
+    "message": "Копирај"
+  },
+  "btnReplace": {
+    "message": "Zameni poruku"
+  },
+  "btnInsert": {
+    "message": "Umetni na poziciju kursora"
+  },
+  "settingProvider": {
+    "message": "AI dobavljač"
+  },
+  "settingModel": {
+    "message": "Model"
+  },
+  "settingCustomModel": {
+    "message": "Prilagođeni model"
+  },
+  "placeholderModelId": {
+    "message": "ID modela"
+  },
+  "settingEndpoint": {
+    "message": "Endpoint"
+  },
+  "settingReasoning": {
+    "message": "Nivo rezonovanja"
+  },
+  "settingApiKey": {
+    "message": "API ključ"
+  },
+  "settingsHint": {
+    "message": "Ključ ostaje u ovom pregledaču (localStorage). Google ne zahteva nalog."
+  },
+  "btnSave": {
+    "message": "Sačuvaj"
+  },
+  "providerDivider": {
+    "message": "──── više ────"
+  },
+  "customModel": {
+    "message": "Prilagođeno…"
+  },
+  "reasoningLowest": {
+    "message": "Најнижи (подразумевано)"
+  },
+  "reasoningDefault": {
+    "message": "Podrazumevano kod provajdera"
+  },
+  "statusOpenMessage": {
+    "message": "Prvo otvorite poruku ili nacrt."
+  },
+  "statusNothing": {
+    "message": "Nema šta da se prevede."
+  },
+  "statusTranslating": {
+    "message": "Prevođenje…"
+  },
+  "statusDone": {
+    "message": "Završeno."
+  },
+  "statusEmpty": {
+    "message": "Prazan prevod."
+  },
+  "statusWritten": {
+    "message": "Upisano u poruku."
+  },
+  "statusWriteFailed": {
+    "message": "Upis nije uspeo."
+  },
+  "statusCopied": {
+    "message": "Kopirano."
+  },
+  "statusLoadedSelection": {
+    "message": "Učitan izbor."
+  },
+  "statusLoadedAll": {
+    "message": "Učitana cela poruka."
+  },
+  "statusSaved": {
+    "message": "Sačuvano."
+  },
+  "statusPreview": {
+    "message": "Režim pregleda — Office.js nije dostupan."
+  },
+  "extDescription": {
+    "message": "Prevedite izabrani tekst ili celu poruku pored originala — Google ili sopstveni AI model (BYOK)."
+  }
+}

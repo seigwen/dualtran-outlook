@@ -1,0 +1,116 @@
+{
+  "engineTitle": {
+    "message": "מנוע"
+  },
+  "engineGoogle": {
+    "message": "Google"
+  },
+  "engineAi": {
+    "message": "AI (BYOK)"
+  },
+  "sourceTitle": {
+    "message": "שפת מקור"
+  },
+  "targetTitle": {
+    "message": "שפת יעד"
+  },
+  "settingsTitle": {
+    "message": "הגדרות"
+  },
+  "inputPlaceholder": {
+    "message": "בחר טקסט בהודעה, או טען את ההודעה כולה…"
+  },
+  "btnLoad": {
+    "message": "טען הודעה"
+  },
+  "btnTranslate": {
+    "message": "תרגם"
+  },
+  "btnCopy": {
+    "message": "עותק"
+  },
+  "btnReplace": {
+    "message": "החלף הודעה"
+  },
+  "btnInsert": {
+    "message": "הוסף בסמן"
+  },
+  "settingProvider": {
+    "message": "ספק בינה מלאכותית"
+  },
+  "settingModel": {
+    "message": "מודל"
+  },
+  "settingCustomModel": {
+    "message": "מודל מותאם אישית"
+  },
+  "placeholderModelId": {
+    "message": "מזהה מודל"
+  },
+  "settingEndpoint": {
+    "message": "נקודת קצה"
+  },
+  "settingReasoning": {
+    "message": "מאמץ חשיבה"
+  },
+  "settingApiKey": {
+    "message": "מפתח API"
+  },
+  "settingsHint": {
+    "message": "המפתח נשמר בדפדפן הזה (localStorage). Google לא דורש חשבון."
+  },
+  "btnSave": {
+    "message": "שמור"
+  },
+  "providerDivider": {
+    "message": "──── עוד ────"
+  },
+  "customModel": {
+    "message": "מותאם אישית…"
+  },
+  "reasoningLowest": {
+    "message": "הנמוך ביותר (ברירת מחדל)"
+  },
+  "reasoningDefault": {
+    "message": "ברירת מחדל של הספק"
+  },
+  "statusOpenMessage": {
+    "message": "פתח הודעה או טיוטה תחילה."
+  },
+  "statusNothing": {
+    "message": "אין מה לתרגם."
+  },
+  "statusTranslating": {
+    "message": "מתרגם…"
+  },
+  "statusDone": {
+    "message": "בוצע."
+  },
+  "statusEmpty": {
+    "message": "תרגום ריק."
+  },
+  "statusWritten": {
+    "message": "נכתב להודעה."
+  },
+  "statusWriteFailed": {
+    "message": "הכתיבה נכשלה."
+  },
+  "statusCopied": {
+    "message": "הועתק."
+  },
+  "statusLoadedSelection": {
+    "message": "הקטע הנבחר נטען."
+  },
+  "statusLoadedAll": {
+    "message": "ההודעה כולה נטענה."
+  },
+  "statusSaved": {
+    "message": "נשמר."
+  },
+  "statusPreview": {
+    "message": "מצב תצוגה מקדימה — Office.js אינו זמין."
+  },
+  "extDescription": {
+    "message": "תרגם את הטקסט הנבחר או את ההודעה כולה לצד המקור — Google או מודל AI משלך (BYOK)."
+  }
+}

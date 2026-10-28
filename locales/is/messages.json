@@ -1,0 +1,116 @@
+{
+  "engineTitle": {
+    "message": "Vél"
+  },
+  "engineGoogle": {
+    "message": "Google"
+  },
+  "engineAi": {
+    "message": "AI (BYOK)"
+  },
+  "sourceTitle": {
+    "message": "Upprunamál"
+  },
+  "targetTitle": {
+    "message": "Markmál"
+  },
+  "settingsTitle": {
+    "message": "Stillingar"
+  },
+  "inputPlaceholder": {
+    "message": "Veldu texta í skilaboðunum eða hlaðið inn öllum skilaboðunum…"
+  },
+  "btnLoad": {
+    "message": "Hlaða skilaboðum"
+  },
+  "btnTranslate": {
+    "message": "Þýða"
+  },
+  "btnCopy": {
+    "message": "Afrita"
+  },
+  "btnReplace": {
+    "message": "Skipta út skilaboðum"
+  },
+  "btnInsert": {
+    "message": "Setja inn við bendil"
+  },
+  "settingProvider": {
+    "message": "AI-veitandi"
+  },
+  "settingModel": {
+    "message": "Líkan"
+  },
+  "settingCustomModel": {
+    "message": "Sérsniðið líkan"
+  },
+  "placeholderModelId": {
+    "message": "model id"
+  },
+  "settingEndpoint": {
+    "message": "Endapunktur"
+  },
+  "settingReasoning": {
+    "message": "Rökhugsunarátak"
+  },
+  "settingApiKey": {
+    "message": "API-lykill"
+  },
+  "settingsHint": {
+    "message": "Lykillinn verður í þessum vafra (localStorage). Google þarf engan reikning."
+  },
+  "btnSave": {
+    "message": "Vista"
+  },
+  "providerDivider": {
+    "message": "──── meira ────"
+  },
+  "customModel": {
+    "message": "Sérsniðið…"
+  },
+  "reasoningLowest": {
+    "message": "Lægst (sjálfgefið)"
+  },
+  "reasoningDefault": {
+    "message": "Sjálfgefið hjá veitanda"
+  },
+  "statusOpenMessage": {
+    "message": "Opnaðu skilaboð eða drög fyrst."
+  },
+  "statusNothing": {
+    "message": "Ekkert til að þýða."
+  },
+  "statusTranslating": {
+    "message": "Þýði…"
+  },
+  "statusDone": {
+    "message": "Lokið."
+  },
+  "statusEmpty": {
+    "message": "Tóm þýðing."
+  },
+  "statusWritten": {
+    "message": "Skrifað í skilaboðin."
+  },
+  "statusWriteFailed": {
+    "message": "Skrif mistókst."
+  },
+  "statusCopied": {
+    "message": "Afritað."
+  },
+  "statusLoadedSelection": {
+    "message": "Hlóð valið."
+  },
+  "statusLoadedAll": {
+    "message": "Hlóð öll skilaboðin."
+  },
+  "statusSaved": {
+    "message": "Vistað."
+  },
+  "statusPreview": {
+    "message": "Forskoðunarhamur — Office.js ekki tiltækt."
+  },
+  "extDescription": {
+    "message": "Þýddu valinn texta eða alla skilaboðin við hlið upprunalegs texta — Google eða þitt eigið AI-líkan (BYOK)."
+  }
+}

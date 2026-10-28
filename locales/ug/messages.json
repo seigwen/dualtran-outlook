@@ -1,0 +1,116 @@
+{
+  "engineTitle": {
+    "message": "قوزغاتقۇچ"
+  },
+  "engineGoogle": {
+    "message": "Google"
+  },
+  "engineAi": {
+    "message": "AI (BYOK)"
+  },
+  "sourceTitle": {
+    "message": "مەنبە تىلى"
+  },
+  "targetTitle": {
+    "message": "نىشان تىل"
+  },
+  "settingsTitle": {
+    "message": "تەڭشەك"
+  },
+  "inputPlaceholder": {
+    "message": "ئۇچۇردىكى تېكىستنى تاللاڭ ياكى پۈتۈن ئۇچۇرنى يۈكلەڭ…"
+  },
+  "btnLoad": {
+    "message": "ئۇچۇرنى يۈكلەش"
+  },
+  "btnTranslate": {
+    "message": "تەرجىمە"
+  },
+  "btnCopy": {
+    "message": "كۆچۈرۈڭ"
+  },
+  "btnReplace": {
+    "message": "ئۇچۇرنى ئالماشتۇرۇش"
+  },
+  "btnInsert": {
+    "message": "كۇرسور ئورنىغا قىستۇرۇش"
+  },
+  "settingProvider": {
+    "message": "AI تەمىنلىگۈچىسى"
+  },
+  "settingModel": {
+    "message": "مودېل"
+  },
+  "settingCustomModel": {
+    "message": "ئۆزگىچە مودېل"
+  },
+  "placeholderModelId": {
+    "message": "model id"
+  },
+  "settingEndpoint": {
+    "message": "ئاخىر نۇقتا"
+  },
+  "settingReasoning": {
+    "message": "پىكىر قىلىش كۈچى"
+  },
+  "settingApiKey": {
+    "message": "API ئاچقۇچى"
+  },
+  "settingsHint": {
+    "message": "ئاچقۇچ بۇ توركۆرگۈدە (localStorage) ساقلىنىدۇ. Google ھېسابات تەلەپ قىلمايدۇ."
+  },
+  "btnSave": {
+    "message": "ساقلاش"
+  },
+  "providerDivider": {
+    "message": "──── تېخىمۇ كۆپ ────"
+  },
+  "customModel": {
+    "message": "ئۆزگەرتىلگەن…"
+  },
+  "reasoningLowest": {
+    "message": "ئەڭ تۆۋەن (سۈكۈتتىكى)"
+  },
+  "reasoningDefault": {
+    "message": "تەمىنلىگۈچىنىڭ سۈكۈتتىكىسى"
+  },
+  "statusOpenMessage": {
+    "message": "ئالدى بىلەن بىر ئۇچۇر ياكى قارالما ئېچىڭ."
+  },
+  "statusNothing": {
+    "message": "تەرجىمە قىلىدىغان نەرسە يوق."
+  },
+  "statusTranslating": {
+    "message": "تەرجىمە قىلىنىۋاتىدۇ…"
+  },
+  "statusDone": {
+    "message": "تامام."
+  },
+  "statusEmpty": {
+    "message": "تەرجىمە بوش."
+  },
+  "statusWritten": {
+    "message": "ئۇچۇرغا يېزىلدى."
+  },
+  "statusWriteFailed": {
+    "message": "يېزىش مەغلۇپ بولدى."
+  },
+  "statusCopied": {
+    "message": "كۆچۈرۈلدى."
+  },
+  "statusLoadedSelection": {
+    "message": "تاللانمىنى يۈكلەندى."
+  },
+  "statusLoadedAll": {
+    "message": "پۈتۈن ئۇچۇرنى يۈكلەندى."
+  },
+  "statusSaved": {
+    "message": "ساقلاندى."
+  },
+  "statusPreview": {
+    "message": "ئالدىن كۆرۈش ھالىتى — Office.js ئىشلەتكىلى بولمايدۇ."
+  },
+  "extDescription": {
+    "message": "تاللانغان تېكىست ياكى پۈتۈن ئۇچۇرنى ئەسلىنىڭ يېنىدا تەرجىمە قىلىدۇ — Google ياكى ئۆزىڭىزنىڭ سۈنئىي ئەقىل مودېلى (BYOK)"
+  }
+}

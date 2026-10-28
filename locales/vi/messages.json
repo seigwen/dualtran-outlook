@@ -1,0 +1,116 @@
+{
+  "engineTitle": {
+    "message": "Engine"
+  },
+  "engineGoogle": {
+    "message": "Google"
+  },
+  "engineAi": {
+    "message": "AI (BYOK)"
+  },
+  "sourceTitle": {
+    "message": "Ngôn ngữ nguồn"
+  },
+  "targetTitle": {
+    "message": "Ngôn ngữ đích"
+  },
+  "settingsTitle": {
+    "message": "Cài đặt"
+  },
+  "inputPlaceholder": {
+    "message": "Chọn văn bản trong tin nhắn, hoặc tải toàn bộ tin nhắn…"
+  },
+  "btnLoad": {
+    "message": "Tải tin nhắn"
+  },
+  "btnTranslate": {
+    "message": "Dịch "
+  },
+  "btnCopy": {
+    "message": "Sao Chép"
+  },
+  "btnReplace": {
+    "message": "Thay thế tin nhắn"
+  },
+  "btnInsert": {
+    "message": "Chèn tại vị trí con trỏ"
+  },
+  "settingProvider": {
+    "message": "Nhà cung cấp AI"
+  },
+  "settingModel": {
+    "message": "Mô hình"
+  },
+  "settingCustomModel": {
+    "message": "Mô hình tùy chỉnh"
+  },
+  "placeholderModelId": {
+    "message": "model id"
+  },
+  "settingEndpoint": {
+    "message": "Endpoint"
+  },
+  "settingReasoning": {
+    "message": "Mức độ suy luận"
+  },
+  "settingApiKey": {
+    "message": "Khóa API"
+  },
+  "settingsHint": {
+    "message": "Khóa được lưu trong trình duyệt này (localStorage). Google không cần tài khoản."
+  },
+  "btnSave": {
+    "message": "Lưu"
+  },
+  "providerDivider": {
+    "message": "──── thêm ────"
+  },
+  "customModel": {
+    "message": "Tùy chỉnh…"
+  },
+  "reasoningLowest": {
+    "message": "Thấp nhất (mặc định)"
+  },
+  "reasoningDefault": {
+    "message": "Mặc định của nhà cung cấp"
+  },
+  "statusOpenMessage": {
+    "message": "Hãy mở một tin nhắn hoặc bản nháp trước."
+  },
+  "statusNothing": {
+    "message": "Không có gì để dịch."
+  },
+  "statusTranslating": {
+    "message": "Đang dịch…"
+  },
+  "statusDone": {
+    "message": "Hoàn tất."
+  },
+  "statusEmpty": {
+    "message": "Bản dịch trống."
+  },
+  "statusWritten": {
+    "message": "Đã ghi vào tin nhắn."
+  },
+  "statusWriteFailed": {
+    "message": "Ghi thất bại."
+  },
+  "statusCopied": {
+    "message": "Đã sao chép."
+  },
+  "statusLoadedSelection": {
+    "message": "Đã tải phần đã chọn."
+  },
+  "statusLoadedAll": {
+    "message": "Đã tải toàn bộ tin nhắn."
+  },
+  "statusSaved": {
+    "message": "Đã lưu."
+  },
+  "statusPreview": {
+    "message": "Chế độ xem trước — Office.js không khả dụng."
+  },
+  "extDescription": {
+    "message": "Dịch văn bản đã chọn hoặc toàn bộ tin nhắn ngay cạnh bản gốc — Google hoặc mô hình AI của riêng bạn (BYOK)."
+  }
+}

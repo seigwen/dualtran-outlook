@@ -1,0 +1,116 @@
+{
+  "engineTitle": {
+    "message": "引擎"
+  },
+  "engineGoogle": {
+    "message": "Google"
+  },
+  "engineAi": {
+    "message": "AI（BYOK）"
+  },
+  "sourceTitle": {
+    "message": "源语言"
+  },
+  "targetTitle": {
+    "message": "目标语言"
+  },
+  "settingsTitle": {
+    "message": "设置"
+  },
+  "inputPlaceholder": {
+    "message": "在邮件里选中文字，或载入整封邮件…"
+  },
+  "btnLoad": {
+    "message": "载入邮件"
+  },
+  "btnTranslate": {
+    "message": "翻译"
+  },
+  "btnCopy": {
+    "message": "复制"
+  },
+  "btnReplace": {
+    "message": "替换邮件正文"
+  },
+  "btnInsert": {
+    "message": "插入到光标处"
+  },
+  "settingProvider": {
+    "message": "AI 服务商"
+  },
+  "settingModel": {
+    "message": "模型"
+  },
+  "settingCustomModel": {
+    "message": "自定义模型"
+  },
+  "placeholderModelId": {
+    "message": "模型 id"
+  },
+  "settingEndpoint": {
+    "message": "Endpoint"
+  },
+  "settingReasoning": {
+    "message": "推理强度"
+  },
+  "settingApiKey": {
+    "message": "API Key"
+  },
+  "settingsHint": {
+    "message": "Key 只存在本机浏览器（localStorage）里。Google 无需账号。"
+  },
+  "btnSave": {
+    "message": "保存"
+  },
+  "providerDivider": {
+    "message": "──── 更多 ────"
+  },
+  "customModel": {
+    "message": "自定义…"
+  },
+  "reasoningLowest": {
+    "message": "最低（默认）"
+  },
+  "reasoningDefault": {
+    "message": "服务商默认"
+  },
+  "statusOpenMessage": {
+    "message": "请先打开一封邮件或草稿。"
+  },
+  "statusNothing": {
+    "message": "没有可翻译的内容。"
+  },
+  "statusTranslating": {
+    "message": "翻译中…"
+  },
+  "statusDone": {
+    "message": "完成。"
+  },
+  "statusEmpty": {
+    "message": "译文为空。"
+  },
+  "statusWritten": {
+    "message": "已写入邮件。"
+  },
+  "statusWriteFailed": {
+    "message": "写入失败。"
+  },
+  "statusCopied": {
+    "message": "已复制。"
+  },
+  "statusLoadedSelection": {
+    "message": "已载入选区。"
+  },
+  "statusLoadedAll": {
+    "message": "已载入整封邮件。"
+  },
+  "statusSaved": {
+    "message": "已保存。"
+  },
+  "statusPreview": {
+    "message": "预览模式 —— Office.js 不可用。"
+  },
+  "extDescription": {
+    "message": "把选中的文字或整封邮件翻成对照译文 —— Google 或你自己的 AI 模型（BYOK）。"
+  }
+}

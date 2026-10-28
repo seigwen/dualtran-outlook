@@ -1,0 +1,116 @@
+{
+  "engineTitle": {
+    "message": "エンジン"
+  },
+  "engineGoogle": {
+    "message": "Google"
+  },
+  "engineAi": {
+    "message": "AI (BYOK)"
+  },
+  "sourceTitle": {
+    "message": "原文言語"
+  },
+  "targetTitle": {
+    "message": "対象言語"
+  },
+  "settingsTitle": {
+    "message": "設定"
+  },
+  "inputPlaceholder": {
+    "message": "メッセージ内のテキストを選択するか、メッセージ全体を読み込みます…"
+  },
+  "btnLoad": {
+    "message": "メッセージを読み込む"
+  },
+  "btnTranslate": {
+    "message": "翻訳"
+  },
+  "btnCopy": {
+    "message": "コピー"
+  },
+  "btnReplace": {
+    "message": "メッセージを置換"
+  },
+  "btnInsert": {
+    "message": "カーソル位置に挿入"
+  },
+  "settingProvider": {
+    "message": "AI プロバイダー"
+  },
+  "settingModel": {
+    "message": "モデル"
+  },
+  "settingCustomModel": {
+    "message": "カスタムモデル"
+  },
+  "placeholderModelId": {
+    "message": "モデルID"
+  },
+  "settingEndpoint": {
+    "message": "エンドポイント"
+  },
+  "settingReasoning": {
+    "message": "推論の強度"
+  },
+  "settingApiKey": {
+    "message": "APIキー"
+  },
+  "settingsHint": {
+    "message": "キーはこのブラウザ（localStorage）に保存されます。Googleはアカウント不要です。"
+  },
+  "btnSave": {
+    "message": "保存"
+  },
+  "providerDivider": {
+    "message": "──── その他 ────"
+  },
+  "customModel": {
+    "message": "カスタム…"
+  },
+  "reasoningLowest": {
+    "message": "最低 (デフォルト)"
+  },
+  "reasoningDefault": {
+    "message": "プロバイダーのデフォルト"
+  },
+  "statusOpenMessage": {
+    "message": "先にメッセージまたは下書きを開いてください。"
+  },
+  "statusNothing": {
+    "message": "翻訳する内容がありません"
+  },
+  "statusTranslating": {
+    "message": "翻訳中…"
+  },
+  "statusDone": {
+    "message": "完了"
+  },
+  "statusEmpty": {
+    "message": "翻訳結果が空です"
+  },
+  "statusWritten": {
+    "message": "メッセージに書き込みました"
+  },
+  "statusWriteFailed": {
+    "message": "書き込みに失敗しました"
+  },
+  "statusCopied": {
+    "message": "コピーしました"
+  },
+  "statusLoadedSelection": {
+    "message": "選択範囲を読み込みました"
+  },
+  "statusLoadedAll": {
+    "message": "メッセージ全体を読み込みました"
+  },
+  "statusSaved": {
+    "message": "保存しました"
+  },
+  "statusPreview": {
+    "message": "プレビューモード — Office.js は利用できません"
+  },
+  "extDescription": {
+    "message": "選択したテキストまたはメッセージ全体を原文の隣に翻訳 — Google または独自の AI モデル (BYOK)"
+  }
+}

@@ -1,0 +1,116 @@
+{
+  "engineTitle": {
+    "message": "Motor"
+  },
+  "engineGoogle": {
+    "message": "Google"
+  },
+  "engineAi": {
+    "message": "AI (BYOK)"
+  },
+  "sourceTitle": {
+    "message": "Kildespråk"
+  },
+  "targetTitle": {
+    "message": "Målspråk"
+  },
+  "settingsTitle": {
+    "message": "Innstillinger"
+  },
+  "inputPlaceholder": {
+    "message": "Velg tekst i meldingen, eller last inn hele meldingen…"
+  },
+  "btnLoad": {
+    "message": "Last inn melding"
+  },
+  "btnTranslate": {
+    "message": "Oversette"
+  },
+  "btnCopy": {
+    "message": "Kopiere"
+  },
+  "btnReplace": {
+    "message": "Erstatt melding"
+  },
+  "btnInsert": {
+    "message": "Sett inn ved markøren"
+  },
+  "settingProvider": {
+    "message": "AI-leverandør"
+  },
+  "settingModel": {
+    "message": "Modell"
+  },
+  "settingCustomModel": {
+    "message": "Egendefinert modell"
+  },
+  "placeholderModelId": {
+    "message": "modell-id"
+  },
+  "settingEndpoint": {
+    "message": "Endepunkt"
+  },
+  "settingReasoning": {
+    "message": "Resonneringsinnsats"
+  },
+  "settingApiKey": {
+    "message": "API-nøkkel"
+  },
+  "settingsHint": {
+    "message": "Nøkkelen blir liggende i denne nettleseren (localStorage). Google trenger ingen konto."
+  },
+  "btnSave": {
+    "message": "Lagre"
+  },
+  "providerDivider": {
+    "message": "──── mer ────"
+  },
+  "customModel": {
+    "message": "Egendefinert…"
+  },
+  "reasoningLowest": {
+    "message": "Laveste (standard)"
+  },
+  "reasoningDefault": {
+    "message": "Leverandørens standard"
+  },
+  "statusOpenMessage": {
+    "message": "Åpne en melding eller en kladd først."
+  },
+  "statusNothing": {
+    "message": "Ingenting å oversette."
+  },
+  "statusTranslating": {
+    "message": "Oversetter…"
+  },
+  "statusDone": {
+    "message": "Ferdig."
+  },
+  "statusEmpty": {
+    "message": "Tom oversettelse."
+  },
+  "statusWritten": {
+    "message": "Skrevet til meldingen."
+  },
+  "statusWriteFailed": {
+    "message": "Skriving mislyktes."
+  },
+  "statusCopied": {
+    "message": "Kopiert."
+  },
+  "statusLoadedSelection": {
+    "message": "Lastet inn utvalget."
+  },
+  "statusLoadedAll": {
+    "message": "Lastet inn hele meldingen."
+  },
+  "statusSaved": {
+    "message": "Lagret."
+  },
+  "statusPreview": {
+    "message": "Forhåndsvisningsmodus – Office.js er ikke tilgjengelig."
+  },
+  "extDescription": {
+    "message": "Oversett den valgte teksten eller hele meldingen ved siden av originalen — Google eller din egen AI-modell (BYOK)."
+  }
+}

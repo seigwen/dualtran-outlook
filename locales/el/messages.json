@@ -1,0 +1,116 @@
+{
+  "engineTitle": {
+    "message": "Μηχανή"
+  },
+  "engineGoogle": {
+    "message": "Google"
+  },
+  "engineAi": {
+    "message": "AI (BYOK)"
+  },
+  "sourceTitle": {
+    "message": "Γλώσσα πηγής"
+  },
+  "targetTitle": {
+    "message": "Γλώσσα-στόχος"
+  },
+  "settingsTitle": {
+    "message": "Ρυθμίσεις"
+  },
+  "inputPlaceholder": {
+    "message": "Επιλέξτε κείμενο στο μήνυμα ή φορτώστε ολόκληρο το μήνυμα…"
+  },
+  "btnLoad": {
+    "message": "Φόρτωση μηνύματος"
+  },
+  "btnTranslate": {
+    "message": "Μετάφραση"
+  },
+  "btnCopy": {
+    "message": "Αντιγραφή"
+  },
+  "btnReplace": {
+    "message": "Αντικατάσταση μηνύματος"
+  },
+  "btnInsert": {
+    "message": "Εισαγωγή στον κέρσορα"
+  },
+  "settingProvider": {
+    "message": "Πάροχος τεχνητής νοημοσύνης"
+  },
+  "settingModel": {
+    "message": "Μοντέλο"
+  },
+  "settingCustomModel": {
+    "message": "Προσαρμοσμένο μοντέλο"
+  },
+  "placeholderModelId": {
+    "message": "αναγνωριστικό μοντέλου"
+  },
+  "settingEndpoint": {
+    "message": "Endpoint"
+  },
+  "settingReasoning": {
+    "message": "Προσπάθεια συλλογισμού"
+  },
+  "settingApiKey": {
+    "message": "Κλειδί API"
+  },
+  "settingsHint": {
+    "message": "Το κλειδί παραμένει σε αυτό το πρόγραμμα περιήγησης (localStorage). Το Google δεν απαιτεί λογαριασμό."
+  },
+  "btnSave": {
+    "message": "Αποθήκευση"
+  },
+  "providerDivider": {
+    "message": "──── περισσότερα ────"
+  },
+  "customModel": {
+    "message": "Προσαρμοσμένο…"
+  },
+  "reasoningLowest": {
+    "message": "Χαμηλότερο (προεπιλογή)"
+  },
+  "reasoningDefault": {
+    "message": "Προεπιλογή παρόχου"
+  },
+  "statusOpenMessage": {
+    "message": "Ανοίξτε πρώτα ένα μήνυμα ή ένα πρόχειρο."
+  },
+  "statusNothing": {
+    "message": "Δεν υπάρχει κείμενο για μετάφραση."
+  },
+  "statusTranslating": {
+    "message": "Μετάφραση…"
+  },
+  "statusDone": {
+    "message": "Ολοκληρώθηκε."
+  },
+  "statusEmpty": {
+    "message": "Κενή μετάφραση."
+  },
+  "statusWritten": {
+    "message": "Γράφτηκε στο μήνυμα."
+  },
+  "statusWriteFailed": {
+    "message": "Η εγγραφή απέτυχε."
+  },
+  "statusCopied": {
+    "message": "Αντιγράφηκε."
+  },
+  "statusLoadedSelection": {
+    "message": "Φορτώθηκε η επιλογή."
+  },
+  "statusLoadedAll": {
+    "message": "Φορτώθηκε ολόκληρο το μήνυμα."
+  },
+  "statusSaved": {
+    "message": "Αποθηκεύτηκε."
+  },
+  "statusPreview": {
+    "message": "Λειτουργία προεπισκόπησης — το Office.js δεν είναι διαθέσιμο."
+  },
+  "extDescription": {
+    "message": "Μεταφράστε το επιλεγμένο κείμενο ή ολόκληρο το μήνυμα δίπλα στο πρωτότυπο — Google ή το δικό σας μοντέλο AI (BYOK)."
+  }
+}

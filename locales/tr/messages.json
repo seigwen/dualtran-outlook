@@ -1,0 +1,116 @@
+{
+  "engineTitle": {
+    "message": "Motor"
+  },
+  "engineGoogle": {
+    "message": "Google"
+  },
+  "engineAi": {
+    "message": "AI (BYOK)"
+  },
+  "sourceTitle": {
+    "message": "Kaynak dil"
+  },
+  "targetTitle": {
+    "message": "Hedef dil"
+  },
+  "settingsTitle": {
+    "message": "Ayarlar"
+  },
+  "inputPlaceholder": {
+    "message": "Mesajdaki metni seçin veya tüm mesajı yükleyin…"
+  },
+  "btnLoad": {
+    "message": "Mesajı yükle"
+  },
+  "btnTranslate": {
+    "message": "Çevir"
+  },
+  "btnCopy": {
+    "message": "Kopyala"
+  },
+  "btnReplace": {
+    "message": "Mesajı değiştir"
+  },
+  "btnInsert": {
+    "message": "İmleç konumuna ekle"
+  },
+  "settingProvider": {
+    "message": "Yapay zekâ sağlayıcısı"
+  },
+  "settingModel": {
+    "message": "Model"
+  },
+  "settingCustomModel": {
+    "message": "Özel model"
+  },
+  "placeholderModelId": {
+    "message": "model kimliği"
+  },
+  "settingEndpoint": {
+    "message": "Uç nokta"
+  },
+  "settingReasoning": {
+    "message": "Akıl yürütme çabası"
+  },
+  "settingApiKey": {
+    "message": "API anahtarı"
+  },
+  "settingsHint": {
+    "message": "Anahtar bu tarayıcıda kalır (localStorage). Google hesap gerektirmez."
+  },
+  "btnSave": {
+    "message": "Kaydet"
+  },
+  "providerDivider": {
+    "message": "──── daha fazla ────"
+  },
+  "customModel": {
+    "message": "Özel…"
+  },
+  "reasoningLowest": {
+    "message": "En düşük (varsayılan)"
+  },
+  "reasoningDefault": {
+    "message": "Sağlayıcı varsayılanı"
+  },
+  "statusOpenMessage": {
+    "message": "Önce bir mesaj veya taslak açın."
+  },
+  "statusNothing": {
+    "message": "Çevrilecek bir şey yok."
+  },
+  "statusTranslating": {
+    "message": "Çevriliyor…"
+  },
+  "statusDone": {
+    "message": "Tamamlandı."
+  },
+  "statusEmpty": {
+    "message": "Boş çeviri."
+  },
+  "statusWritten": {
+    "message": "Mesaja yazıldı."
+  },
+  "statusWriteFailed": {
+    "message": "Yazma başarısız."
+  },
+  "statusCopied": {
+    "message": "Kopyalandı."
+  },
+  "statusLoadedSelection": {
+    "message": "Seçim yüklendi."
+  },
+  "statusLoadedAll": {
+    "message": "Tüm mesaj yüklendi."
+  },
+  "statusSaved": {
+    "message": "Kaydedildi."
+  },
+  "statusPreview": {
+    "message": "Önizleme modu — Office.js kullanılamıyor."
+  },
+  "extDescription": {
+    "message": "Seçili metni veya tüm mesajı orijinalin yanında çevirin — Google veya kendi AI modeliniz (BYOK)."
+  }
+}

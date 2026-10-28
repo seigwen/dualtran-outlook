@@ -10,7 +10,45 @@
   <ProviderName>seigwen</ProviderName>
   <DefaultLocale>en-US</DefaultLocale>
   <DisplayName DefaultValue="DualTran"/>
-  <Description DefaultValue="Translate the selected text or the whole message next to the original — Google or your own AI model (BYOK)."/>
+  <Description DefaultValue="Translate the selected text or the whole message next to the original — Google or your own AI model (BYOK).">
+    <Override Locale="af-ZA" Value="Vertaal die gekose teks of die hele boodskap langs die oorspronklike — Google of jou eie KI-model (BYOK)."/>
+    <Override Locale="ar-SA" Value="ترجم النص المحدد أو الرسالة كاملة بجانب النص الأصلي — Google أو نموذج الذكاء الاصطناعي الخاص بك (BYOK)."/>
+    <Override Locale="ca-ES" Value="Tradueix el text seleccionat o el missatge sencer al costat de l'original — Google o el teu propi model d'IA (BYOK)."/>
+    <Override Locale="cs-CZ" Value="Přeložte vybraný text nebo celou zprávu vedle originálu — Google nebo váš vlastní AI model (BYOK)."/>
+    <Override Locale="da-DK" Value="Oversæt den markerede tekst eller hele meddelelsen ved siden af originalen — Google eller din egen AI-model (BYOK)."/>
+    <Override Locale="de-DE" Value="Übersetze den ausgewählten Text oder die ganze Nachricht neben dem Original — Google oder dein eigenes KI-Modell (BYOK)."/>
+    <Override Locale="el-GR" Value="Μεταφράστε το επιλεγμένο κείμενο ή ολόκληρο το μήνυμα δίπλα στο πρωτότυπο — Google ή το δικό σας μοντέλο AI (BYOK)."/>
+    <Override Locale="es-ES" Value="Traduce el texto seleccionado o el mensaje completo junto al original — Google o tu propio modelo de IA (BYOK)."/>
+    <Override Locale="fa-IR" Value="متن انتخاب‌شده یا کل پیام را در کنار متن اصلی ترجمه کنید — Google یا مدل هوش مصنوعی خودتان (BYOK)."/>
+    <Override Locale="fi-FI" Value="Käännä valittu teksti tai koko viesti alkuperäisen viereen — Google tai oma AI-mallisi (BYOK)."/>
+    <Override Locale="fr-FR" Value="Traduisez le texte sélectionné ou tout le message à côté de l’original — Google ou votre propre modèle d’IA (BYOK)."/>
+    <Override Locale="he-IL" Value="תרגם את הטקסט הנבחר או את ההודעה כולה לצד המקור — Google או מודל AI משלך (BYOK)."/>
+    <Override Locale="hi-IN" Value="चयनित टेक्स्ट या पूरे संदेश का अनुवाद मूल के बगल में करें — Google या आपका अपना AI मॉडल (BYOK)"/>
+    <Override Locale="hr-HR" Value="Prevedite odabrani tekst ili cijelu poruku uz izvornik — Google ili vlastiti AI model (BYOK)."/>
+    <Override Locale="hu-HU" Value="Fordítsa le a kijelölt szöveget vagy a teljes üzenetet az eredeti mellett — Google vagy saját AI-modell (BYOK)."/>
+    <Override Locale="is-IS" Value="Þýddu valinn texta eða alla skilaboðin við hlið upprunalegs texta — Google eða þitt eigið AI-líkan (BYOK)."/>
+    <Override Locale="it-IT" Value="Traduci il testo selezionato o l'intero messaggio accanto all'originale — Google o il tuo modello AI (BYOK)."/>
+    <Override Locale="ja-JP" Value="選択したテキストまたはメッセージ全体を原文の隣に翻訳 — Google または独自の AI モデル (BYOK)"/>
+    <Override Locale="ko-KR" Value="선택한 텍스트 또는 전체 메시지를 원문 옆에 번역합니다 — Google 또는 사용자의 AI 모델(BYOK)"/>
+    <Override Locale="lv-LV" Value="Tulkojiet atlasīto tekstu vai visu ziņojumu blakus oriģinālam — Google vai savs AI modelis (BYOK)."/>
+    <Override Locale="nl-NL" Value="Vertaal de geselecteerde tekst of het hele bericht naast het origineel — Google of je eigen AI-model (BYOK)."/>
+    <Override Locale="nb-NO" Value="Oversett den valgte teksten eller hele meldingen ved siden av originalen — Google eller din egen AI-modell (BYOK)."/>
+    <Override Locale="pl-PL" Value="Tłumacz zaznaczony tekst lub całą wiadomość obok oryginału — Google lub własny model AI (BYOK)."/>
+    <Override Locale="pt-BR" Value="Traduza o texto selecionado ou a mensagem inteira ao lado do original — Google ou seu próprio modelo de IA (BYOK)."/>
+    <Override Locale="pt-PT" Value="Traduza o texto selecionado ou a mensagem completa junto ao original — Google ou o seu próprio modelo de IA (BYOK)."/>
+    <Override Locale="ro-RO" Value="Traduce textul selectat sau întregul mesaj lângă original — Google sau propriul model AI (BYOK)."/>
+    <Override Locale="ru-RU" Value="Переводите выделенный текст или всё сообщение рядом с оригиналом — Google или собственная модель ИИ (BYOK)."/>
+    <Override Locale="sl-SI" Value="Prevedite izbrano besedilo ali celotno sporočilo poleg izvirnika — Google ali vaš lastni model AI (BYOK)."/>
+    <Override Locale="sr-Latn-RS" Value="Prevedite izabrani tekst ili celu poruku pored originala — Google ili sopstveni AI model (BYOK)."/>
+    <Override Locale="sv-SE" Value="Översätt den markerade texten eller hela meddelandet bredvid originalet — Google eller din egen AI-modell (BYOK)."/>
+    <Override Locale="th-TH" Value="แปลข้อความที่เลือกหรือทั้งข้อความข้างต้นฉบับ — Google หรือโมเดล AI ของคุณเอง (BYOK)"/>
+    <Override Locale="tr-TR" Value="Seçili metni veya tüm mesajı orijinalin yanında çevirin — Google veya kendi AI modeliniz (BYOK)."/>
+    <Override Locale="ug-CN" Value="تاللانغان تېكىست ياكى پۈتۈن ئۇچۇرنى ئەسلىنىڭ يېنىدا تەرجىمە قىلىدۇ — Google ياكى ئۆزىڭىزنىڭ سۈنئىي ئەقىل مودېلى (BYOK)"/>
+    <Override Locale="uk-UA" Value="Перекладайте виділений текст або все повідомлення поруч з оригіналом — Google або власна AI-модель (BYOK)."/>
+    <Override Locale="vi-VN" Value="Dịch văn bản đã chọn hoặc toàn bộ tin nhắn ngay cạnh bản gốc — Google hoặc mô hình AI của riêng bạn (BYOK)."/>
+    <Override Locale="zh-CN" Value="把选中的文字或整封邮件翻成对照译文 —— Google 或你自己的 AI 模型（BYOK）。"/>
+    <Override Locale="zh-TW" Value="把選取的文字或整封郵件翻成對照譯文 —— Google 或你自己的 AI 模型（BYOK）。"/>
+  </Description>
   <IconUrl DefaultValue="https://seigwen.github.io/dualtran-outlook/assets/icon-32.png"/>
   <HighResolutionIconUrl DefaultValue="https://seigwen.github.io/dualtran-outlook/assets/icon-80.png"/>
   <SupportUrl DefaultValue="https://github.com/seigwen/dualtran-outlook/issues"/>

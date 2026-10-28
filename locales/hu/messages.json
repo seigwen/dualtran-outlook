@@ -1,0 +1,116 @@
+{
+  "engineTitle": {
+    "message": "Motor"
+  },
+  "engineGoogle": {
+    "message": "Google"
+  },
+  "engineAi": {
+    "message": "AI (BYOK)"
+  },
+  "sourceTitle": {
+    "message": "Forrásnyelv"
+  },
+  "targetTitle": {
+    "message": "Célnyelv"
+  },
+  "settingsTitle": {
+    "message": "Beállítások"
+  },
+  "inputPlaceholder": {
+    "message": "Jelöljön ki szöveget az üzenetben, vagy töltse be a teljes üzenetet…"
+  },
+  "btnLoad": {
+    "message": "Üzenet betöltése"
+  },
+  "btnTranslate": {
+    "message": "Lefordítás"
+  },
+  "btnCopy": {
+    "message": "Másolás"
+  },
+  "btnReplace": {
+    "message": "Üzenet cseréje"
+  },
+  "btnInsert": {
+    "message": "Beszúrás a kurzorhoz"
+  },
+  "settingProvider": {
+    "message": "MI-szolgáltató"
+  },
+  "settingModel": {
+    "message": "Modell"
+  },
+  "settingCustomModel": {
+    "message": "Egyéni modell"
+  },
+  "placeholderModelId": {
+    "message": "modell azonosító"
+  },
+  "settingEndpoint": {
+    "message": "Végpont"
+  },
+  "settingReasoning": {
+    "message": "Gondolkodási erőfeszítés"
+  },
+  "settingApiKey": {
+    "message": "API-kulcs"
+  },
+  "settingsHint": {
+    "message": "A kulcs ebben a böngészőben marad (localStorage). A Google-hez nem kell fiók."
+  },
+  "btnSave": {
+    "message": "Mentés"
+  },
+  "providerDivider": {
+    "message": "──── további ────"
+  },
+  "customModel": {
+    "message": "Egyéni…"
+  },
+  "reasoningLowest": {
+    "message": "Legalacsonyabb (alapértelmezett)"
+  },
+  "reasoningDefault": {
+    "message": "Szolgáltató alapértelmezése"
+  },
+  "statusOpenMessage": {
+    "message": "Először nyisson meg egy üzenetet vagy piszkozatot."
+  },
+  "statusNothing": {
+    "message": "Nincs mit lefordítani."
+  },
+  "statusTranslating": {
+    "message": "Fordítás…"
+  },
+  "statusDone": {
+    "message": "Kész."
+  },
+  "statusEmpty": {
+    "message": "Üres fordítás."
+  },
+  "statusWritten": {
+    "message": "Beírva az üzenetbe."
+  },
+  "statusWriteFailed": {
+    "message": "A beírás sikertelen."
+  },
+  "statusCopied": {
+    "message": "Vágólapra másolva."
+  },
+  "statusLoadedSelection": {
+    "message": "A kijelölés betöltve."
+  },
+  "statusLoadedAll": {
+    "message": "A teljes üzenet betöltve."
+  },
+  "statusSaved": {
+    "message": "Mentve."
+  },
+  "statusPreview": {
+    "message": "Előnézeti mód — az Office.js nem érhető el."
+  },
+  "extDescription": {
+    "message": "Fordítsa le a kijelölt szöveget vagy a teljes üzenetet az eredeti mellett — Google vagy saját AI-modell (BYOK)."
+  }
+}

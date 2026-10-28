@@ -1,0 +1,116 @@
+{
+  "engineTitle": {
+    "message": "引擎"
+  },
+  "engineGoogle": {
+    "message": "Google"
+  },
+  "engineAi": {
+    "message": "AI（BYOK）"
+  },
+  "sourceTitle": {
+    "message": "來源語言"
+  },
+  "targetTitle": {
+    "message": "目標語言"
+  },
+  "settingsTitle": {
+    "message": "設定"
+  },
+  "inputPlaceholder": {
+    "message": "在郵件中選取文字，或載入整封郵件…"
+  },
+  "btnLoad": {
+    "message": "載入郵件"
+  },
+  "btnTranslate": {
+    "message": "翻譯"
+  },
+  "btnCopy": {
+    "message": "複製"
+  },
+  "btnReplace": {
+    "message": "取代郵件內文"
+  },
+  "btnInsert": {
+    "message": "插入到游標處"
+  },
+  "settingProvider": {
+    "message": "AI 服務商"
+  },
+  "settingModel": {
+    "message": "模型"
+  },
+  "settingCustomModel": {
+    "message": "自訂模型"
+  },
+  "placeholderModelId": {
+    "message": "模型 id"
+  },
+  "settingEndpoint": {
+    "message": "Endpoint"
+  },
+  "settingReasoning": {
+    "message": "推理強度"
+  },
+  "settingApiKey": {
+    "message": "API Key"
+  },
+  "settingsHint": {
+    "message": "金鑰只存在本機瀏覽器（localStorage）。Google 無需帳號。"
+  },
+  "btnSave": {
+    "message": "儲存"
+  },
+  "providerDivider": {
+    "message": "──── 更多 ────"
+  },
+  "customModel": {
+    "message": "自訂…"
+  },
+  "reasoningLowest": {
+    "message": "最低（預設）"
+  },
+  "reasoningDefault": {
+    "message": "服務商預設"
+  },
+  "statusOpenMessage": {
+    "message": "請先開啟一封郵件或草稿。"
+  },
+  "statusNothing": {
+    "message": "沒有可翻譯的內容。"
+  },
+  "statusTranslating": {
+    "message": "翻譯中…"
+  },
+  "statusDone": {
+    "message": "完成。"
+  },
+  "statusEmpty": {
+    "message": "譯文為空。"
+  },
+  "statusWritten": {
+    "message": "已寫入郵件。"
+  },
+  "statusWriteFailed": {
+    "message": "寫入失敗。"
+  },
+  "statusCopied": {
+    "message": "已複製。"
+  },
+  "statusLoadedSelection": {
+    "message": "已載入選取範圍。"
+  },
+  "statusLoadedAll": {
+    "message": "已載入整封郵件。"
+  },
+  "statusSaved": {
+    "message": "已儲存。"
+  },
+  "statusPreview": {
+    "message": "預覽模式 —— Office.js 無法使用。"
+  },
+  "extDescription": {
+    "message": "把選取的文字或整封郵件翻成對照譯文 —— Google 或你自己的 AI 模型（BYOK）。"
+  }
+}

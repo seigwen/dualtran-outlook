@@ -1,0 +1,116 @@
+{
+  "engineTitle": {
+    "message": "Enjin"
+  },
+  "engineGoogle": {
+    "message": "Google"
+  },
+  "engineAi": {
+    "message": "KI (BYOK)"
+  },
+  "sourceTitle": {
+    "message": "Brontaal"
+  },
+  "targetTitle": {
+    "message": "Teikentaal"
+  },
+  "settingsTitle": {
+    "message": "Instellings"
+  },
+  "inputPlaceholder": {
+    "message": "Kies teks in die boodskap, of laai die hele boodskap…"
+  },
+  "btnLoad": {
+    "message": "Laai boodskap"
+  },
+  "btnTranslate": {
+    "message": "Vertaal"
+  },
+  "btnCopy": {
+    "message": "Kopieer"
+  },
+  "btnReplace": {
+    "message": "Vervang boodskap"
+  },
+  "btnInsert": {
+    "message": "Voeg by wyser in"
+  },
+  "settingProvider": {
+    "message": "KI-verskaffer"
+  },
+  "settingModel": {
+    "message": "Model"
+  },
+  "settingCustomModel": {
+    "message": "Pasgemaakte model"
+  },
+  "placeholderModelId": {
+    "message": "model id"
+  },
+  "settingEndpoint": {
+    "message": "Eindpunt"
+  },
+  "settingReasoning": {
+    "message": "Redenasie-inspanning"
+  },
+  "settingApiKey": {
+    "message": "API-sleutel"
+  },
+  "settingsHint": {
+    "message": "Die sleutel bly in hierdie blaaier (localStorage). Google benodig geen rekening nie."
+  },
+  "btnSave": {
+    "message": "Stoor"
+  },
+  "providerDivider": {
+    "message": "──── meer ────"
+  },
+  "customModel": {
+    "message": "Pasgemaak…"
+  },
+  "reasoningLowest": {
+    "message": "Laagste (standaard)"
+  },
+  "reasoningDefault": {
+    "message": "Verskaffer se verstek"
+  },
+  "statusOpenMessage": {
+    "message": "Maak eers 'n boodskap of 'n konsep oop."
+  },
+  "statusNothing": {
+    "message": "Niks om te vertaal nie."
+  },
+  "statusTranslating": {
+    "message": "Vertaal tans…"
+  },
+  "statusDone": {
+    "message": "Klaar."
+  },
+  "statusEmpty": {
+    "message": "Leë vertaling."
+  },
+  "statusWritten": {
+    "message": "Na die boodskap geskryf."
+  },
+  "statusWriteFailed": {
+    "message": "Skryf het misluk."
+  },
+  "statusCopied": {
+    "message": "Gekopieer."
+  },
+  "statusLoadedSelection": {
+    "message": "Die seleksie is gelaai."
+  },
+  "statusLoadedAll": {
+    "message": "Die hele boodskap is gelaai."
+  },
+  "statusSaved": {
+    "message": "Gestoor."
+  },
+  "statusPreview": {
+    "message": "Voorskoumodus — Office.js nie beskikbaar nie."
+  },
+  "extDescription": {
+    "message": "Vertaal die gekose teks of die hele boodskap langs die oorspronklike — Google of jou eie KI-model (BYOK)."
+  }
+}

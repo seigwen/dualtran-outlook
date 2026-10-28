@@ -1,0 +1,116 @@
+{
+  "engineTitle": {
+    "message": "Engine"
+  },
+  "engineGoogle": {
+    "message": "Google"
+  },
+  "engineAi": {
+    "message": "KI (BYOK)"
+  },
+  "sourceTitle": {
+    "message": "Ausgangssprache"
+  },
+  "targetTitle": {
+    "message": "Zielsprache"
+  },
+  "settingsTitle": {
+    "message": "Einstellungen"
+  },
+  "inputPlaceholder": {
+    "message": "Text in der Nachricht auswählen oder die gesamte Nachricht laden…"
+  },
+  "btnLoad": {
+    "message": "Nachricht laden"
+  },
+  "btnTranslate": {
+    "message": "Übersetzen"
+  },
+  "btnCopy": {
+    "message": "Kopieren"
+  },
+  "btnReplace": {
+    "message": "Nachricht ersetzen"
+  },
+  "btnInsert": {
+    "message": "An Cursorposition einfügen"
+  },
+  "settingProvider": {
+    "message": "KI-Anbieter"
+  },
+  "settingModel": {
+    "message": "Modell"
+  },
+  "settingCustomModel": {
+    "message": "Benutzerdefiniertes Modell"
+  },
+  "placeholderModelId": {
+    "message": "Modell-ID"
+  },
+  "settingEndpoint": {
+    "message": "Endpunkt"
+  },
+  "settingReasoning": {
+    "message": "Reasoning-Aufwand"
+  },
+  "settingApiKey": {
+    "message": "API-Schlüssel"
+  },
+  "settingsHint": {
+    "message": "Der Schlüssel bleibt in diesem Browser (localStorage). Google benötigt kein Konto."
+  },
+  "btnSave": {
+    "message": "Speichern"
+  },
+  "providerDivider": {
+    "message": "──── mehr ────"
+  },
+  "customModel": {
+    "message": "Benutzerdefiniert…"
+  },
+  "reasoningLowest": {
+    "message": "Niedrigste (Standard)"
+  },
+  "reasoningDefault": {
+    "message": "Anbieter-Standard"
+  },
+  "statusOpenMessage": {
+    "message": "Öffnen Sie zuerst eine Nachricht oder einen Entwurf."
+  },
+  "statusNothing": {
+    "message": "Nichts zu übersetzen."
+  },
+  "statusTranslating": {
+    "message": "Übersetze…"
+  },
+  "statusDone": {
+    "message": "Fertig."
+  },
+  "statusEmpty": {
+    "message": "Leere Übersetzung."
+  },
+  "statusWritten": {
+    "message": "In die Nachricht geschrieben."
+  },
+  "statusWriteFailed": {
+    "message": "Schreiben fehlgeschlagen."
+  },
+  "statusCopied": {
+    "message": "Kopiert."
+  },
+  "statusLoadedSelection": {
+    "message": "Auswahl geladen."
+  },
+  "statusLoadedAll": {
+    "message": "Gesamte Nachricht geladen."
+  },
+  "statusSaved": {
+    "message": "Gespeichert."
+  },
+  "statusPreview": {
+    "message": "Vorschaumodus — Office.js nicht verfügbar."
+  },
+  "extDescription": {
+    "message": "Übersetze den ausgewählten Text oder die ganze Nachricht neben dem Original — Google oder dein eigenes KI-Modell (BYOK)."
+  }
+}

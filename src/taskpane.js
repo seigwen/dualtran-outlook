@@ -20,6 +20,11 @@
   el.aiReasoning = $("aiReasoning");
   el.customModelRow = $("customModelRow");
 
+  // Interface language: Office's display language → browser language → English.
+  const i18n = window.DtI18n.init();
+  const t = i18n.t;
+  i18n.apply();
+
   const SETTINGS_KEY = "dualtran.outlook.settings";
   const CATALOG_KEY = "dualtran.outlook.catalog";
   const CATALOG_TTL = 24 * 60 * 60 * 1000;
@@ -81,7 +86,7 @@
         const divider = document.createElement("option");
         divider.disabled = true;
         divider.value = MORE_VALUE;
-        divider.textContent = "──── more ────";
+        divider.textContent = t("providerDivider");
         el.aiProvider.appendChild(divider);
         dividerAdded = true;
       }
@@ -106,7 +111,7 @@
     }
     const custom = document.createElement("option");
     custom.value = CUSTOM_VALUE;
-    custom.textContent = "Custom…";
+    custom.textContent = t("customModel");
     el.aiModelSelect.appendChild(custom);
 
     const known = models.some((model) => model.id === selectedModelId);
@@ -125,7 +130,7 @@
     const levels = reasoningLevels();
     const values = DualTranCatalog.LEVEL_ORDER.filter((level) => levels.includes(level));
     el.aiReasoning.innerHTML = "";
-    const entries = [["lowest", "Lowest (default)"], ["", "Provider default"]].concat(
+    const entries = [["lowest", t("reasoningLowest")], ["", t("reasoningDefault")]].concat(
       values.map((level) => [level, level])
     );
     for (const [value, label] of entries) {
@@ -177,7 +182,7 @@
 
   function withItem(fn) {
     const item = Office.context && Office.context.mailbox && Office.context.mailbox.item;
-    if (!item) { status("Open a message or a draft first.", true); return; }
+    if (!item) { status(t("statusOpenMessage"), true); return; }
     fn(item);
   }
 
@@ -206,11 +211,11 @@
 
   async function translateNow() {
     const text = el.input.value.trim();
-    if (!text) { status("Nothing to translate.", true); return; }
+    if (!text) { status(t("statusNothing"), true); return; }
     const cfg = current();
     saveSettings(cfg);
     el.translate.disabled = true;
-    status("Translating…", false, true);
+    status(t("statusTranslating"), false, true);
     el.result.textContent = "";
     el.copy.disabled = true;
     el.replace.disabled = true;
@@ -225,7 +230,7 @@
       el.copy.disabled = !out;
       el.replace.disabled = !out;
       el.insert.disabled = !out;
-      status(out ? "Done." : "Empty translation.");
+      status(out ? t("statusDone") : t("statusEmpty"));
     } catch (e) {
       status(String(e && e.message || e), true);
     } finally {
@@ -237,7 +242,10 @@
     const out = el.result.textContent;
     if (!out) return;
     withItem((item) => {
-      const cb = (r) => status(r.status === Office.AsyncResultStatus.Succeeded ? "Written to the message." : "Write failed.", r.status !== Office.AsyncResultStatus.Succeeded);
+      const cb = (r) => {{
+        const ok = r.status === Office.AsyncResultStatus.Succeeded;
+        status(ok ? t("statusWritten") : t("statusWriteFailed"), !ok);
+      }};
       if (mode === "replace") item.body.setAsync(out, { coercionType: Office.CoercionType.Text }, cb);
       else item.body.setSelectedDataAsync(out, { coercionType: Office.CoercionType.Text }, cb);
     });
@@ -256,17 +264,17 @@
     });
     el.aiModel.addEventListener("input", () => renderReasoning(el.aiReasoning.value));
     el.translate.addEventListener("click", translateNow);
-    el.copy.addEventListener("click", () => navigator.clipboard.writeText(el.result.textContent).then(() => status("Copied.")));
+    el.copy.addEventListener("click", () => navigator.clipboard.writeText(el.result.textContent).then(() => status(t("statusCopied"))));
     el.load.addEventListener("click", async () => {
       const selected = await getSelected();
-      if (selected) { el.input.value = selected; status("Loaded the selection."); return; }
-      try { el.input.value = await getBody(); status("Loaded the whole message."); }
+      if (selected) { el.input.value = selected; status(t("statusLoadedSelection")); return; }
+      try { el.input.value = await getBody(); status(t("statusLoadedAll")); }
       catch (e) { status(String(e.message || e), true); }
     });
     el.replace.addEventListener("click", () => writeBody("replace"));
     el.insert.addEventListener("click", () => writeBody("insert"));
     el.settings.addEventListener("click", () => { el.panel.hidden = !el.panel.hidden; });
-    el.save.addEventListener("click", () => { saveSettings(current()); status("Saved."); });
+    el.save.addEventListener("click", () => { saveSettings(current()); status(t("statusSaved")); });
     el.input.addEventListener("keydown", (e) => {
       if (e.key === "Enter" && (e.ctrlKey || e.metaKey)) translateNow();
     });
@@ -276,7 +284,7 @@
     await loadCatalog();
     paintSettings();
     wire();
-    if (typeof Office === "undefined") status("Preview mode — Office.js not available.");
+    if (typeof Office === "undefined") status(t("statusPreview"));
   }
 
   if (typeof Office !== "undefined") {

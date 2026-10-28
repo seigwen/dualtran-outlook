@@ -1,0 +1,116 @@
+{
+  "engineTitle": {
+    "message": "เอนจิน"
+  },
+  "engineGoogle": {
+    "message": "Google"
+  },
+  "engineAi": {
+    "message": "AI (BYOK)"
+  },
+  "sourceTitle": {
+    "message": "ภาษาต้นทาง"
+  },
+  "targetTitle": {
+    "message": "ภาษาปลายทาง"
+  },
+  "settingsTitle": {
+    "message": "การตั้งค่า"
+  },
+  "inputPlaceholder": {
+    "message": "เลือกข้อความในข้อความ หรือโหลดข้อความทั้งหมด…"
+  },
+  "btnLoad": {
+    "message": "โหลดข้อความ"
+  },
+  "btnTranslate": {
+    "message": "แปลภาษา"
+  },
+  "btnCopy": {
+    "message": "สำเนา"
+  },
+  "btnReplace": {
+    "message": "แทนที่ข้อความ"
+  },
+  "btnInsert": {
+    "message": "แทรกที่เคอร์เซอร์"
+  },
+  "settingProvider": {
+    "message": "ผู้ให้บริการ AI"
+  },
+  "settingModel": {
+    "message": "โมเดล"
+  },
+  "settingCustomModel": {
+    "message": "โมเดลกำหนดเอง"
+  },
+  "placeholderModelId": {
+    "message": "model id"
+  },
+  "settingEndpoint": {
+    "message": "Endpoint"
+  },
+  "settingReasoning": {
+    "message": "ระดับการใช้เหตุผล"
+  },
+  "settingApiKey": {
+    "message": "API key"
+  },
+  "settingsHint": {
+    "message": "คีย์จะถูกเก็บไว้ในเบราว์เซอร์นี้ (localStorage) Google ไม่ต้องใช้บัญชี"
+  },
+  "btnSave": {
+    "message": "บันทึก"
+  },
+  "providerDivider": {
+    "message": "──── เพิ่มเติม ────"
+  },
+  "customModel": {
+    "message": "กำหนดเอง…"
+  },
+  "reasoningLowest": {
+    "message": "ต่ำสุด (ค่าเริ่มต้น)"
+  },
+  "reasoningDefault": {
+    "message": "ค่าเริ่มต้นของผู้ให้บริการ"
+  },
+  "statusOpenMessage": {
+    "message": "เปิดข้อความหรือฉบับร่างก่อน"
+  },
+  "statusNothing": {
+    "message": "ไม่มีอะไรต้องแปล"
+  },
+  "statusTranslating": {
+    "message": "กำลังแปล…"
+  },
+  "statusDone": {
+    "message": "เสร็จสิ้น"
+  },
+  "statusEmpty": {
+    "message": "คำแปลว่างเปล่า"
+  },
+  "statusWritten": {
+    "message": "เขียนลงในข้อความแล้ว"
+  },
+  "statusWriteFailed": {
+    "message": "เขียนไม่สำเร็จ"
+  },
+  "statusCopied": {
+    "message": "คัดลอกแล้ว"
+  },
+  "statusLoadedSelection": {
+    "message": "โหลดข้อความที่เลือกแล้ว"
+  },
+  "statusLoadedAll": {
+    "message": "โหลดข้อความทั้งหมดแล้ว"
+  },
+  "statusSaved": {
+    "message": "บันทึกแล้ว"
+  },
+  "statusPreview": {
+    "message": "โหมดตัวอย่าง — ไม่มี Office.js"
+  },
+  "extDescription": {
+    "message": "แปลข้อความที่เลือกหรือทั้งข้อความข้างต้นฉบับ — Google หรือโมเดล AI ของคุณเอง (BYOK)"
+  }
+}

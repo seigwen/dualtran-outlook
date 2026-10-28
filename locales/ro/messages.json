@@ -1,0 +1,116 @@
+{
+  "engineTitle": {
+    "message": "Motor"
+  },
+  "engineGoogle": {
+    "message": "Google"
+  },
+  "engineAi": {
+    "message": "AI (BYOK)"
+  },
+  "sourceTitle": {
+    "message": "Limba sursă"
+  },
+  "targetTitle": {
+    "message": "Limba țintă"
+  },
+  "settingsTitle": {
+    "message": "Reglări"
+  },
+  "inputPlaceholder": {
+    "message": "Selectați textul din mesaj sau încărcați întregul mesaj…"
+  },
+  "btnLoad": {
+    "message": "Încarcă mesajul"
+  },
+  "btnTranslate": {
+    "message": "Tradu"
+  },
+  "btnCopy": {
+    "message": "Copiază"
+  },
+  "btnReplace": {
+    "message": "Înlocuiește mesajul"
+  },
+  "btnInsert": {
+    "message": "Inserează la cursor"
+  },
+  "settingProvider": {
+    "message": "Furnizor de IA"
+  },
+  "settingModel": {
+    "message": "Model"
+  },
+  "settingCustomModel": {
+    "message": "Model personalizat"
+  },
+  "placeholderModelId": {
+    "message": "id model"
+  },
+  "settingEndpoint": {
+    "message": "Endpoint"
+  },
+  "settingReasoning": {
+    "message": "Efort de raționare"
+  },
+  "settingApiKey": {
+    "message": "Cheie API"
+  },
+  "settingsHint": {
+    "message": "Cheia rămâne în acest browser (localStorage). Google nu necesită cont."
+  },
+  "btnSave": {
+    "message": "Salvează"
+  },
+  "providerDivider": {
+    "message": "──── mai multe ────"
+  },
+  "customModel": {
+    "message": "Personalizat…"
+  },
+  "reasoningLowest": {
+    "message": "Cea mai mică (implicit)"
+  },
+  "reasoningDefault": {
+    "message": "Implicit furnizor"
+  },
+  "statusOpenMessage": {
+    "message": "Deschide mai întâi un mesaj sau o ciornă."
+  },
+  "statusNothing": {
+    "message": "Nimic de tradus."
+  },
+  "statusTranslating": {
+    "message": "Se traduce…"
+  },
+  "statusDone": {
+    "message": "Finalizat."
+  },
+  "statusEmpty": {
+    "message": "Traducere goală."
+  },
+  "statusWritten": {
+    "message": "Scris în mesaj."
+  },
+  "statusWriteFailed": {
+    "message": "Scrierea a eșuat."
+  },
+  "statusCopied": {
+    "message": "Copiat."
+  },
+  "statusLoadedSelection": {
+    "message": "Selecția a fost încărcată."
+  },
+  "statusLoadedAll": {
+    "message": "Întregul mesaj a fost încărcat."
+  },
+  "statusSaved": {
+    "message": "Salvat."
+  },
+  "statusPreview": {
+    "message": "Mod de previzualizare — Office.js nu este disponibil."
+  },
+  "extDescription": {
+    "message": "Traduce textul selectat sau întregul mesaj lângă original — Google sau propriul model AI (BYOK)."
+  }
+}

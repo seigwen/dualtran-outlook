@@ -1,0 +1,116 @@
+{
+  "engineTitle": {
+    "message": "Движок"
+  },
+  "engineGoogle": {
+    "message": "Google"
+  },
+  "engineAi": {
+    "message": "AI (BYOK)"
+  },
+  "sourceTitle": {
+    "message": "Исходный язык"
+  },
+  "targetTitle": {
+    "message": "Целевой язык"
+  },
+  "settingsTitle": {
+    "message": "Настройки"
+  },
+  "inputPlaceholder": {
+    "message": "Выделите текст в сообщении или загрузите всё сообщение…"
+  },
+  "btnLoad": {
+    "message": "Загрузить сообщение"
+  },
+  "btnTranslate": {
+    "message": "Перевести"
+  },
+  "btnCopy": {
+    "message": "Копировать"
+  },
+  "btnReplace": {
+    "message": "Заменить сообщение"
+  },
+  "btnInsert": {
+    "message": "Вставить в позицию курсора"
+  },
+  "settingProvider": {
+    "message": "Поставщик ИИ"
+  },
+  "settingModel": {
+    "message": "Модель"
+  },
+  "settingCustomModel": {
+    "message": "Своя модель"
+  },
+  "placeholderModelId": {
+    "message": "id модели"
+  },
+  "settingEndpoint": {
+    "message": "Endpoint"
+  },
+  "settingReasoning": {
+    "message": "Усилие рассуждения"
+  },
+  "settingApiKey": {
+    "message": "API-ключ"
+  },
+  "settingsHint": {
+    "message": "Ключ хранится в этом браузере (localStorage). Google не требует аккаунта."
+  },
+  "btnSave": {
+    "message": "Сохранить"
+  },
+  "providerDivider": {
+    "message": "──── ещё ────"
+  },
+  "customModel": {
+    "message": "Другая…"
+  },
+  "reasoningLowest": {
+    "message": "Минимальный (по умолчанию)"
+  },
+  "reasoningDefault": {
+    "message": "По умолчанию провайдера"
+  },
+  "statusOpenMessage": {
+    "message": "Сначала откройте сообщение или черновик."
+  },
+  "statusNothing": {
+    "message": "Нечего переводить."
+  },
+  "statusTranslating": {
+    "message": "Перевод…"
+  },
+  "statusDone": {
+    "message": "Готово."
+  },
+  "statusEmpty": {
+    "message": "Пустой перевод."
+  },
+  "statusWritten": {
+    "message": "Записано в сообщение."
+  },
+  "statusWriteFailed": {
+    "message": "Не удалось записать."
+  },
+  "statusCopied": {
+    "message": "Скопировано."
+  },
+  "statusLoadedSelection": {
+    "message": "Загружен выделенный фрагмент."
+  },
+  "statusLoadedAll": {
+    "message": "Загружено всё сообщение."
+  },
+  "statusSaved": {
+    "message": "Сохранено."
+  },
+  "statusPreview": {
+    "message": "Режим предпросмотра — Office.js недоступен."
+  },
+  "extDescription": {
+    "message": "Переводите выделенный текст или всё сообщение рядом с оригиналом — Google или собственная модель ИИ (BYOK)."
+  }
+}

@@ -1,0 +1,116 @@
+{
+  "engineTitle": {
+    "message": "المحرك"
+  },
+  "engineGoogle": {
+    "message": "Google"
+  },
+  "engineAi": {
+    "message": "الذكاء الاصطناعي (BYOK)"
+  },
+  "sourceTitle": {
+    "message": "لغة المصدر"
+  },
+  "targetTitle": {
+    "message": "اللغة المستهدفة"
+  },
+  "settingsTitle": {
+    "message": "إعدادات"
+  },
+  "inputPlaceholder": {
+    "message": "حدد نصًا في الرسالة، أو حمّل الرسالة كاملة…"
+  },
+  "btnLoad": {
+    "message": "تحميل الرسالة"
+  },
+  "btnTranslate": {
+    "message": "ترجم"
+  },
+  "btnCopy": {
+    "message": "نسخ"
+  },
+  "btnReplace": {
+    "message": "استبدال الرسالة"
+  },
+  "btnInsert": {
+    "message": "إدراج عند المؤشر"
+  },
+  "settingProvider": {
+    "message": "مزود الذكاء الاصطناعي"
+  },
+  "settingModel": {
+    "message": "الطراز"
+  },
+  "settingCustomModel": {
+    "message": "طراز مخصص"
+  },
+  "placeholderModelId": {
+    "message": "معرّف النموذج"
+  },
+  "settingEndpoint": {
+    "message": "نقطة النهاية"
+  },
+  "settingReasoning": {
+    "message": "جهد الاستدلال"
+  },
+  "settingApiKey": {
+    "message": "مفتاح API"
+  },
+  "settingsHint": {
+    "message": "يبقى المفتاح في هذا المتصفح (localStorage). لا يحتاج Google إلى حساب."
+  },
+  "btnSave": {
+    "message": "حفظ"
+  },
+  "providerDivider": {
+    "message": "──── المزيد ────"
+  },
+  "customModel": {
+    "message": "مخصص…"
+  },
+  "reasoningLowest": {
+    "message": "الأدنى (افتراضي)"
+  },
+  "reasoningDefault": {
+    "message": "افتراضي المزود"
+  },
+  "statusOpenMessage": {
+    "message": "افتح رسالة أو مسودة أولاً."
+  },
+  "statusNothing": {
+    "message": "لا يوجد شيء للترجمة."
+  },
+  "statusTranslating": {
+    "message": "جارٍ الترجمة…"
+  },
+  "statusDone": {
+    "message": "تم."
+  },
+  "statusEmpty": {
+    "message": "ترجمة فارغة."
+  },
+  "statusWritten": {
+    "message": "تمت الكتابة في الرسالة."
+  },
+  "statusWriteFailed": {
+    "message": "فشلت الكتابة."
+  },
+  "statusCopied": {
+    "message": "تم النسخ."
+  },
+  "statusLoadedSelection": {
+    "message": "تم تحميل التحديد."
+  },
+  "statusLoadedAll": {
+    "message": "تم تحميل الرسالة كاملة."
+  },
+  "statusSaved": {
+    "message": "تم الحفظ."
+  },
+  "statusPreview": {
+    "message": "وضع المعاينة — Office.js غير متاح."
+  },
+  "extDescription": {
+    "message": "ترجم النص المحدد أو الرسالة كاملة بجانب النص الأصلي — Google أو نموذج الذكاء الاصطناعي الخاص بك (BYOK)."
+  }
+}

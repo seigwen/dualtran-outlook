@@ -1,0 +1,116 @@
+{
+  "engineTitle": {
+    "message": "Motor"
+  },
+  "engineGoogle": {
+    "message": "Google"
+  },
+  "engineAi": {
+    "message": "IA (BYOK)"
+  },
+  "sourceTitle": {
+    "message": "Idioma de origem"
+  },
+  "targetTitle": {
+    "message": "Língua de destino"
+  },
+  "settingsTitle": {
+    "message": "Configurações"
+  },
+  "inputPlaceholder": {
+    "message": "Selecione texto na mensagem ou carregue a mensagem completa…"
+  },
+  "btnLoad": {
+    "message": "Carregar mensagem"
+  },
+  "btnTranslate": {
+    "message": "Traduzir"
+  },
+  "btnCopy": {
+    "message": "Copiar"
+  },
+  "btnReplace": {
+    "message": "Substituir mensagem"
+  },
+  "btnInsert": {
+    "message": "Inserir no cursor"
+  },
+  "settingProvider": {
+    "message": "Fornecedor de IA"
+  },
+  "settingModel": {
+    "message": "Modelo"
+  },
+  "settingCustomModel": {
+    "message": "Modelo personalizado"
+  },
+  "placeholderModelId": {
+    "message": "id do modelo"
+  },
+  "settingEndpoint": {
+    "message": "Endpoint"
+  },
+  "settingReasoning": {
+    "message": "Esforço de raciocínio"
+  },
+  "settingApiKey": {
+    "message": "Chave API"
+  },
+  "settingsHint": {
+    "message": "A chave fica neste navegador (localStorage). O Google não precisa de conta."
+  },
+  "btnSave": {
+    "message": "Guardar"
+  },
+  "providerDivider": {
+    "message": "──── mais ────"
+  },
+  "customModel": {
+    "message": "Personalizado…"
+  },
+  "reasoningLowest": {
+    "message": "O mais baixo (predefinição)"
+  },
+  "reasoningDefault": {
+    "message": "Predefinição do fornecedor"
+  },
+  "statusOpenMessage": {
+    "message": "Abra primeiro uma mensagem ou um rascunho."
+  },
+  "statusNothing": {
+    "message": "Nada para traduzir."
+  },
+  "statusTranslating": {
+    "message": "A traduzir…"
+  },
+  "statusDone": {
+    "message": "Concluído."
+  },
+  "statusEmpty": {
+    "message": "Tradução vazia."
+  },
+  "statusWritten": {
+    "message": "Escrito na mensagem."
+  },
+  "statusWriteFailed": {
+    "message": "Falha ao escrever."
+  },
+  "statusCopied": {
+    "message": "Copiado."
+  },
+  "statusLoadedSelection": {
+    "message": "Seleção carregada."
+  },
+  "statusLoadedAll": {
+    "message": "Mensagem completa carregada."
+  },
+  "statusSaved": {
+    "message": "Guardado."
+  },
+  "statusPreview": {
+    "message": "Modo de pré-visualização — Office.js indisponível."
+  },
+  "extDescription": {
+    "message": "Traduza o texto selecionado ou a mensagem completa junto ao original — Google ou o seu próprio modelo de IA (BYOK)."
+  }
+}

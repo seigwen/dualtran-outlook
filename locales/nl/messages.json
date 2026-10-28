@@ -1,0 +1,116 @@
+{
+  "engineTitle": {
+    "message": "Engine"
+  },
+  "engineGoogle": {
+    "message": "Google"
+  },
+  "engineAi": {
+    "message": "AI (BYOK)"
+  },
+  "sourceTitle": {
+    "message": "Brontaal"
+  },
+  "targetTitle": {
+    "message": "Doeltaal"
+  },
+  "settingsTitle": {
+    "message": "Instellingen"
+  },
+  "inputPlaceholder": {
+    "message": "Selecteer tekst in het bericht of laad het hele bericht…"
+  },
+  "btnLoad": {
+    "message": "Bericht laden"
+  },
+  "btnTranslate": {
+    "message": "Vertalen"
+  },
+  "btnCopy": {
+    "message": "Kopiëren"
+  },
+  "btnReplace": {
+    "message": "Bericht vervangen"
+  },
+  "btnInsert": {
+    "message": "Invoegen bij cursor"
+  },
+  "settingProvider": {
+    "message": "AI-provider"
+  },
+  "settingModel": {
+    "message": "Model"
+  },
+  "settingCustomModel": {
+    "message": "Aangepast model"
+  },
+  "placeholderModelId": {
+    "message": "model-id"
+  },
+  "settingEndpoint": {
+    "message": "Endpoint"
+  },
+  "settingReasoning": {
+    "message": "Redeneerinspanning"
+  },
+  "settingApiKey": {
+    "message": "API-sleutel"
+  },
+  "settingsHint": {
+    "message": "De sleutel blijft in deze browser (localStorage). Google heeft geen account nodig."
+  },
+  "btnSave": {
+    "message": "Opslaan"
+  },
+  "providerDivider": {
+    "message": "──── meer ────"
+  },
+  "customModel": {
+    "message": "Aangepast…"
+  },
+  "reasoningLowest": {
+    "message": "Laagste (standaard)"
+  },
+  "reasoningDefault": {
+    "message": "Provider-standaard"
+  },
+  "statusOpenMessage": {
+    "message": "Open eerst een bericht of een concept."
+  },
+  "statusNothing": {
+    "message": "Niets te vertalen."
+  },
+  "statusTranslating": {
+    "message": "Vertalen…"
+  },
+  "statusDone": {
+    "message": "Klaar."
+  },
+  "statusEmpty": {
+    "message": "Lege vertaling."
+  },
+  "statusWritten": {
+    "message": "Naar het bericht geschreven."
+  },
+  "statusWriteFailed": {
+    "message": "Schrijven mislukt."
+  },
+  "statusCopied": {
+    "message": "Gekopieerd."
+  },
+  "statusLoadedSelection": {
+    "message": "De selectie geladen."
+  },
+  "statusLoadedAll": {
+    "message": "Het hele bericht geladen."
+  },
+  "statusSaved": {
+    "message": "Opgeslagen."
+  },
+  "statusPreview": {
+    "message": "Voorbeeldmodus — Office.js niet beschikbaar."
+  },
+  "extDescription": {
+    "message": "Vertaal de geselecteerde tekst of het hele bericht naast het origineel — Google of je eigen AI-model (BYOK)."
+  }
+}

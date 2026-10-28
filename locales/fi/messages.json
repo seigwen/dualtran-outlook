@@ -1,0 +1,116 @@
+{
+  "engineTitle": {
+    "message": "Moottori"
+  },
+  "engineGoogle": {
+    "message": "Google"
+  },
+  "engineAi": {
+    "message": "AI (BYOK)"
+  },
+  "sourceTitle": {
+    "message": "Lähdekieli"
+  },
+  "targetTitle": {
+    "message": "Kohdekieli"
+  },
+  "settingsTitle": {
+    "message": "Asetukset"
+  },
+  "inputPlaceholder": {
+    "message": "Valitse viestistä tekstiä tai lataa koko viesti…"
+  },
+  "btnLoad": {
+    "message": "Lataa viesti"
+  },
+  "btnTranslate": {
+    "message": "Käännä"
+  },
+  "btnCopy": {
+    "message": "Kopio"
+  },
+  "btnReplace": {
+    "message": "Korvaa viesti"
+  },
+  "btnInsert": {
+    "message": "Lisää kohdistimeen"
+  },
+  "settingProvider": {
+    "message": "AI-palveluntarjoaja"
+  },
+  "settingModel": {
+    "message": "Malli"
+  },
+  "settingCustomModel": {
+    "message": "Mukautettu malli"
+  },
+  "placeholderModelId": {
+    "message": "mallin tunniste"
+  },
+  "settingEndpoint": {
+    "message": "Päätepiste"
+  },
+  "settingReasoning": {
+    "message": "Päättelyn taso"
+  },
+  "settingApiKey": {
+    "message": "API-avain"
+  },
+  "settingsHint": {
+    "message": "Avain pysyy tässä selaimessa (localStorage). Google ei vaadi tiliä."
+  },
+  "btnSave": {
+    "message": "Tallenna"
+  },
+  "providerDivider": {
+    "message": "──── lisää ────"
+  },
+  "customModel": {
+    "message": "Mukautettu…"
+  },
+  "reasoningLowest": {
+    "message": "Matalin (oletus)"
+  },
+  "reasoningDefault": {
+    "message": "Palveluntarjoajan oletus"
+  },
+  "statusOpenMessage": {
+    "message": "Avaa ensin viesti tai luonnos."
+  },
+  "statusNothing": {
+    "message": "Ei käännettävää."
+  },
+  "statusTranslating": {
+    "message": "Käännetään…"
+  },
+  "statusDone": {
+    "message": "Valmis."
+  },
+  "statusEmpty": {
+    "message": "Tyhjä käännös."
+  },
+  "statusWritten": {
+    "message": "Kirjoitettu viestiin."
+  },
+  "statusWriteFailed": {
+    "message": "Kirjoitus epäonnistui."
+  },
+  "statusCopied": {
+    "message": "Kopioitu."
+  },
+  "statusLoadedSelection": {
+    "message": "Valinta ladattu."
+  },
+  "statusLoadedAll": {
+    "message": "Koko viesti ladattu."
+  },
+  "statusSaved": {
+    "message": "Tallennettu."
+  },
+  "statusPreview": {
+    "message": "Esikatselutila — Office.js ei ole käytettävissä."
+  },
+  "extDescription": {
+    "message": "Käännä valittu teksti tai koko viesti alkuperäisen viereen — Google tai oma AI-mallisi (BYOK)."
+  }
+}

@@ -11,43 +11,45 @@
   <main class="wrap">
     <header class="bar">
       <span class="brand">DualTran</span>
-      <select id="engine" title="Engine">
-        <option value="google">Google</option>
-        <option value="ai">AI (BYOK)</option>
+      <select id="engine" data-i18n-title="engineTitle">
+        <option value="google" data-i18n="engineGoogle">Google</option>
+        <option value="ai" data-i18n="engineAi">AI (BYOK)</option>
       </select>
-      <input id="source" class="lang" title="Source language" size="4" value="auto" />
+      <input id="source" class="lang" data-i18n-title="sourceTitle" size="4" value="auto" />
       <span class="arrow">→</span>
-      <input id="target" class="lang" title="Target language" size="4" value="zh-CN" />
-      <button id="settings" class="link" title="Settings">⚙</button>
+      <input id="target" class="lang" data-i18n-title="targetTitle" size="4" value="zh-CN" />
+      <button id="settings" class="link" data-i18n-title="settingsTitle">⚙</button>
     </header>
 
-    <textarea id="input" placeholder="Select text in the message, or load the whole message…" spellcheck="false"></textarea>
+    <textarea id="input" data-i18n-placeholder="inputPlaceholder" spellcheck="false"></textarea>
 
     <div class="actions">
-      <button id="load" class="ghost">Load message</button>
-      <button id="translate">Translate</button>
-      <button id="copy" class="ghost" disabled>Copy</button>
+      <button id="load" class="ghost" data-i18n="btnLoad">Load message</button>
+      <button id="translate" data-i18n="btnTranslate">Translate</button>
+      <button id="copy" class="ghost" data-i18n="btnCopy" disabled>Copy</button>
       <span id="status" class="status"></span>
     </div>
 
     <pre id="result" class="result"></pre>
 
     <div class="actions">
-      <button id="replace" class="ghost" disabled>Replace message</button>
-      <button id="insert" class="ghost" disabled>Insert at cursor</button>
+      <button id="replace" class="ghost" data-i18n="btnReplace" disabled>Replace message</button>
+      <button id="insert" class="ghost" data-i18n="btnInsert" disabled>Insert at cursor</button>
     </div>
 
     <section id="settingsPanel" class="panel" hidden>
-      <label>AI provider <select id="aiProvider"></select></label>
-      <label>Model <select id="aiModelSelect"></select></label>
-      <label id="customModelRow" hidden>Custom model <input id="aiModel" placeholder="model id" /></label>
-      <label>Endpoint <input id="aiEndpoint" placeholder="https://api.openai.com/v1" /></label>
-      <label>Reasoning effort <select id="aiReasoning"></select></label>
-      <label>API key <input id="aiKey" type="password" placeholder="sk-…" /></label>
-      <p class="hint">The key stays in this browser (localStorage). Google needs no account.</p>
-      <button id="saveSettings">Save</button>
+      <label><span data-i18n="settingProvider">AI provider</span> <select id="aiProvider"></select></label>
+      <label><span data-i18n="settingModel">Model</span> <select id="aiModelSelect"></select></label>
+      <label id="customModelRow" hidden><span data-i18n="settingCustomModel">Custom model</span> <input id="aiModel" data-i18n-placeholder="placeholderModelId" /></label>
+      <label><span data-i18n="settingEndpoint">Endpoint</span> <input id="aiEndpoint" placeholder="https://api.openai.com/v1" /></label>
+      <label><span data-i18n="settingReasoning">Reasoning effort</span> <select id="aiReasoning"></select></label>
+      <label><span data-i18n="settingApiKey">API key</span> <input id="aiKey" type="password" placeholder="sk-…" /></label>
+      <p class="hint" data-i18n="settingsHint">The key stays in this browser (localStorage). Google needs no account.</p>
+      <button id="saveSettings" data-i18n="btnSave">Save</button>
     </section>
   </main>
+  <script src="i18n.data.js"></script>
+  <script src="i18n.js"></script>
   <script src="catalog.js"></script>
   <script src="translate.js"></script>
   <script src="taskpane.js"></script>

@@ -1,0 +1,116 @@
+{
+  "engineTitle": {
+    "message": "Motor"
+  },
+  "engineGoogle": {
+    "message": "Google"
+  },
+  "engineAi": {
+    "message": "AI (BYOK)"
+  },
+  "sourceTitle": {
+    "message": "Källspråk"
+  },
+  "targetTitle": {
+    "message": "Målspråk"
+  },
+  "settingsTitle": {
+    "message": "inställningar"
+  },
+  "inputPlaceholder": {
+    "message": "Markera text i meddelandet eller läs in hela meddelandet…"
+  },
+  "btnLoad": {
+    "message": "Läs in meddelande"
+  },
+  "btnTranslate": {
+    "message": "Översätt"
+  },
+  "btnCopy": {
+    "message": "Kopiera"
+  },
+  "btnReplace": {
+    "message": "Ersätt meddelande"
+  },
+  "btnInsert": {
+    "message": "Infoga vid markören"
+  },
+  "settingProvider": {
+    "message": "AI-leverantör"
+  },
+  "settingModel": {
+    "message": "Modell"
+  },
+  "settingCustomModel": {
+    "message": "Anpassad modell"
+  },
+  "placeholderModelId": {
+    "message": "modell-id"
+  },
+  "settingEndpoint": {
+    "message": "Endpoint"
+  },
+  "settingReasoning": {
+    "message": "Resonemangsansträngning"
+  },
+  "settingApiKey": {
+    "message": "API-nyckel"
+  },
+  "settingsHint": {
+    "message": "Nyckeln stannar i den här webbläsaren (localStorage). Google kräver inget konto."
+  },
+  "btnSave": {
+    "message": "Spara"
+  },
+  "providerDivider": {
+    "message": "──── mer ────"
+  },
+  "customModel": {
+    "message": "Anpassad…"
+  },
+  "reasoningLowest": {
+    "message": "Lägsta (standard)"
+  },
+  "reasoningDefault": {
+    "message": "Leverantörens standard"
+  },
+  "statusOpenMessage": {
+    "message": "Öppna ett meddelande eller ett utkast först."
+  },
+  "statusNothing": {
+    "message": "Inget att översätta."
+  },
+  "statusTranslating": {
+    "message": "Översätter…"
+  },
+  "statusDone": {
+    "message": "Klart."
+  },
+  "statusEmpty": {
+    "message": "Tom översättning."
+  },
+  "statusWritten": {
+    "message": "Skrivet till meddelandet."
+  },
+  "statusWriteFailed": {
+    "message": "Skrivning misslyckades."
+  },
+  "statusCopied": {
+    "message": "Kopierat."
+  },
+  "statusLoadedSelection": {
+    "message": "Läste in markeringen."
+  },
+  "statusLoadedAll": {
+    "message": "Läste in hela meddelandet."
+  },
+  "statusSaved": {
+    "message": "Sparat."
+  },
+  "statusPreview": {
+    "message": "Förhandsläge – Office.js är inte tillgängligt."
+  },
+  "extDescription": {
+    "message": "Översätt den markerade texten eller hela meddelandet bredvid originalet — Google eller din egen AI-modell (BYOK)."
+  }
+}

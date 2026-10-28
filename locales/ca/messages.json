@@ -1,0 +1,116 @@
+{
+  "engineTitle": {
+    "message": "Motor"
+  },
+  "engineGoogle": {
+    "message": "Google"
+  },
+  "engineAi": {
+    "message": "IA (BYOK)"
+  },
+  "sourceTitle": {
+    "message": "Idioma d'origen"
+  },
+  "targetTitle": {
+    "message": "Llengua de destinació"
+  },
+  "settingsTitle": {
+    "message": "Paràmetres"
+  },
+  "inputPlaceholder": {
+    "message": "Selecciona text al missatge o carrega el missatge sencer…"
+  },
+  "btnLoad": {
+    "message": "Carrega el missatge"
+  },
+  "btnTranslate": {
+    "message": "Tradueix"
+  },
+  "btnCopy": {
+    "message": "Copia"
+  },
+  "btnReplace": {
+    "message": "Substitueix el missatge"
+  },
+  "btnInsert": {
+    "message": "Insereix al cursor"
+  },
+  "settingProvider": {
+    "message": "Proveïdor d'IA"
+  },
+  "settingModel": {
+    "message": "Model"
+  },
+  "settingCustomModel": {
+    "message": "Model personalitzat"
+  },
+  "placeholderModelId": {
+    "message": "id del model"
+  },
+  "settingEndpoint": {
+    "message": "Endpoint"
+  },
+  "settingReasoning": {
+    "message": "Esforç de raonament"
+  },
+  "settingApiKey": {
+    "message": "Clau API"
+  },
+  "settingsHint": {
+    "message": "La clau es queda en aquest navegador (localStorage). Google no necessita compte."
+  },
+  "btnSave": {
+    "message": "Desa"
+  },
+  "providerDivider": {
+    "message": "──── més ────"
+  },
+  "customModel": {
+    "message": "Personalitzat…"
+  },
+  "reasoningLowest": {
+    "message": "El més baix (per defecte)"
+  },
+  "reasoningDefault": {
+    "message": "Predeterminat del proveïdor"
+  },
+  "statusOpenMessage": {
+    "message": "Obre primer un missatge o un esborrany."
+  },
+  "statusNothing": {
+    "message": "No hi ha res per traduir."
+  },
+  "statusTranslating": {
+    "message": "S'està traduint…"
+  },
+  "statusDone": {
+    "message": "Fet."
+  },
+  "statusEmpty": {
+    "message": "Traducció buida."
+  },
+  "statusWritten": {
+    "message": "Escrit al missatge."
+  },
+  "statusWriteFailed": {
+    "message": "No s'ha pogut escriure."
+  },
+  "statusCopied": {
+    "message": "Copiat."
+  },
+  "statusLoadedSelection": {
+    "message": "S'ha carregat la selecció."
+  },
+  "statusLoadedAll": {
+    "message": "S'ha carregat tot el missatge."
+  },
+  "statusSaved": {
+    "message": "Desat."
+  },
+  "statusPreview": {
+    "message": "Mode de previsualització: Office.js no disponible."
+  },
+  "extDescription": {
+    "message": "Tradueix el text seleccionat o el missatge sencer al costat de l'original — Google o el teu propi model d'IA (BYOK)."
+  }
+}

@@ -1,0 +1,116 @@
+{
+  "engineTitle": {
+    "message": "Dzinējs"
+  },
+  "engineGoogle": {
+    "message": "Google"
+  },
+  "engineAi": {
+    "message": "AI (BYOK)"
+  },
+  "sourceTitle": {
+    "message": "Avota valoda"
+  },
+  "targetTitle": {
+    "message": "Mērķvaloda"
+  },
+  "settingsTitle": {
+    "message": "Iestatījumi"
+  },
+  "inputPlaceholder": {
+    "message": "Atlasiet tekstu ziņojumā vai ielādējiet visu ziņojumu…"
+  },
+  "btnLoad": {
+    "message": "Ielādēt ziņojumu"
+  },
+  "btnTranslate": {
+    "message": "Tulkot"
+  },
+  "btnCopy": {
+    "message": "Kopēt"
+  },
+  "btnReplace": {
+    "message": "Aizstāt ziņojumu"
+  },
+  "btnInsert": {
+    "message": "Ievietot pie kursora"
+  },
+  "settingProvider": {
+    "message": "AI pakalpojumu sniedzējs"
+  },
+  "settingModel": {
+    "message": "Modelis"
+  },
+  "settingCustomModel": {
+    "message": "Pielāgots modelis"
+  },
+  "placeholderModelId": {
+    "message": "modeļa id"
+  },
+  "settingEndpoint": {
+    "message": "Galapunkts"
+  },
+  "settingReasoning": {
+    "message": "Spriešanas intensitāte"
+  },
+  "settingApiKey": {
+    "message": "API atslēga"
+  },
+  "settingsHint": {
+    "message": "Atslēga paliek šajā pārlūkā (localStorage). Google kontam nav nepieciešams."
+  },
+  "btnSave": {
+    "message": "Saglabāt"
+  },
+  "providerDivider": {
+    "message": "──── vairāk ────"
+  },
+  "customModel": {
+    "message": "Pielāgots…"
+  },
+  "reasoningLowest": {
+    "message": "Zemākais (noklusējums)"
+  },
+  "reasoningDefault": {
+    "message": "Pakalpojuma noklusējums"
+  },
+  "statusOpenMessage": {
+    "message": "Vispirms atveriet ziņu vai melnrakstu."
+  },
+  "statusNothing": {
+    "message": "Nekas nav jātulko."
+  },
+  "statusTranslating": {
+    "message": "Tulko…"
+  },
+  "statusDone": {
+    "message": "Gatavs."
+  },
+  "statusEmpty": {
+    "message": "Tukšs tulkojums."
+  },
+  "statusWritten": {
+    "message": "Ierakstīts ziņojumā."
+  },
+  "statusWriteFailed": {
+    "message": "Ierakstīšana neizdevās."
+  },
+  "statusCopied": {
+    "message": "Nokopēts."
+  },
+  "statusLoadedSelection": {
+    "message": "Ielādēta atlase."
+  },
+  "statusLoadedAll": {
+    "message": "Ielādēts viss ziņojums."
+  },
+  "statusSaved": {
+    "message": "Saglabāts."
+  },
+  "statusPreview": {
+    "message": "Priekšskatījuma režīms — Office.js nav pieejams."
+  },
+  "extDescription": {
+    "message": "Tulkojiet atlasīto tekstu vai visu ziņojumu blakus oriģinālam — Google vai savs AI modelis (BYOK)."
+  }
+}

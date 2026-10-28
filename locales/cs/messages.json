@@ -1,0 +1,116 @@
+{
+  "engineTitle": {
+    "message": "Modul"
+  },
+  "engineGoogle": {
+    "message": "Google"
+  },
+  "engineAi": {
+    "message": "AI (BYOK)"
+  },
+  "sourceTitle": {
+    "message": "Zdrojový jazyk"
+  },
+  "targetTitle": {
+    "message": "Cílový jazyk"
+  },
+  "settingsTitle": {
+    "message": "Nastavení"
+  },
+  "inputPlaceholder": {
+    "message": "Vyberte text ve zprávě nebo načtěte celou zprávu…"
+  },
+  "btnLoad": {
+    "message": "Načíst zprávu"
+  },
+  "btnTranslate": {
+    "message": "Přeložit"
+  },
+  "btnCopy": {
+    "message": "Kopírovat"
+  },
+  "btnReplace": {
+    "message": "Nahradit zprávu"
+  },
+  "btnInsert": {
+    "message": "Vložit na pozici kurzoru"
+  },
+  "settingProvider": {
+    "message": "Poskytovatel AI"
+  },
+  "settingModel": {
+    "message": "Model"
+  },
+  "settingCustomModel": {
+    "message": "Vlastní model"
+  },
+  "placeholderModelId": {
+    "message": "ID modelu"
+  },
+  "settingEndpoint": {
+    "message": "Endpoint"
+  },
+  "settingReasoning": {
+    "message": "Úsilí uvažování"
+  },
+  "settingApiKey": {
+    "message": "API klíč"
+  },
+  "settingsHint": {
+    "message": "Klíč zůstává v tomto prohlížeči (localStorage). Google nevyžaduje účet."
+  },
+  "btnSave": {
+    "message": "Uložit"
+  },
+  "providerDivider": {
+    "message": "──── více ────"
+  },
+  "customModel": {
+    "message": "Vlastní…"
+  },
+  "reasoningLowest": {
+    "message": "Nejnižší (výchozí)"
+  },
+  "reasoningDefault": {
+    "message": "Výchozí poskytovatele"
+  },
+  "statusOpenMessage": {
+    "message": "Nejprve otevřete zprávu nebo koncept."
+  },
+  "statusNothing": {
+    "message": "Není co překládat."
+  },
+  "statusTranslating": {
+    "message": "Překládá se…"
+  },
+  "statusDone": {
+    "message": "Hotovo."
+  },
+  "statusEmpty": {
+    "message": "Prázdný překlad."
+  },
+  "statusWritten": {
+    "message": "Zapsáno do zprávy."
+  },
+  "statusWriteFailed": {
+    "message": "Zápis se nezdařil."
+  },
+  "statusCopied": {
+    "message": "Zkopírováno."
+  },
+  "statusLoadedSelection": {
+    "message": "Načten výběr."
+  },
+  "statusLoadedAll": {
+    "message": "Načtena celá zpráva."
+  },
+  "statusSaved": {
+    "message": "Uloženo."
+  },
+  "statusPreview": {
+    "message": "Režim náhledu – Office.js není k dispozici."
+  },
+  "extDescription": {
+    "message": "Přeložte vybraný text nebo celou zprávu vedle originálu — Google nebo váš vlastní AI model (BYOK)."
+  }
+}

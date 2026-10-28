@@ -1,0 +1,116 @@
+{
+  "engineTitle": {
+    "message": "इंजन"
+  },
+  "engineGoogle": {
+    "message": "Google"
+  },
+  "engineAi": {
+    "message": "AI (BYOK)"
+  },
+  "sourceTitle": {
+    "message": "स्रोत भाषा"
+  },
+  "targetTitle": {
+    "message": "लक्षित भाषा"
+  },
+  "settingsTitle": {
+    "message": "समायोजन"
+  },
+  "inputPlaceholder": {
+    "message": "संदेश में टेक्स्ट चुनें, या पूरा संदेश लोड करें…"
+  },
+  "btnLoad": {
+    "message": "संदेश लोड करें"
+  },
+  "btnTranslate": {
+    "message": "अनुवाद करना"
+  },
+  "btnCopy": {
+    "message": "प्रतिलिपि"
+  },
+  "btnReplace": {
+    "message": "संदेश बदलें"
+  },
+  "btnInsert": {
+    "message": "कर्सर पर डालें"
+  },
+  "settingProvider": {
+    "message": "एआई प्रदाता"
+  },
+  "settingModel": {
+    "message": "मॉडल"
+  },
+  "settingCustomModel": {
+    "message": "कस्टम मॉडल"
+  },
+  "placeholderModelId": {
+    "message": "मॉडल आईडी"
+  },
+  "settingEndpoint": {
+    "message": "एंडपॉइंट"
+  },
+  "settingReasoning": {
+    "message": "रीज़निंग प्रयास"
+  },
+  "settingApiKey": {
+    "message": "API कुंजी"
+  },
+  "settingsHint": {
+    "message": "कुंजी इस ब्राउज़र (localStorage) में रहती है। Google के लिए खाते की आवश्यकता नहीं है।"
+  },
+  "btnSave": {
+    "message": "सहेजें"
+  },
+  "providerDivider": {
+    "message": "──── अधिक ────"
+  },
+  "customModel": {
+    "message": "कस्टम…"
+  },
+  "reasoningLowest": {
+    "message": "न्यूनतम (डिफ़ॉल्ट)"
+  },
+  "reasoningDefault": {
+    "message": "प्रदाता डिफ़ॉल्ट"
+  },
+  "statusOpenMessage": {
+    "message": "पहले कोई संदेश या ड्राफ़्ट खोलें।"
+  },
+  "statusNothing": {
+    "message": "अनुवाद करने के लिए कुछ नहीं है।"
+  },
+  "statusTranslating": {
+    "message": "अनुवाद हो रहा है…"
+  },
+  "statusDone": {
+    "message": "पूर्ण।"
+  },
+  "statusEmpty": {
+    "message": "खाली अनुवाद।"
+  },
+  "statusWritten": {
+    "message": "संदेश में लिखा गया।"
+  },
+  "statusWriteFailed": {
+    "message": "लिखने में विफल।"
+  },
+  "statusCopied": {
+    "message": "कॉपी किया गया।"
+  },
+  "statusLoadedSelection": {
+    "message": "चयन लोड किया गया।"
+  },
+  "statusLoadedAll": {
+    "message": "पूरा संदेश लोड किया गया।"
+  },
+  "statusSaved": {
+    "message": "सहेजा गया।"
+  },
+  "statusPreview": {
+    "message": "पूर्वावलोकन मोड — Office.js उपलब्ध नहीं है।"
+  },
+  "extDescription": {
+    "message": "चयनित टेक्स्ट या पूरे संदेश का अनुवाद मूल के बगल में करें — Google या आपका अपना AI मॉडल (BYOK)"
+  }
+}

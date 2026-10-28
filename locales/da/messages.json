@@ -1,0 +1,116 @@
+{
+  "engineTitle": {
+    "message": "Motor"
+  },
+  "engineGoogle": {
+    "message": "Google"
+  },
+  "engineAi": {
+    "message": "AI (BYOK)"
+  },
+  "sourceTitle": {
+    "message": "Kildesprog"
+  },
+  "targetTitle": {
+    "message": "Målsprog"
+  },
+  "settingsTitle": {
+    "message": "Indstillinger"
+  },
+  "inputPlaceholder": {
+    "message": "Vælg tekst i meddelelsen, eller indlæs hele meddelelsen…"
+  },
+  "btnLoad": {
+    "message": "Indlæs meddelelse"
+  },
+  "btnTranslate": {
+    "message": "Oversæt"
+  },
+  "btnCopy": {
+    "message": "Kopier"
+  },
+  "btnReplace": {
+    "message": "Erstat meddelelse"
+  },
+  "btnInsert": {
+    "message": "Indsæt ved markør"
+  },
+  "settingProvider": {
+    "message": "AI-udbyder"
+  },
+  "settingModel": {
+    "message": "Model"
+  },
+  "settingCustomModel": {
+    "message": "Brugerdefineret model"
+  },
+  "placeholderModelId": {
+    "message": "model-id"
+  },
+  "settingEndpoint": {
+    "message": "Endpoint"
+  },
+  "settingReasoning": {
+    "message": "Reasoning-indsats"
+  },
+  "settingApiKey": {
+    "message": "API-nøgle"
+  },
+  "settingsHint": {
+    "message": "Nøglen forbliver i denne browser (localStorage). Google kræver ingen konto."
+  },
+  "btnSave": {
+    "message": "Gem"
+  },
+  "providerDivider": {
+    "message": "──── mere ────"
+  },
+  "customModel": {
+    "message": "Tilpasset…"
+  },
+  "reasoningLowest": {
+    "message": "Laveste (standard)"
+  },
+  "reasoningDefault": {
+    "message": "Udbyderens standard"
+  },
+  "statusOpenMessage": {
+    "message": "Åbn først en besked eller en kladde."
+  },
+  "statusNothing": {
+    "message": "Intet at oversætte."
+  },
+  "statusTranslating": {
+    "message": "Oversætter…"
+  },
+  "statusDone": {
+    "message": "Færdig."
+  },
+  "statusEmpty": {
+    "message": "Tom oversættelse."
+  },
+  "statusWritten": {
+    "message": "Skrevet til meddelelsen."
+  },
+  "statusWriteFailed": {
+    "message": "Skrivning mislykkedes."
+  },
+  "statusCopied": {
+    "message": "Kopieret."
+  },
+  "statusLoadedSelection": {
+    "message": "Indlæste markeringen."
+  },
+  "statusLoadedAll": {
+    "message": "Indlæste hele meddelelsen."
+  },
+  "statusSaved": {
+    "message": "Gemt."
+  },
+  "statusPreview": {
+    "message": "Forhåndsvisningstilstand — Office.js er ikke tilgængelig."
+  },
+  "extDescription": {
+    "message": "Oversæt den markerede tekst eller hele meddelelsen ved siden af originalen — Google eller din egen AI-model (BYOK)."
+  }
+}

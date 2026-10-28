@@ -1,0 +1,116 @@
+{
+  "engineTitle": {
+    "message": "Engine"
+  },
+  "engineGoogle": {
+    "message": "Google"
+  },
+  "engineAi": {
+    "message": "AI (BYOK)"
+  },
+  "sourceTitle": {
+    "message": "Source language"
+  },
+  "targetTitle": {
+    "message": "Target language"
+  },
+  "settingsTitle": {
+    "message": "Settings"
+  },
+  "inputPlaceholder": {
+    "message": "Select text in the message, or load the whole message…"
+  },
+  "btnLoad": {
+    "message": "Load message"
+  },
+  "btnTranslate": {
+    "message": "Translate"
+  },
+  "btnCopy": {
+    "message": "Copy"
+  },
+  "btnReplace": {
+    "message": "Replace message"
+  },
+  "btnInsert": {
+    "message": "Insert at cursor"
+  },
+  "settingProvider": {
+    "message": "AI provider"
+  },
+  "settingModel": {
+    "message": "Model"
+  },
+  "settingCustomModel": {
+    "message": "Custom model"
+  },
+  "placeholderModelId": {
+    "message": "model id"
+  },
+  "settingEndpoint": {
+    "message": "Endpoint"
+  },
+  "settingReasoning": {
+    "message": "Reasoning effort"
+  },
+  "settingApiKey": {
+    "message": "API key"
+  },
+  "settingsHint": {
+    "message": "The key stays in this browser (localStorage). Google needs no account."
+  },
+  "btnSave": {
+    "message": "Save"
+  },
+  "providerDivider": {
+    "message": "──── more ────"
+  },
+  "customModel": {
+    "message": "Custom…"
+  },
+  "reasoningLowest": {
+    "message": "Lowest (default)"
+  },
+  "reasoningDefault": {
+    "message": "Provider default"
+  },
+  "statusOpenMessage": {
+    "message": "Open a message or a draft first."
+  },
+  "statusNothing": {
+    "message": "Nothing to translate."
+  },
+  "statusTranslating": {
+    "message": "Translating…"
+  },
+  "statusDone": {
+    "message": "Done."
+  },
+  "statusEmpty": {
+    "message": "Empty translation."
+  },
+  "statusWritten": {
+    "message": "Written to the message."
+  },
+  "statusWriteFailed": {
+    "message": "Write failed."
+  },
+  "statusCopied": {
+    "message": "Copied."
+  },
+  "statusLoadedSelection": {
+    "message": "Loaded the selection."
+  },
+  "statusLoadedAll": {
+    "message": "Loaded the whole message."
+  },
+  "statusSaved": {
+    "message": "Saved."
+  },
+  "statusPreview": {
+    "message": "Preview mode — Office.js not available."
+  },
+  "extDescription": {
+    "message": "Translate the selected text or the whole message next to the original — Google or your own AI model (BYOK)."
+  }
+}

@@ -1,0 +1,116 @@
+{
+  "engineTitle": {
+    "message": "موتور"
+  },
+  "engineGoogle": {
+    "message": "Google"
+  },
+  "engineAi": {
+    "message": "هوش مصنوعی (BYOK)"
+  },
+  "sourceTitle": {
+    "message": "زبان مبدأ"
+  },
+  "targetTitle": {
+    "message": "زبان مقصد"
+  },
+  "settingsTitle": {
+    "message": "تنظیمات"
+  },
+  "inputPlaceholder": {
+    "message": "متن را در پیام انتخاب کنید، یا کل پیام را بارگذاری کنید…"
+  },
+  "btnLoad": {
+    "message": "بارگذاری پیام"
+  },
+  "btnTranslate": {
+    "message": "ترجمه"
+  },
+  "btnCopy": {
+    "message": "کپی (رونوشت)"
+  },
+  "btnReplace": {
+    "message": "جایگزینی پیام"
+  },
+  "btnInsert": {
+    "message": "درج در مکان‌نما"
+  },
+  "settingProvider": {
+    "message": "ارائه‌دهنده هوش مصنوعی"
+  },
+  "settingModel": {
+    "message": "مدل"
+  },
+  "settingCustomModel": {
+    "message": "مدل سفارشی"
+  },
+  "placeholderModelId": {
+    "message": "شناسه مدل"
+  },
+  "settingEndpoint": {
+    "message": "نقطه پایانی"
+  },
+  "settingReasoning": {
+    "message": "میزان استدلال"
+  },
+  "settingApiKey": {
+    "message": "کلید API"
+  },
+  "settingsHint": {
+    "message": "کلید در همین مرورگر (localStorage) می‌ماند. Google به حساب کاربری نیاز ندارد."
+  },
+  "btnSave": {
+    "message": "ذخیره"
+  },
+  "providerDivider": {
+    "message": "──── بیشتر ────"
+  },
+  "customModel": {
+    "message": "سفارشی…"
+  },
+  "reasoningLowest": {
+    "message": "پایین‌ترین (پیش‌فرض)"
+  },
+  "reasoningDefault": {
+    "message": "پیش‌فرض ارائه‌دهنده"
+  },
+  "statusOpenMessage": {
+    "message": "ابتدا یک پیام یا پیش‌نویس باز کنید."
+  },
+  "statusNothing": {
+    "message": "چیزی برای ترجمه نیست."
+  },
+  "statusTranslating": {
+    "message": "در حال ترجمه…"
+  },
+  "statusDone": {
+    "message": "انجام شد."
+  },
+  "statusEmpty": {
+    "message": "ترجمه خالی است."
+  },
+  "statusWritten": {
+    "message": "در پیام نوشته شد."
+  },
+  "statusWriteFailed": {
+    "message": "نوشتن ناموفق بود."
+  },
+  "statusCopied": {
+    "message": "کپی شد."
+  },
+  "statusLoadedSelection": {
+    "message": "انتخاب بارگذاری شد."
+  },
+  "statusLoadedAll": {
+    "message": "کل پیام بارگذاری شد."
+  },
+  "statusSaved": {
+    "message": "ذخیره شد."
+  },
+  "statusPreview": {
+    "message": "حالت پیش‌نمایش — Office.js در دسترس نیست."
+  },
+  "extDescription": {
+    "message": "متن انتخاب‌شده یا کل پیام را در کنار متن اصلی ترجمه کنید — Google یا مدل هوش مصنوعی خودتان (BYOK)."
+  }
+}
