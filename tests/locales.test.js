@@ -50,6 +50,21 @@ test("every locale carries every key, non-empty, without stray Chinese", () => {
   }
 });
 
+test("no user-visible literal bypasses the catalogue", () => {
+  const js = fs.readFileSync(path.join(ROOT, "src", "taskpane.js"), "utf8");
+  const html = fs.readFileSync(path.join(ROOT, "src", "taskpane.html"), "utf8");
+  const offenders = [];
+  for (const pattern of [/status\(\s*"[^"]/g, /\.textContent\s*=\s*"[^"]/g, /setAttribute\(\s*"placeholder",\s*"[^"]/g]) {
+    for (const match of js.matchAll(pattern)) offenders.push(`taskpane.js: ${match[0]}`);
+  }
+  for (const tag of html.match(/<[^>]+>/g) || []) {
+    if (/placeholder="/.test(tag) && !/data-i18n-placeholder=/.test(tag) && !/placeholder="(?:sk-…|https:\/\/)/.test(tag)) {
+      offenders.push(`taskpane.html: ${tag.trim().slice(0, 70)}`);
+    }
+  }
+  assert.deepEqual(offenders, [], offenders.join("\n"));
+});
+
 test("the bundled data file matches the catalogues", () => {
   const data = fs.readFileSync(path.join(ROOT, "src", "i18n.data.js"), "utf8");
   for (const code of EXPECTED) assert.ok(data.includes(`"${code}":`), `i18n.data.js is missing ${code}`);
