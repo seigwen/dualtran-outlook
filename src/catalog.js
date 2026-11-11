@@ -40,6 +40,9 @@
 
   const LEVEL_ORDER = ["none", "minimal", "low", "medium", "high", "xhigh", "max"];
 
+  /** Provider labels sort the way the picker reads them: case- and accent-blind, numbers in order. */
+  const collate = new Intl.Collator("en", { numeric: true, sensitivity: "base" });
+
   /** Effort values a model declares, in a stable order; a toggle model reports ["high"]. */
   function levelsOf(model) {
     const options = Array.isArray(model && model.reasoning_options) ? model.reasoning_options : [];
@@ -75,7 +78,7 @@
     return { providers, modelsById, reasoning };
   }
 
-  /** Built-ins in registry order, then the catalogue alphabetically, alias twins removed. */
+  /** Built-ins and the catalogue in ONE list, alphabetical by visible label; alias twins removed. */
   function buildProviderList(catalogue, modelsById) {
     const byId = new Map((catalogue || []).map((provider) => [provider.id, provider]));
     const fallbackModels = modelsById || {};
@@ -90,7 +93,22 @@
       if (BUILTINS.some((entry) => entry.id === provider.id)) continue;
       out.push({ id: provider.id, name: provider.name, api: provider.api, models: provider.models, builtIn: false });
     }
-    return out;
+    // One alphabetical list: a built-in and a catalogue entry sit side by side,
+    // so a user looking for "Groq" does not have to know which half it is in.
+    // Ties (same label from two ids) fall back to the id for a stable order.
+    return out.sort((a, b) => collate.compare(a.name, b.name) || collate.compare(a.id, b.id));
+  }
+
+  /**
+   * Endpoint after a provider change: an empty (or whitespace-only) endpoint is
+   * filled with the provider's API; anything the user typed wins, so a proxy or
+   * gateway URL is never clobbered. A provider without an api fills nothing.
+   */
+  function resolveEndpointOnProviderChange(currentEndpoint, providerApi) {
+    const current = typeof currentEndpoint === "string" ? currentEndpoint.trim() : "";
+    if (current) return current;
+    const api = typeof providerApi === "string" ? providerApi.trim() : "";
+    return api;
   }
 
   /** Turn the stored setting into the value to send; nothing declared → no parameter. */
@@ -104,5 +122,5 @@
     return "";
   }
 
-  return { MODELS_DEV_URL, BUILTINS, LEVEL_ORDER, levelsOf, projectCatalog, buildProviderList, resolveReasoning };
+  return { MODELS_DEV_URL, BUILTINS, LEVEL_ORDER, levelsOf, projectCatalog, buildProviderList, resolveEndpointOnProviderChange, resolveReasoning };
 });

@@ -15,6 +15,7 @@ select, input, textarea, button {
   border-radius: 6px; padding: 5px 8px; font: inherit; outline: none;
 }
 .lang { width: 58px; text-align: center; }
+select#target { width: auto; max-width: 11em; text-align: left; }
 textarea { flex: 0 0 30%; resize: none; }
 .actions { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
 button { cursor: pointer; }

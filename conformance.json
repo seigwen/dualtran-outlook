@@ -1,0 +1,16 @@
+{
+  "spec": "2.0.0",
+  "host": "dualtran-outlook",
+  "payload": "scripts/conformance/payload.mjs",
+  "static": {
+    "files": ["src/taskpane.html", "src/taskpane.js"],
+    "patterns": [
+      "providerSeparator",
+      "__separator__",
+      "__more__",
+      "More (models.dev)",
+      { "token": "target-input", "regex": "<input[^>]+id=\"target\"" }
+    ]
+  },
+  "platformLimits": []
+}

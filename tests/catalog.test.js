@@ -1,6 +1,6 @@
 const test = require("node:test");
 const assert = require("node:assert");
-const { projectCatalog, buildProviderList, resolveReasoning, BUILTINS } = require("../src/catalog");
+const { projectCatalog, buildProviderList, resolveEndpointOnProviderChange, resolveReasoning } = require("../src/catalog");
 
 const raw = {
   openai: {
@@ -38,19 +38,31 @@ test("projectCatalog keeps reachable providers and indexes reasoning for every p
   assert.deepStrictEqual(modelsById.openai.map((m) => m.id), ["gpt-5", "gpt-4o"]);
 });
 
-test("buildProviderList puts built-ins first, then the catalogue, without alias twins", () => {
+test("buildProviderList merges built-ins and the catalogue into one alphabetical list", () => {
   const { providers, modelsById } = projectCatalog(raw);
   const list = buildProviderList(providers, modelsById);
-  assert.strictEqual(list[0].builtIn, true);
-  const builtInCount = list.filter((p) => p.builtIn).length;
-  assert.strictEqual(builtInCount, BUILTINS.length);
-  assert.ok(list.slice(builtInCount).every((p) => p.builtIn === false), "catalogue comes after the divider");
+  assert.ok(list.some((p) => p.builtIn), "built-ins stay in the list");
+  assert.ok(list.some((p) => !p.builtIn), "catalogue-only providers are merged in");
+  const names = list.map((p) => p.name);
+  assert.deepStrictEqual(names, [...names].sort((a, b) => a.localeCompare(b, "en")), "one A→Z list, no divider split");
   const moons = list.filter((p) => p.id === "moonshot" || p.id === "moonshotai");
   assert.strictEqual(moons.length, 1, "moonshot ↔ moonshotai must not repeat");
   assert.ok(!list.some((p) => p.id === "no-api"));
   // A built-in pulls its model list from the catalogue entry it aliases.
   const openai = list.find((p) => p.id === "openai");
   assert.ok(openai.models.some((m) => m.id === "gpt-5"));
+});
+
+test("resolveEndpointOnProviderChange fills an empty endpoint and respects a user override", () => {
+  assert.strictEqual(resolveEndpointOnProviderChange("", "https://api.openai.com/v1"), "https://api.openai.com/v1");
+  assert.strictEqual(resolveEndpointOnProviderChange("  ", "https://api.x.ai/v1"), "https://api.x.ai/v1");
+  assert.strictEqual(
+    resolveEndpointOnProviderChange("https://proxy.example/v1", "https://api.openai.com/v1"),
+    "https://proxy.example/v1",
+    "a user-edited endpoint survives a provider switch"
+  );
+  assert.strictEqual(resolveEndpointOnProviderChange("https://proxy.example/v1", ""), "https://proxy.example/v1");
+  assert.strictEqual(resolveEndpointOnProviderChange("", ""), "");
 });
 
 test("resolveReasoning maps the lowest sentinel onto the model's own levels", () => {

@@ -18,6 +18,8 @@ jobs:
         run: npm test
       - name: Manifest validation
         run: npm run validate
+      - name: Host conformance (SPEC v2)
+        run: npm run conformance
 
   e2e:
     runs-on: ubuntu-latest

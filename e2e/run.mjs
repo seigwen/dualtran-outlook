@@ -2,8 +2,8 @@
  * run.mjs — Outlook task-pane E2E (host API stubbed, real DOM, real fetch).
  *
  * Six scenarios, the same contract every DualTran host follows:
- *   1. settings shape   — provider select with built-ins → "──── more ────" → catalogue,
- *                         reasoning starts with Lowest + Default
+ *   1. settings shape   — one alphabetical provider select (built-ins + catalogue,
+ *                         no divider), reasoning starts with Lowest + Default
  *   2. Google translate — selection → translated text in #result
  *   3. AI request body  — endpoint/model/key/reasoning reach the wire intact
  *   4. loading visible  — spinner class while the request is in flight, gone after
@@ -86,9 +86,9 @@ async function openPage(browser, origin, options = {}) {
   await page.goto(`${origin}/taskpane.html`);
   // <option> inside a closed <select> is never "visible"; wait on the DOM instead.
   await page.waitForFunction(() => document.querySelectorAll("#aiProvider option").length > 0);
-  // Catalogue fetch is async; wait until the divider exists.
+  // Catalogue fetch is async; wait until a models.dev-only provider is merged in.
   await page.waitForFunction(() =>
-    Array.from(document.querySelectorAll("#aiProvider option")).some((option) => option.disabled)
+    Array.from(document.querySelectorAll("#aiProvider option")).some((option) => option.value === "orcarouter")
   );
   return { page, context, consoleLines };
 }
@@ -102,26 +102,35 @@ scenario("settings-shape", async ({ browser, server }) => {
   const shape = await page.evaluate(() => {
     const provider = document.getElementById("aiProvider");
     const options = Array.from(provider.options);
-    const divider = options.findIndex((option) => option.disabled);
     const reasoning = document.getElementById("aiReasoning");
     return {
       providers: options.length,
+      values: options.map((option) => option.value),
+      labels: options.map((option) => option.textContent.trim()),
+      disabled: options.filter((option) => option.disabled).length,
       firstThree: options.slice(0, 3).map((option) => option.value),
-      dividerText: divider >= 0 ? options[divider].textContent.trim() : null,
-      afterDivider: divider >= 0 ? options.slice(divider + 1).map((option) => option.value) : [],
       reasoning: Array.from(reasoning.options).map((option) => option.value),
       reasoningDefault: reasoning.value,
+      targetTag: document.getElementById("target").tagName,
+      targetOptions: document.getElementById("target").options.length,
+      targetCurrent: document.getElementById("target").value,
     };
   });
   assert(shape.providers > 11, `expected built-ins + catalogue, got ${shape.providers} options`);
-  assert(shape.firstThree[0] === "openai", `built-ins must lead, got ${shape.firstThree.join(",")}`);
+  assert(shape.disabled === 0, `provider picker must have no disabled divider, got ${shape.disabled}`);
+  assert(!shape.values.includes("__more__"), "the divider sentinel must be gone");
+  assert(shape.values.includes("openai"), "built-in providers stay in the list");
+  assert(shape.values.includes("orcarouter"), "catalogue providers are merged in");
+  const sorted = [...shape.labels].sort((a, b) => a.localeCompare(b, "en", { sensitivity: "base" }));
   assert(
-    shape.dividerText && shape.dividerText.includes("more"),
-    `divider must read "──── more ────", got ${JSON.stringify(shape.dividerText)}`
+    JSON.stringify(sorted) === JSON.stringify(shape.labels),
+    `provider list must be alphabetical: ${shape.labels.join(", ")}`
   );
-  assert(shape.afterDivider.includes("orcarouter"), "catalogue providers must follow the divider");
   assert(shape.reasoning[0] === "lowest", `reasoning must default to lowest, got ${shape.reasoning[0]}`);
   assert(shape.reasoningDefault === "lowest", `selected value must be lowest, got ${shape.reasoningDefault}`);
+  assert(shape.targetTag === "SELECT", `target must be a select, got ${shape.targetTag}`);
+  assert(shape.targetOptions >= 40, `target picker needs ≥40 languages, got ${shape.targetOptions}`);
+  assert(shape.targetCurrent === "zh-CN", `target must default to zh-CN, got ${shape.targetCurrent}`);
   await page.screenshot({ path: path.join(ARTIFACTS, "settings-shape", "screenshot.png") });
   await context.close();
 });
@@ -243,7 +252,7 @@ scenario("persistence", async ({ browser, server }) => {
   await page.reload();
   await page.waitForFunction(() => document.querySelectorAll("#aiProvider option").length > 0);
   await page.waitForFunction(() =>
-    Array.from(document.querySelectorAll("#aiProvider option")).some((option) => option.disabled)
+    Array.from(document.querySelectorAll("#aiProvider option")).some((option) => option.value === "orcarouter")
   );
   const restored = await page.evaluate(() => ({
     provider: document.getElementById("aiProvider").value,
@@ -276,7 +285,7 @@ scenario("i18n-locale", async ({ browser, server }) => {
     providerLabel: document.querySelector('[data-i18n="settingProvider"]').textContent,
     hint: document.querySelector('[data-i18n="settingsHint"]').textContent,
     reasoningFirst: document.getElementById("aiReasoning").options[0].textContent,
-    divider: Array.from(document.getElementById("aiProvider").options).find((option) => option.disabled)?.textContent,
+    targetLabel: document.getElementById("target").options[document.getElementById("target").selectedIndex].textContent,
     dictDir: document.documentElement.getAttribute("dir"),
     htmlLang: document.documentElement.getAttribute("lang"),
   }));
@@ -289,7 +298,7 @@ scenario("i18n-locale", async ({ browser, server }) => {
   assert(ui.providerLabel === de.settingProvider.message, `settings label must be German, got "${ui.providerLabel}"`);
   assert(ui.hint === de.settingsHint.message, `hint must be German, got "${ui.hint}"`);
   assert(ui.reasoningFirst === de.reasoningLowest.message, `reasoning label must be German, got "${ui.reasoningFirst}"`);
-  assert(ui.divider === de.providerDivider.message, `catalogue divider must be German, got "${ui.divider}"`);
+  assert(ui.targetLabel === "Chinese (Simplified) (zh-CN)", `target label must read "Name (code)", got "${ui.targetLabel}"`);
   assert(ui.dictDir === null, `German must not set dir, got "${ui.dictDir}"`);
   assert(ui.htmlLang === "de", `<html lang> must follow the locale, got "${ui.htmlLang}"`);
 
