@@ -2,13 +2,14 @@
   "name": "dualtran-outlook",
   "version": "1.1.0",
   "private": true,
-  "description": "DualTran for Outlook — translate selections or whole messages next to the original.",
+  "description": "DualTran for Outlook \u2014 translate selections or whole messages next to the original.",
   "license": "MIT",
   "scripts": {
     "test": "node --test tests/*.test.js",
     "validate": "office-addin-manifest validate manifest.xml",
+    "conformance": "node scripts/conformance/run.mjs",
     "e2e": "node e2e/run.mjs",
-    "verify": "npm test && npm run i18n:check && npm run e2e",
+    "verify": "npm test && npm run i18n:check && npm run e2e && npm run conformance",
     "i18n:build": "node scripts/build-i18n.mjs && node scripts/build-manifest-i18n.mjs",
     "i18n:sync": "node scripts/locale-kit.mjs",
     "i18n:check": "node scripts/locale-kit.mjs --check"

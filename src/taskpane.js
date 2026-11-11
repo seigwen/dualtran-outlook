@@ -37,12 +37,12 @@
   const SETTINGS_KEY = "dualtran.outlook.settings";
   const CATALOG_KEY = "dualtran.outlook.catalog";
   const CATALOG_TTL = 24 * 60 * 60 * 1000;
-  const MORE_VALUE = "__more__";
   const CUSTOM_VALUE = "__custom__";
+  const DEFAULT_TARGET = window.DualTranLanguages.DEFAULT_TARGET;
 
   /** Projected models.dev data: { providers, modelsById, reasoning }. */
   let catalog = { providers: [], modelsById: {}, reasoning: {} };
-  /** Built-ins first, then the catalogue — what the dropdown shows. */
+  /** Built-ins and the catalogue in one list — what the dropdown shows. */
   let providerList = [];
 
   function readCatalogCache() {
@@ -89,16 +89,7 @@
   function renderProviders(selectedId) {
     providerList = DualTranCatalog.buildProviderList(catalog.providers, catalog.modelsById);
     el.aiProvider.innerHTML = "";
-    let dividerAdded = false;
     for (const provider of providerList) {
-      if (!provider.builtIn && !dividerAdded) {
-        const divider = document.createElement("option");
-        divider.disabled = true;
-        divider.value = MORE_VALUE;
-        divider.textContent = t("providerDivider");
-        el.aiProvider.appendChild(divider);
-        dividerAdded = true;
-      }
       const option = document.createElement("option");
       option.value = provider.id;
       option.textContent = provider.name;
@@ -108,9 +99,30 @@
     el.aiProvider.value = known ? selectedId : "openai";
   }
 
+  /** The target picker: one option per language, codes as values, "Name (code)" as label. */
+  function renderTargets(selectedCode) {
+    const chosen = DualTranLanguages.normalizeTarget(selectedCode || DEFAULT_TARGET);
+    el.target.innerHTML = "";
+    for (const language of DualTranLanguages.TARGET_LANGUAGES) {
+      const option = document.createElement("option");
+      option.value = language.code;
+      option.textContent = language.label;
+      el.target.appendChild(option);
+    }
+    el.target.value = chosen;
+  }
+
   function renderModels(selectedModelId) {
     const provider = providerById(el.aiProvider.value);
-    const models = (provider && provider.models) || [];
+    // Catalogue rows read alphabetically; the free-text entry is an action and
+    // stays last (SPEC 2.0.0 R2).
+    const models = ((provider && provider.models) || [])
+      .slice()
+      .sort(
+        (a, b) =>
+          a.label.localeCompare(b.label, "en", { numeric: true, sensitivity: "base" }) ||
+          a.id.localeCompare(b.id)
+      );
     el.aiModelSelect.innerHTML = "";
     for (const model of models) {
       const option = document.createElement("option");
@@ -125,10 +137,17 @@
 
     const known = models.some((model) => model.id === selectedModelId);
     if (known) el.aiModelSelect.value = selectedModelId;
-    else if (models.length && !selectedModelId) el.aiModelSelect.value = models[0].id;
+    else if (models.length && !selectedModelId) el.aiModelSelect.value = sortedFirstModel(models);
     else el.aiModelSelect.value = CUSTOM_VALUE;
     if (!known && selectedModelId) el.aiModel.value = selectedModelId;
     toggleCustomRow();
+  }
+
+  /** The model the picker shows when nothing is stored: the first catalogue row it displays. */
+  function sortedFirstModel(models) {
+    return models
+      .slice()
+      .sort((a, b) => a.label.localeCompare(b.label, "en", { numeric: true, sensitivity: "base" }) || a.id.localeCompare(b.id))[0].id;
   }
 
   function toggleCustomRow() {
@@ -164,7 +183,7 @@
     const s = loadSettings();
     el.engine.value = s.engine || "google";
     el.source.value = s.sourceLanguage || "auto";
-    el.target.value = s.targetLanguage || "zh-CN";
+    renderTargets(s.targetLanguage || DEFAULT_TARGET);
     renderProviders(s.aiProvider || "openai");
     renderModels(s.aiModel || "");
     el.aiEndpoint.value = s.aiEndpoint || "";
@@ -174,7 +193,7 @@
     return {
       engine: el.engine.value,
       sourceLanguage: el.source.value.trim() || "auto",
-      targetLanguage: el.target.value.trim() || "en",
+      targetLanguage: DualTranLanguages.normalizeTarget(el.target.value),
       aiProvider: el.aiProvider.value,
       reasoningSetting: el.aiReasoning.value,
       reasoning: DualTranCatalog.resolveReasoning(el.aiReasoning.value, reasoningLevels()),
@@ -263,7 +282,10 @@
   function wire() {
     el.aiProvider.addEventListener("change", () => {
       const provider = providerById(el.aiProvider.value);
-      if (provider) el.aiEndpoint.value = provider.api;
+      el.aiEndpoint.value = DualTranCatalog.resolveEndpointOnProviderChange(
+        el.aiEndpoint.value,
+        provider ? provider.api : ""
+      );
       renderModels("");
       renderReasoning(el.aiReasoning.value);
     });
