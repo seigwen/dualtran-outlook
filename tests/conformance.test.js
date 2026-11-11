@@ -42,7 +42,7 @@ test("R1 — languages.js offers ≥40 human-readable targets and keeps the curr
   const list = languages.TARGET_LANGUAGES;
   assert.ok(Array.isArray(list), "TARGET_LANGUAGES must be an array");
   assert.ok(list.length >= 40, `expected ≥40 target languages, got ${list.length}`);
-  const names = JSON.parse(fs.readFileSync(path.join(ROOT, "facts", "language-names.json"), "utf8"));
+  const names = JSON.parse(fs.readFileSync(path.join(ROOT, "tests", "fixtures", "conformance", "language-names.json"), "utf8"));
   for (const entry of list) {
     assert.equal(typeof entry.code, "string", "every entry needs a code");
     assert.equal(entry.code, entry.code.trim(), `code "${entry.code}" carries whitespace`);
@@ -67,7 +67,7 @@ test("R1 — languages.js offers ≥40 human-readable targets and keeps the curr
 
 test("R2 — the provider list drops the divider and merges sources by visible label", () => {
   const catalog = require(path.join(ROOT, "src", "catalog.js"));
-  const sample = JSON.parse(fs.readFileSync(path.join(ROOT, "facts", "models-dev-sample.json"), "utf8"));
+  const sample = JSON.parse(fs.readFileSync(path.join(ROOT, "tests", "fixtures", "conformance", "models-dev-sample.json"), "utf8"));
   const { providers, modelsById } = catalog.projectCatalog(sample);
   const list = catalog.buildProviderList(providers, modelsById);
 
@@ -138,7 +138,7 @@ test("R2 — the model sort the pane renders matches the validator's collation",
   const paneOpts = Function(`return (${flags[1]});`)();
 
   const catalog = require(path.join(ROOT, "src", "catalog.js"));
-  const sample = JSON.parse(fs.readFileSync(path.join(ROOT, "facts", "models-dev-sample.json"), "utf8"));
+  const sample = JSON.parse(fs.readFileSync(path.join(ROOT, "tests", "fixtures", "conformance", "models-dev-sample.json"), "utf8"));
   const { providers, modelsById } = catalog.projectCatalog(sample);
   const list = catalog.buildProviderList(providers, modelsById);
   const validatorCompare = new Intl.Collator("en", { numeric: true, sensitivity: "base" }).compare;

@@ -247,7 +247,7 @@ scenario("persistence", async ({ browser, server }) => {
   await page.selectOption("#aiModelSelect", "orcarouter/fusion-mini");
   await page.selectOption("#aiReasoning", "high");
   await page.fill("#aiEndpoint", `${server.origin}/v1`);
-  await page.fill("#target", "ja");
+  await page.selectOption("#target", "ja");
   await page.click("#saveSettings");
   await page.reload();
   await page.waitForFunction(() => document.querySelectorAll("#aiProvider option").length > 0);
