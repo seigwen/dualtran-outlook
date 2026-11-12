@@ -112,5 +112,14 @@
   },
   "extDescription": {
     "message": "Prevedite izabrani tekst ili celu poruku pored originala — Google ili sopstveni AI model (BYOK)."
+  },
+  "providerPlaceholder": {
+    "message": "Izaberite provajdera"
+  },
+  "providerRequiredForModel": {
+    "message": "Prvo izaberite provajdera"
+  },
+  "providerRequiredError": {
+    "message": "Pre prevođenja izaberite AI provajdera u podešavanjima."
   }
 }

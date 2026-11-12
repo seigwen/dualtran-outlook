@@ -112,5 +112,14 @@
   },
   "extDescription": {
     "message": "Μεταφράστε το επιλεγμένο κείμενο ή ολόκληρο το μήνυμα δίπλα στο πρωτότυπο — Google ή το δικό σας μοντέλο AI (BYOK)."
+  },
+  "providerPlaceholder": {
+    "message": "Επιλέξτε πάροχο"
+  },
+  "providerRequiredForModel": {
+    "message": "Επιλέξτε πρώτα πάροχο"
+  },
+  "providerRequiredError": {
+    "message": "Επιλέξτε πάροχο AI στις ρυθμίσεις πριν μεταφράσετε."
   }
 }

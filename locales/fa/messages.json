@@ -112,5 +112,14 @@
   },
   "extDescription": {
     "message": "متن انتخاب‌شده یا کل پیام را در کنار متن اصلی ترجمه کنید — Google یا مدل هوش مصنوعی خودتان (BYOK)."
+  },
+  "providerPlaceholder": {
+    "message": "یک ارائه‌دهنده انتخاب کنید"
+  },
+  "providerRequiredForModel": {
+    "message": "ابتدا یک ارائه‌دهنده انتخاب کنید"
+  },
+  "providerRequiredError": {
+    "message": "پیش از ترجمه، یک ارائه‌دهنده هوش مصنوعی را در تنظیمات انتخاب کنید."
   }
 }

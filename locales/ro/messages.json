@@ -112,5 +112,14 @@
   },
   "extDescription": {
     "message": "Traduce textul selectat sau întregul mesaj lângă original — Google sau propriul model AI (BYOK)."
+  },
+  "providerPlaceholder": {
+    "message": "Selectați un furnizor"
+  },
+  "providerRequiredForModel": {
+    "message": "Selectați mai întâi un furnizor"
+  },
+  "providerRequiredError": {
+    "message": "Înainte de a traduce, alegeți un furnizor AI din setări."
   }
 }

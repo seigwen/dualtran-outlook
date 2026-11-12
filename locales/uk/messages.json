@@ -112,5 +112,14 @@
   },
   "extDescription": {
     "message": "Перекладайте виділений текст або все повідомлення поруч з оригіналом — Google або власна AI-модель (BYOK)."
+  },
+  "providerPlaceholder": {
+    "message": "Виберіть постачальника"
+  },
+  "providerRequiredForModel": {
+    "message": "Спочатку виберіть постачальника"
+  },
+  "providerRequiredError": {
+    "message": "Перед перекладом виберіть постачальника ШІ в налаштуваннях."
   }
 }

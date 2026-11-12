@@ -112,5 +112,14 @@
   },
   "extDescription": {
     "message": "Переводите выделенный текст или всё сообщение рядом с оригиналом — Google или собственная модель ИИ (BYOK)."
+  },
+  "providerPlaceholder": {
+    "message": "Выберите провайдера"
+  },
+  "providerRequiredForModel": {
+    "message": "Сначала выберите провайдера"
+  },
+  "providerRequiredError": {
+    "message": "Перед переводом выберите провайдера ИИ в настройках."
   }
 }

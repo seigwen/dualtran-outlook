@@ -112,5 +112,14 @@
   },
   "extDescription": {
     "message": "Přeložte vybraný text nebo celou zprávu vedle originálu — Google nebo váš vlastní AI model (BYOK)."
+  },
+  "providerPlaceholder": {
+    "message": "Vyberte poskytovatele"
+  },
+  "providerRequiredForModel": {
+    "message": "Nejprve vyberte poskytovatele"
+  },
+  "providerRequiredError": {
+    "message": "Před překladem vyberte v nastavení poskytovatele AI."
   }
 }

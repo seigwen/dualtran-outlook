@@ -1,7 +1,8 @@
 {
-  "spec": "2.0.0",
+  "spec": "2.1.0",
   "host": "dualtran-outlook",
   "payload": "scripts/conformance/payload.mjs",
+  "payloadCommand": "node scripts/conformance/print-payload.mjs",
   "static": {
     "files": ["src/taskpane.html", "src/taskpane.js"],
     "patterns": [

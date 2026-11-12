@@ -112,5 +112,14 @@
   },
   "extDescription": {
     "message": "चयनित टेक्स्ट या पूरे संदेश का अनुवाद मूल के बगल में करें — Google या आपका अपना AI मॉडल (BYOK)"
+  },
+  "providerPlaceholder": {
+    "message": "प्रदाता चुनें"
+  },
+  "providerRequiredForModel": {
+    "message": "पहले प्रदाता चुनें"
+  },
+  "providerRequiredError": {
+    "message": "अनुवाद करने से पहले सेटिंग में AI प्रदाता चुनें।"
   }
 }

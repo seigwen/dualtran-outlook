@@ -112,5 +112,14 @@
   },
   "extDescription": {
     "message": "選択したテキストまたはメッセージ全体を原文の隣に翻訳 — Google または独自の AI モデル (BYOK)"
+  },
+  "providerPlaceholder": {
+    "message": "プロバイダーを選択"
+  },
+  "providerRequiredForModel": {
+    "message": "先にプロバイダーを選択してください"
+  },
+  "providerRequiredError": {
+    "message": "翻訳する前に、設定で AI プロバイダーを選択してください。"
   }
 }

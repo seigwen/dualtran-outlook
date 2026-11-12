@@ -1,6 +1,6 @@
 "use strict";
 /**
- * Host conformance for the Outlook task pane (SPEC 2.0.0, node:test).
+ * Host conformance for the Outlook task pane (SPEC 2.1.0, node:test).
  *
  * Three layers, no jsdom and no network:
  *   1. markup      — src/taskpane.html really renders <select id="target">;
@@ -98,8 +98,13 @@ test("R2 — taskpane.js renders no divider and still creates the custom model e
   const script = fs.readFileSync(path.join(ROOT, "src", "taskpane.js"), "utf8");
   assert.doesNotMatch(script, /__more__/, "the __more__ divider sentinel must be gone from the renderer");
   assert.doesNotMatch(script, /providerDivider/, "the divider label must not be painted");
-  // A disabled <option> is what the old divider was; buttons may still disable.
-  assert.doesNotMatch(script, /option\.disabled\s*=\s*true|divider\s*\.\s*disabled\s*=\s*true|\.disabled\s*=\s*true;\s*el\.aiProvider/, "no picker option may be disabled");
+  // SPEC 2.1.0 R2: the ONE disabled option allowed is the empty-state placeholder;
+  // nothing else may be disabled inside the provider <select>.
+  const providerRenders = script.slice(script.indexOf("function renderProviders"), script.indexOf("function syncProviderState"));
+  const disabledOptions = providerRenders.match(/\.disabled\s*=\s*true/g) || [];
+  assert.equal(disabledOptions.length, 1, "only the placeholder option may be disabled");
+  assert.match(providerRenders, /placeholder\.disabled\s*=\s*true/, "the disabled option must be the placeholder");
+  assert.doesNotMatch(script, /divider\s*\.\s*disabled\s*=\s*true/, "the divider stays gone");
   const customAt = script.indexOf("custom.value = CUSTOM_VALUE");
   const appendAt = script.indexOf("el.aiModelSelect.appendChild(custom)");
   assert.ok(customAt >= 0 && appendAt > customAt, "the custom model option must still be appended to the model select");
@@ -164,13 +169,13 @@ test("R2 — the model sort the pane renders matches the validator's collation",
 
 test("kit self-test catches its own negative controls", async () => {
   const { selfTest } = await import(validatorUrl);
-  assert.equal(selfTest(), 12);
+  assert.equal(selfTest(), 15);
 });
 
 test("validatePayload accepts the payload built from the real modules", async () => {
   const { validatePayload } = await import(validatorUrl);
   const { buildPayload } = await import(payloadUrl);
-  const payload = buildPayload();
+  const payload = await buildPayload();
   assert.equal(payload.host, "dualtran-outlook");
   const summary = validatePayload(payload, {});
   assert.equal(summary.host, "dualtran-outlook");
@@ -183,8 +188,8 @@ test("validatePayload rejects the pre-fix shape (text target, divider)", async (
   const { validatePayload, ConformanceError } = await import(validatorUrl);
   const { buildPayload } = await import(payloadUrl);
   // Each mutation starts from a passing payload: one broken rule at a time.
-  const ruleOf = (mutate) => {
-    const payload = buildPayload();
+  const ruleOf = async (mutate) => {
+    const payload = await buildPayload();
     validatePayload(payload, {});
     mutate(payload);
     try {
@@ -195,12 +200,14 @@ test("validatePayload rejects the pre-fix shape (text target, divider)", async (
     }
     return null;
   };
-  assert.equal(ruleOf((payload) => { payload.language.control = "text"; }), "R1");
+  assert.equal(await ruleOf((payload) => { payload.language.control = "text"; }), "R1");
   assert.equal(
-    ruleOf((payload) => {
+    await ruleOf((payload) => {
       payload.provider.options.splice(3, 0, { value: "__more__", label: "──── more ────", disabled: true });
     }),
     "R2"
   );
-  assert.equal(ruleOf((payload) => { payload.endpoint.autofill.afterSwitch = "https://api.openai.com/v1"; }), "R3");
+  assert.equal(await ruleOf((payload) => { payload.endpoint.autofill.afterSwitch = "https://api.openai.com/v1"; }), "R3");
+  // SPEC 2.1.0: a fresh install that falls back to openai is the bug, not a default.
+  assert.equal(await ruleOf((payload) => { payload.provider.current = "openai"; }), "R2");
 });

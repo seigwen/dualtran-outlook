@@ -112,5 +112,14 @@
   },
   "extDescription": {
     "message": "Fordítsa le a kijelölt szöveget vagy a teljes üzenetet az eredeti mellett — Google vagy saját AI-modell (BYOK)."
+  },
+  "providerPlaceholder": {
+    "message": "Válasszon szolgáltatót"
+  },
+  "providerRequiredForModel": {
+    "message": "Először válasszon szolgáltatót"
+  },
+  "providerRequiredError": {
+    "message": "Fordítás előtt válasszon AI-szolgáltatót a beállításokban."
   }
 }

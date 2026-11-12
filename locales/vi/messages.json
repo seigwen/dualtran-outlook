@@ -112,5 +112,14 @@
   },
   "extDescription": {
     "message": "Dịch văn bản đã chọn hoặc toàn bộ tin nhắn ngay cạnh bản gốc — Google hoặc mô hình AI của riêng bạn (BYOK)."
+  },
+  "providerPlaceholder": {
+    "message": "Chọn nhà cung cấp"
+  },
+  "providerRequiredForModel": {
+    "message": "Chọn nhà cung cấp trước"
+  },
+  "providerRequiredError": {
+    "message": "Chọn nhà cung cấp AI trong cài đặt trước khi dịch."
   }
 }

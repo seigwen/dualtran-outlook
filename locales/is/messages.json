@@ -112,5 +112,14 @@
   },
   "extDescription": {
     "message": "Þýddu valinn texta eða alla skilaboðin við hlið upprunalegs texta — Google eða þitt eigið AI-líkan (BYOK)."
+  },
+  "providerPlaceholder": {
+    "message": "Veldu þjónustuaðila"
+  },
+  "providerRequiredForModel": {
+    "message": "Veldu þjónustuaðila fyrst"
+  },
+  "providerRequiredError": {
+    "message": "Veldu AI-þjónustuaðila í stillingum áður en þú þýðir."
   }
 }

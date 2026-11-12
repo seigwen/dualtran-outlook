@@ -112,5 +112,14 @@
   },
   "extDescription": {
     "message": "Tłumacz zaznaczony tekst lub całą wiadomość obok oryginału — Google lub własny model AI (BYOK)."
+  },
+  "providerPlaceholder": {
+    "message": "Wybierz dostawcę"
+  },
+  "providerRequiredForModel": {
+    "message": "Najpierw wybierz dostawcę"
+  },
+  "providerRequiredError": {
+    "message": "Przed tłumaczeniem wybierz dostawcę AI w ustawieniach."
   }
 }

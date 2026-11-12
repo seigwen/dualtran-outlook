@@ -112,5 +112,14 @@
   },
   "extDescription": {
     "message": "Übersetze den ausgewählten Text oder die ganze Nachricht neben dem Original — Google oder dein eigenes KI-Modell (BYOK)."
+  },
+  "providerPlaceholder": {
+    "message": "Anbieter auswählen"
+  },
+  "providerRequiredForModel": {
+    "message": "Zuerst einen Anbieter auswählen"
+  },
+  "providerRequiredError": {
+    "message": "Wähle vor dem Übersetzen einen KI-Anbieter in den Einstellungen."
   }
 }

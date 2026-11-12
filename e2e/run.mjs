@@ -1,9 +1,11 @@
 /**
  * run.mjs — Outlook task-pane E2E (host API stubbed, real DOM, real fetch).
  *
- * Six scenarios, the same contract every DualTran host follows:
+ * Seven scenarios, the same contract every DualTran host follows:
  *   1. settings shape   — one alphabetical provider select (built-ins + catalogue,
  *                         no divider), reasoning starts with Lowest + Default
+ *   0. empty provider   — a fresh install has no provider: disabled selected
+ *                         placeholder, disabled model/reasoning, no request
  *   2. Google translate — selection → translated text in #result
  *   3. AI request body  — endpoint/model/key/reasoning reach the wire intact
  *   4. loading visible  — spinner class while the request is in flight, gone after
@@ -97,6 +99,70 @@ function assert(condition, message) {
   if (!condition) throw new Error(message);
 }
 
+scenario("empty-provider", async ({ browser, server }) => {
+  const { page, context } = await openPage(browser, server.origin);
+  const empty = await page.evaluate(() => {
+    const provider = document.getElementById("aiProvider");
+    const placeholder = Array.from(provider.options).find((option) => option.value === "");
+    const model = document.getElementById("aiModelSelect");
+    const reasoning = document.getElementById("aiReasoning");
+    const endpoint = document.getElementById("aiEndpoint");
+    return {
+      provider: provider.value,
+      placeholder: placeholder && {
+        label: placeholder.textContent.trim(),
+        disabled: placeholder.disabled,
+        selected: placeholder.selected,
+      },
+      modelDisabled: model.disabled,
+      modelOptions: model.options.length,
+      modelLabel: model.options.length ? model.options[0].textContent.trim() : "",
+      reasoningDisabled: reasoning.disabled,
+      reasoning: reasoning.value,
+      endpoint: endpoint.value,
+      endpointPlaceholder: endpoint.placeholder,
+      stored: localStorage.getItem("dualtran.outlook.settings"),
+    };
+  });
+  assert(empty.provider === "", `a fresh install must have no provider, got "${empty.provider}"`);
+  assert(empty.placeholder && empty.placeholder.disabled && empty.placeholder.selected, "disabled selected placeholder expected");
+  assert(empty.placeholder.label === "Select a provider", `placeholder label, got "${empty.placeholder.label}"`);
+  assert(empty.modelDisabled && empty.modelOptions === 0, "the model picker must be empty and disabled");
+  assert(empty.reasoningDisabled, "the reasoning picker must be disabled");
+  assert(empty.reasoning === "lowest", `the stored sentinel must stay lowest, got "${empty.reasoning}"`);
+  assert(empty.endpoint === "", `the endpoint must be empty, got "${empty.endpoint}"`);
+  assert(empty.endpointPlaceholder === "https://", `endpoint placeholder, got "${empty.endpointPlaceholder}"`);
+  assert(!/openai/i.test(empty.stored || ""), `nothing may be stored as openai: ${empty.stored}`);
+
+  // Translate with nothing configured: providerRequiredError, and nothing on the wire.
+  server.clear();
+  await page.fill("#input", "Hello world");
+  await page.click("#translate");
+  await page.waitForFunction(() => document.getElementById("status").textContent.trim().length > 0);
+  const status = await page.textContent("#status");
+  const errorText = await page.evaluate(() => {
+    const locales = window.DT_LOCALES.en;
+    return locales.providerRequiredError.message;
+  });
+  assert(status === errorText, `expected providerRequiredError, got "${status}"`);
+  assert(server.requests.length === 0, `no request may leave the pane, saw ${JSON.stringify(server.requests.map((r) => r.url))}`);
+
+  // Choosing a provider fills the endpoint value and enables the pickers.
+  await page.click("#settings");
+  await page.selectOption("#aiProvider", "openai");
+  const picked = await page.evaluate(() => ({
+    endpoint: document.getElementById("aiEndpoint").value,
+    modelDisabled: document.getElementById("aiModelSelect").disabled,
+    reasoningDisabled: document.getElementById("aiReasoning").disabled,
+    providerDisabledCount: Array.from(document.getElementById("aiProvider").options).filter((option) => option.disabled).length,
+  }));
+  assert(picked.endpoint === "https://api.openai.com/v1", `endpoint value after pick, got "${picked.endpoint}"`);
+  assert(!picked.modelDisabled, "the model picker must enable");
+  assert(!picked.reasoningDisabled, "the reasoning picker must enable");
+  await page.screenshot({ path: path.join(ARTIFACTS, "empty-provider", "screenshot.png") });
+  await context.close();
+});
+
 scenario("settings-shape", async ({ browser, server }) => {
   const { page, context } = await openPage(browser, server.origin);
   const shape = await page.evaluate(() => {
@@ -104,11 +170,15 @@ scenario("settings-shape", async ({ browser, server }) => {
     const options = Array.from(provider.options);
     const reasoning = document.getElementById("aiReasoning");
     return {
-      providers: options.length,
+      // SPEC 2.1.0: option 0 is the disabled empty-state placeholder, not a provider.
+      providers: options.filter((option) => option.value !== "").length,
       values: options.map((option) => option.value),
       labels: options.map((option) => option.textContent.trim()),
       disabled: options.filter((option) => option.disabled).length,
-      firstThree: options.slice(0, 3).map((option) => option.value),
+      placeholder: options
+        .filter((option) => option.value === "")
+        .map((option) => ({ label: option.textContent.trim(), disabled: option.disabled, selected: option.selected })),
+      firstThree: options.slice(1, 4).map((option) => option.value),
       reasoning: Array.from(reasoning.options).map((option) => option.value),
       reasoningDefault: reasoning.value,
       targetTag: document.getElementById("target").tagName,
@@ -116,16 +186,19 @@ scenario("settings-shape", async ({ browser, server }) => {
       targetCurrent: document.getElementById("target").value,
     };
   });
-  assert(shape.providers > 11, `expected built-ins + catalogue, got ${shape.providers} options`);
-  assert(shape.disabled === 0, `provider picker must have no disabled divider, got ${shape.disabled}`);
+  assert(shape.providers > 11, `expected built-ins + catalogue, got ${shape.providers} providers`);
+  assert(shape.disabled === 1, `only the placeholder may be disabled, got ${shape.disabled} disabled options`);
+  assert(shape.placeholder.length === 1 && shape.placeholder[0].disabled, "the placeholder is the one disabled option");
   assert(!shape.values.includes("__more__"), "the divider sentinel must be gone");
   assert(shape.values.includes("openai"), "built-in providers stay in the list");
   assert(shape.values.includes("orcarouter"), "catalogue providers are merged in");
-  const sorted = [...shape.labels].sort((a, b) => a.localeCompare(b, "en", { sensitivity: "base" }));
+  const realLabels = shape.labels.filter((_label, index) => shape.values[index] !== "");
+  const sorted = [...realLabels].sort((a, b) => a.localeCompare(b, "en", { sensitivity: "base" }));
   assert(
-    JSON.stringify(sorted) === JSON.stringify(shape.labels),
-    `provider list must be alphabetical: ${shape.labels.join(", ")}`
+    JSON.stringify(sorted) === JSON.stringify(realLabels),
+    `provider list must be alphabetical: ${realLabels.join(", ")}`
   );
+  assert(!realLabels.includes("Select a provider"), "the placeholder must not sort into the list");
   assert(shape.reasoning[0] === "lowest", `reasoning must default to lowest, got ${shape.reasoning[0]}`);
   assert(shape.reasoningDefault === "lowest", `selected value must be lowest, got ${shape.reasoningDefault}`);
   assert(shape.targetTag === "SELECT", `target must be a select, got ${shape.targetTag}`);
@@ -137,6 +210,9 @@ scenario("settings-shape", async ({ browser, server }) => {
 
 scenario("google-translate", async ({ browser, server }) => {
   const { page, context } = await openPage(browser, server.origin);
+  // SPEC 2.1.0: translation needs a provider, so this scenario picks one first.
+  await page.click("#settings");
+  await page.selectOption("#aiProvider", "openai");
   await page.fill("#input", "Hello world");
   await page.selectOption("#engine", "google");
   await page.click("#translate");
@@ -349,7 +425,11 @@ async function main() {
   for (const entry of scenarios) fs.mkdirSync(path.join(ARTIFACTS, entry.name), { recursive: true });
 
   const server = await startMockServer();
-  const browser = await chromium.launch({ headless: true });
+  // CHROME_PATH lets a locked-down CI reuse an existing Chromium build.
+  const browser = await chromium.launch({
+    headless: true,
+    ...(process.env.CHROME_PATH ? { executablePath: process.env.CHROME_PATH } : {}),
+  });
   const failures = [];
 
   for (const entry of scenarios) {

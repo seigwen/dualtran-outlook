@@ -112,5 +112,14 @@
   },
   "extDescription": {
     "message": "把選取的文字或整封郵件翻成對照譯文 —— Google 或你自己的 AI 模型（BYOK）。"
+  },
+  "providerPlaceholder": {
+    "message": "請選擇 AI 服務商"
+  },
+  "providerRequiredForModel": {
+    "message": "請先選擇服務商"
+  },
+  "providerRequiredError": {
+    "message": "翻譯前請先在設定中選擇 AI 服務商。"
   }
 }

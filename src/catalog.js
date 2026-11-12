@@ -40,6 +40,18 @@
 
   const LEVEL_ORDER = ["none", "minimal", "low", "medium", "high", "xhigh", "max"];
 
+  /**
+   * Curated endpoints for models.dev entries that carry no `api` of their own.
+   * models.dev omits it for the big names because their official SDKs infer a
+   * base URL; a BYOK pane that talks plain HTTP has to know it. Without an
+   * entry here such a provider cannot be reached and stays out of the picker
+   * (see buildProviderList) — a pickable provider that fills nothing would
+   * break SPEC R3. Never invent a URL: only well-known, documented bases.
+   */
+  const MODELS_DEV_ENDPOINTS = {
+    anthropic: "https://api.anthropic.com/v1",
+  };
+
   /** Provider labels sort the way the picker reads them: case- and accent-blind, numbers in order. */
   const collate = new Intl.Collator("en", { numeric: true, sensitivity: "base" });
 
@@ -78,7 +90,22 @@
     return { providers, modelsById, reasoning };
   }
 
-  /** Built-ins and the catalogue in ONE list, alphabetical by visible label; alias twins removed. */
+  /** providerList entry → the models.dev shape projectCatalog reads ({ models: { id: { name } } }). */
+  function projectEntries(lists) {
+    const raw = {};
+    for (const entry of lists || []) {
+      const models = {};
+      for (const model of entry.models || []) models[model.id] = { id: model.id, name: model.label };
+      raw[entry.id] = { name: entry.name, api: entry.api, models };
+    }
+    return projectCatalog(raw);
+  }
+
+  /**
+   * Built-ins and the catalogue in ONE list, alphabetical by visible label; alias
+   * twins removed. A models.dev entry with no known endpoint is left out: the
+   * picker only offers providers whose endpoint it can actually fill (SPEC R3).
+   */
   function buildProviderList(catalogue, modelsById) {
     const byId = new Map((catalogue || []).map((provider) => [provider.id, provider]));
     const fallbackModels = modelsById || {};
@@ -91,7 +118,9 @@
     for (const provider of catalogue || []) {
       if (claimed.has(provider.id)) continue;
       if (BUILTINS.some((entry) => entry.id === provider.id)) continue;
-      out.push({ id: provider.id, name: provider.name, api: provider.api, models: provider.models, builtIn: false });
+      const api = provider.api || MODELS_DEV_ENDPOINTS[provider.id] || "";
+      if (!api) continue;
+      out.push({ id: provider.id, name: provider.name, api, models: provider.models, builtIn: false });
     }
     // One alphabetical list: a built-in and a catalogue entry sit side by side,
     // so a user looking for "Groq" does not have to know which half it is in.
@@ -122,5 +151,5 @@
     return "";
   }
 
-  return { MODELS_DEV_URL, BUILTINS, LEVEL_ORDER, levelsOf, projectCatalog, buildProviderList, resolveEndpointOnProviderChange, resolveReasoning };
+  return { MODELS_DEV_URL, BUILTINS, MODELS_DEV_ENDPOINTS, LEVEL_ORDER, levelsOf, projectCatalog, projectEntries, buildProviderList, resolveEndpointOnProviderChange, resolveReasoning };
 });

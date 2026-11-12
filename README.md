@@ -11,6 +11,9 @@ original in the task pane; in a draft you can replace the body or insert at the 
 - **Compose mode** — translate a draft and *Replace message* / *Insert at cursor*.
 - **Google** needs no account. **AI (BYOK)** takes any OpenAI-compatible endpoint
   (OpenAI, Azure OpenAI, OpenRouter, DeepSeek, Groq, Ollama, …), model and key.
+- **No provider by default.** A fresh install shows a disabled *Select a provider*
+  placeholder; the model and reasoning pickers stay disabled and the pane never
+  guesses OpenAI. Pick a provider in settings and its API base fills the endpoint.
 - **No telemetry**: the developer collects nothing. Text goes only to the engine you pick.
 - The API key is stored in this browser's `localStorage` and is sent only to your endpoint.
 
@@ -29,7 +32,8 @@ The Playwright suite includes an `i18n-locale` scenario: it starts the pane with
 
 ```bash
 npm install
-npm test          # unit tests for the translation helpers
+npm test          # unit + conformance tests
+npm run conformance  # SPEC 2.1.0 gate over the real settings controls
 npm run validate  # validates manifest.xml with office-addin-manifest
 npx serve .       # optional: serve locally for the task pane preview
 ```
@@ -47,4 +51,4 @@ MIT — the DualTran translation engine is MPL-2.0; see NOTICE if present.
 
 ## E2E
 
-`npm run e2e` drives the task pane in headless Chromium with a minimal Office.js stub and a local mock for Google/AI: settings shape, translation, AI request body, loading state, error path and persistence. Artifacts (screenshots, requests) land in `e2e-artifacts/`. CI runs it on every push.
+`npm run e2e` drives the task pane in headless Chromium with a minimal Office.js stub and a local mock for Google/AI: empty provider, settings shape, translation, AI request body, loading state, error path and persistence. Set `CHROME_PATH` to reuse an existing Chromium build instead of downloading one. Artifacts (screenshots, requests) land in `e2e-artifacts/`. CI runs it on every push.

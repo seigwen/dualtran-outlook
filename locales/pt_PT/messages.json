@@ -112,5 +112,14 @@
   },
   "extDescription": {
     "message": "Traduza o texto selecionado ou a mensagem completa junto ao original — Google ou o seu próprio modelo de IA (BYOK)."
+  },
+  "providerPlaceholder": {
+    "message": "Selecione um fornecedor"
+  },
+  "providerRequiredForModel": {
+    "message": "Selecione primeiro um fornecedor"
+  },
+  "providerRequiredError": {
+    "message": "Escolha um fornecedor de IA nas definições antes de traduzir."
   }
 }

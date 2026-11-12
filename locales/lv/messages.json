@@ -112,5 +112,14 @@
   },
   "extDescription": {
     "message": "Tulkojiet atlasīto tekstu vai visu ziņojumu blakus oriģinālam — Google vai savs AI modelis (BYOK)."
+  },
+  "providerPlaceholder": {
+    "message": "Izvēlieties pakalpojumu sniedzēju"
+  },
+  "providerRequiredForModel": {
+    "message": "Vispirms izvēlieties pakalpojumu sniedzēju"
+  },
+  "providerRequiredError": {
+    "message": "Pirms tulkošanas iestatījumos izvēlieties AI pakalpojumu sniedzēju."
   }
 }

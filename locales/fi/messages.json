@@ -112,5 +112,14 @@
   },
   "extDescription": {
     "message": "Käännä valittu teksti tai koko viesti alkuperäisen viereen — Google tai oma AI-mallisi (BYOK)."
+  },
+  "providerPlaceholder": {
+    "message": "Valitse palveluntarjoaja"
+  },
+  "providerRequiredForModel": {
+    "message": "Valitse ensin palveluntarjoaja"
+  },
+  "providerRequiredError": {
+    "message": "Valitse AI-palveluntarjoaja asetuksista ennen kääntämistä."
   }
 }
