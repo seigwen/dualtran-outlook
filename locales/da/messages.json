@@ -112,5 +112,14 @@
   },
   "extDescription": {
     "message": "Oversæt den markerede tekst eller hele meddelelsen ved siden af originalen — Google eller din egen AI-model (BYOK)."
+  },
+  "providerPlaceholder": {
+    "message": "Vælg en udbyder"
+  },
+  "providerRequiredForModel": {
+    "message": "Vælg en udbyder først"
+  },
+  "providerRequiredError": {
+    "message": "Vælg en AI-udbyder i indstillingerne, før du oversætter."
   }
 }

@@ -112,5 +112,14 @@
   },
   "extDescription": {
     "message": "Prevedite odabrani tekst ili cijelu poruku uz izvornik — Google ili vlastiti AI model (BYOK)."
+  },
+  "providerPlaceholder": {
+    "message": "Odaberite pružatelja"
+  },
+  "providerRequiredForModel": {
+    "message": "Najprije odaberite pružatelja"
+  },
+  "providerRequiredError": {
+    "message": "Prije prevođenja odaberite pružatelja AI usluge u postavkama."
   }
 }

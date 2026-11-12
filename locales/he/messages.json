@@ -112,5 +112,14 @@
   },
   "extDescription": {
     "message": "תרגם את הטקסט הנבחר או את ההודעה כולה לצד המקור — Google או מודל AI משלך (BYOK)."
+  },
+  "providerPlaceholder": {
+    "message": "בחרו ספק"
+  },
+  "providerRequiredForModel": {
+    "message": "בחרו ספק תחילה"
+  },
+  "providerRequiredError": {
+    "message": "בחרו ספק AI בהגדרות לפני התרגום."
   }
 }

@@ -112,5 +112,14 @@
   },
   "extDescription": {
     "message": "Seçili metni veya tüm mesajı orijinalin yanında çevirin — Google veya kendi AI modeliniz (BYOK)."
+  },
+  "providerPlaceholder": {
+    "message": "Bir sağlayıcı seçin"
+  },
+  "providerRequiredForModel": {
+    "message": "Önce bir sağlayıcı seçin"
+  },
+  "providerRequiredError": {
+    "message": "Çeviri yapmadan önce ayarlardan bir yapay zekâ sağlayıcısı seçin."
   }
 }

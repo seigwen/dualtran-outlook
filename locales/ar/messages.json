@@ -112,5 +112,14 @@
   },
   "extDescription": {
     "message": "ترجم النص المحدد أو الرسالة كاملة بجانب النص الأصلي — Google أو نموذج الذكاء الاصطناعي الخاص بك (BYOK)."
+  },
+  "providerPlaceholder": {
+    "message": "اختر مزودًا"
+  },
+  "providerRequiredForModel": {
+    "message": "اختر مزودًا أولًا"
+  },
+  "providerRequiredError": {
+    "message": "اختر مزود ذكاء اصطناعي في الإعدادات قبل الترجمة."
   }
 }

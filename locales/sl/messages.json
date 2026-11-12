@@ -112,5 +112,14 @@
   },
   "extDescription": {
     "message": "Prevedite izbrano besedilo ali celotno sporočilo poleg izvirnika — Google ali vaš lastni model AI (BYOK)."
+  },
+  "providerPlaceholder": {
+    "message": "Izberite ponudnika"
+  },
+  "providerRequiredForModel": {
+    "message": "Najprej izberite ponudnika"
+  },
+  "providerRequiredError": {
+    "message": "Pred prevajanjem v nastavitvah izberite ponudnika AI."
   }
 }

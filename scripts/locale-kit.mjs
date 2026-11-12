@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * locale-kit.mjs — keep `_locales/<code>/messages.json` complete for every
+ * locale-kit.mjs — keep `locales/<code>/messages.json` complete for every
  * language the product ships, reusing the browser extension's catalogue as the
  * translation memory.
  *

@@ -112,5 +112,14 @@
   },
   "extDescription": {
     "message": "Vertaal de geselecteerde tekst of het hele bericht naast het origineel — Google of je eigen AI-model (BYOK)."
+  },
+  "providerPlaceholder": {
+    "message": "Selecteer een provider"
+  },
+  "providerRequiredForModel": {
+    "message": "Selecteer eerst een provider"
+  },
+  "providerRequiredError": {
+    "message": "Kies een AI-provider in de instellingen voordat je vertaalt."
   }
 }

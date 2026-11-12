@@ -112,5 +112,14 @@
   },
   "extDescription": {
     "message": "تاللانغان تېكىست ياكى پۈتۈن ئۇچۇرنى ئەسلىنىڭ يېنىدا تەرجىمە قىلىدۇ — Google ياكى ئۆزىڭىزنىڭ سۈنئىي ئەقىل مودېلى (BYOK)"
+  },
+  "providerPlaceholder": {
+    "message": "بىر تەمىنلىگۈچى تاللاڭ"
+  },
+  "providerRequiredForModel": {
+    "message": "ئاۋۋال تەمىنلىگۈچى تاللاڭ"
+  },
+  "providerRequiredError": {
+    "message": "تەرجىمە قىلىشتىن بۇرۇن تەڭشەكتىن بىر AI تەمىنلىگۈچىسىنى تاللاڭ."
   }
 }

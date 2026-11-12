@@ -39,6 +39,11 @@
   const CATALOG_TTL = 24 * 60 * 60 * 1000;
   const CUSTOM_VALUE = "__custom__";
   const DEFAULT_TARGET = window.DualTranLanguages.DEFAULT_TARGET;
+  /** The unconfigured provider. A fresh install has no provider at all (SPEC 2.1.0). */
+  const EMPTY_PROVIDER = "";
+  /** Endpoint placeholder while nothing is configured. */
+  const EMPTY_ENDPOINT_PLACEHOLDER = "https://";
+  const REASONING_SENTINEL = "lowest";
 
   /** Projected models.dev data: { providers, modelsById, reasoning }. */
   let catalog = { providers: [], modelsById: {}, reasoning: {} };
@@ -71,6 +76,11 @@
     return providerList.find((p) => p.id === id);
   }
 
+  /** True while the user has not chosen a provider: no request may leave the pane. */
+  function providerMissing() {
+    return el.aiProvider.value === EMPTY_PROVIDER;
+  }
+
   function devIdFor(providerId) {
     const builtIn = DualTranCatalog.BUILTINS.find((entry) => entry.id === providerId);
     return builtIn ? builtIn.dev : providerId;
@@ -86,17 +96,53 @@
     return levels[selectedModel()] || [];
   }
 
+  /**
+   * The provider picker: a disabled, selected placeholder first (when nothing is
+   * stored), then the one alphabetical list of real providers. The placeholder
+   * is NOT part of that list and never sorts into it (SPEC 2.1.0 R2).
+   */
   function renderProviders(selectedId) {
     providerList = DualTranCatalog.buildProviderList(catalog.providers, catalog.modelsById);
+    const stored = typeof selectedId === "string" ? selectedId.trim() : "";
+    const known = providerList.some((provider) => provider.id === stored);
+
     el.aiProvider.innerHTML = "";
+    const placeholder = document.createElement("option");
+    placeholder.value = EMPTY_PROVIDER;
+    placeholder.textContent = t("providerPlaceholder");
+    placeholder.disabled = true;
+    // Kept in the list only while it is the selection: once a provider is
+    // chosen it disappears, so there is no way back to the empty state.
+    if (!known) el.aiProvider.appendChild(placeholder);
     for (const provider of providerList) {
       const option = document.createElement("option");
       option.value = provider.id;
       option.textContent = provider.name;
       el.aiProvider.appendChild(option);
     }
-    const known = providerList.some((provider) => provider.id === selectedId);
-    el.aiProvider.value = known ? selectedId : "openai";
+    el.aiProvider.value = known ? stored : EMPTY_PROVIDER;
+    placeholder.selected = !known;
+    syncProviderState();
+  }
+
+  /**
+   * Everything that depends on "is a provider chosen": the tooltip that explains
+   * the disabled state, the model list, the endpoint placeholder and the
+   * reasoning picker. One function so the two renderers cannot drift apart.
+   */
+  function syncProviderState() {
+    const missing = providerMissing();
+    el.aiProvider.title = missing ? t("providerRequiredError") : "";
+    el.aiModelSelect.title = missing ? t("providerRequiredForModel") : "";
+    el.aiModelSelect.disabled = missing;
+    el.aiReasoning.disabled = missing;
+    el.aiEndpoint.placeholder = missing ? EMPTY_ENDPOINT_PLACEHOLDER : "";
+    if (missing) {
+      // Unconfigured: no models, no stale endpoint — but the stored sentinel stays.
+      el.aiModelSelect.innerHTML = "";
+      el.customModelRow.hidden = true;
+      el.aiEndpoint.value = "";
+    }
   }
 
   /** The target picker: one option per language, codes as values, "Name (code)" as label. */
@@ -114,8 +160,9 @@
 
   function renderModels(selectedModelId) {
     const provider = providerById(el.aiProvider.value);
+    if (!provider) { renderModelsForNoProvider(); return; }
     // Catalogue rows read alphabetically; the free-text entry is an action and
-    // stays last (SPEC 2.0.0 R2).
+    // stays last (SPEC 2.1.0 R2).
     const models = ((provider && provider.models) || [])
       .slice()
       .sort(
@@ -143,6 +190,13 @@
     toggleCustomRow();
   }
 
+  /** No provider: the model picker is empty, disabled and says what is missing. */
+  function renderModelsForNoProvider() {
+    el.aiModelSelect.innerHTML = "";
+    el.customModelRow.hidden = true;
+    syncProviderState();
+  }
+
   /** The model the picker shows when nothing is stored: the first catalogue row it displays. */
   function sortedFirstModel(models) {
     return models
@@ -158,7 +212,7 @@
     const levels = reasoningLevels();
     const values = DualTranCatalog.LEVEL_ORDER.filter((level) => levels.includes(level));
     el.aiReasoning.innerHTML = "";
-    const entries = [["lowest", t("reasoningLowest")], ["", t("reasoningDefault")]].concat(
+    const entries = [[REASONING_SENTINEL, t("reasoningLowest")], ["", t("reasoningDefault")]].concat(
       values.map((level) => [level, level])
     );
     for (const [value, label] of entries) {
@@ -168,7 +222,8 @@
       el.aiReasoning.appendChild(option);
     }
     const known = entries.some(([value]) => value === selected);
-    el.aiReasoning.value = known ? selected : "lowest";
+    el.aiReasoning.value = known ? selected : REASONING_SENTINEL;
+    el.aiReasoning.disabled = providerMissing();
   }
 
   function loadSettings() {
@@ -184,10 +239,17 @@
     el.engine.value = s.engine || "google";
     el.source.value = s.sourceLanguage || "auto";
     renderTargets(s.targetLanguage || DEFAULT_TARGET);
-    renderProviders(s.aiProvider || "openai");
+    // A stored provider is painted as stored; a fresh install stays empty.
+    const stored = typeof s.aiProvider === "string" ? s.aiProvider : EMPTY_PROVIDER;
+    renderProviders(stored);
+    if (providerMissing()) {
+      // Nothing configured: keep the sentinel, paint no endpoint, no models.
+      renderReasoning(s.reasoningSetting || REASONING_SENTINEL);
+      return;
+    }
     renderModels(s.aiModel || "");
     el.aiEndpoint.value = s.aiEndpoint || "";
-    renderReasoning(s.reasoningSetting || "lowest");
+    renderReasoning(s.reasoningSetting || REASONING_SENTINEL);
   }
   function current() {
     return {
@@ -240,6 +302,8 @@
   async function translateNow() {
     const text = el.input.value.trim();
     if (!text) { status(t("statusNothing"), true); return; }
+    // Nothing configured: say so and leave before any network call (SPEC 2.1.0).
+    if (providerMissing()) { status(t("providerRequiredError"), true); return; }
     const cfg = current();
     saveSettings(cfg);
     el.translate.disabled = true;
@@ -281,13 +345,18 @@
 
   function wire() {
     el.aiProvider.addEventListener("change", () => {
+      // The placeholder is gone once a provider is chosen, so this only ever
+      // sees real providers; an empty value would mean "stay put".
+      if (providerMissing()) return;
       const provider = providerById(el.aiProvider.value);
       el.aiEndpoint.value = DualTranCatalog.resolveEndpointOnProviderChange(
         el.aiEndpoint.value,
         provider ? provider.api : ""
       );
+      syncProviderState();
       renderModels("");
       renderReasoning(el.aiReasoning.value);
+      updateActionLabels();
     });
     el.aiModelSelect.addEventListener("change", () => {
       toggleCustomRow();
@@ -311,10 +380,20 @@
     });
   }
 
+  /**
+   * The Translate button explains, while nothing is configured, why it would do
+   * nothing: same string as the status it would show (SPEC 2.1.0). It stays
+   * clickable so the click itself can say so.
+   */
+  function updateActionLabels() {
+    el.translate.title = providerMissing() ? t("providerRequiredError") : "";
+  }
+
   async function boot() {
     relocalize(typeof Office !== "undefined" && Office.context ? Office.context.displayLanguage : "");
     await loadCatalog();
     paintSettings();
+    updateActionLabels();
     wire();
     if (typeof Office === "undefined") status(t("statusPreview"));
   }

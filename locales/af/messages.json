@@ -112,5 +112,14 @@
   },
   "extDescription": {
     "message": "Vertaal die gekose teks of die hele boodskap langs die oorspronklike — Google of jou eie KI-model (BYOK)."
+  },
+  "providerPlaceholder": {
+    "message": "Kies ’n verskaffer"
+  },
+  "providerRequiredForModel": {
+    "message": "Kies eers ’n verskaffer"
+  },
+  "providerRequiredError": {
+    "message": "Kies ’n KI-verskaffer in instellings voordat jy vertaal."
   }
 }

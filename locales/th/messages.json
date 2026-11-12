@@ -112,5 +112,14 @@
   },
   "extDescription": {
     "message": "แปลข้อความที่เลือกหรือทั้งข้อความข้างต้นฉบับ — Google หรือโมเดล AI ของคุณเอง (BYOK)"
+  },
+  "providerPlaceholder": {
+    "message": "เลือกผู้ให้บริการ"
+  },
+  "providerRequiredForModel": {
+    "message": "เลือกผู้ให้บริการก่อน"
+  },
+  "providerRequiredError": {
+    "message": "เลือกผู้ให้บริการ AI ในการตั้งค่าก่อนแปล"
   }
 }
